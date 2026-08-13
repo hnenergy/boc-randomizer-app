@@ -12,10 +12,11 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Verify spin, completed draft, new draft, refresh recovery, and mobile responsive mode
 - [ ] Initialize a Git repository and create the baseline commit
 - [ ] Create a GitHub repository and push the baseline
-- [ ] Import the GitHub repository into Vercel
-- [ ] Verify the production HTTPS URL on desktop and iPhone Safari
-- [ ] Verify **Add to Home Screen** and launch the installed PWA
-- [ ] Record the Vercel URL in `README.md`
+- [x] Deploy the production static PWA to Vercel
+- [x] Verify the production HTTPS URL in a desktop browser
+- [x] Verify the production HTTPS URL in iPhone Safari
+- [x] Verify **Add to Home Screen** and launch the installed PWA
+- [x] Record the Vercel URL in `README.md`
 
 **Exit:** the unchanged current application is running from a stable Vercel HTTPS URL and is installable on iPhone.
 
@@ -55,6 +56,7 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Normalize blanks/whitespace and reject duplicates or more than 25 names
 - [ ] Add manual vs auto mode selection
 - [ ] Add ascending vs descending rank direction
+- [ ] Let users choose Draft, Order, Grouping, Lineup, Draw, or a custom activity label; use the selected terminology instead of hard-coded "Draft" wording in headings, buttons, status messages, results, downloads, sharing, print output, and email drafts, with the BOC football preset defaulting to Draft
 - [ ] Add review screen and edit/back behavior
 
 **Exit:** a valid custom event can be created without login or network data storage.

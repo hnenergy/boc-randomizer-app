@@ -4,11 +4,15 @@ A free, installable web application for creating fair randomized orders for fant
 
 The current prototype is the **BOC Randomizer**, a 12-team fantasy-football draft picker. This repository is being evolved into a reusable public product.
 
+## Live application
+
+The current static PWA is available at [boc-randomizer-app.vercel.app](https://boc-randomizer-app.vercel.app/).
+
 ## Product status
 
-- Current: static installable PWA prototype in `index.html`
+- Current: static installable PWA in `index.html`, deployed to Vercel
 - Next: migrate to Next.js + TypeScript and implement the general event builder
-- Hosting target: Vercel
+- Hosting: Vercel
 - Data model: no accounts and no server-side event storage in the MVP
 - Monetization target: free app supported by privacy-conscious display ads after traffic and policy eligibility are established
 
@@ -46,4 +50,3 @@ Opening `index.html` directly will not fully test service workers or PWA install
 ## Working agreement
 
 All implementation work should follow [AGENTS.md](AGENTS.md). Each feature is complete only when acceptance criteria pass, automated checks pass, and the mobile experience is manually verified.
-
