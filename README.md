@@ -2,7 +2,7 @@
 
 A free, installable web application for creating fair randomized orders for fantasy drafts, golf groups, sports competitions, classroom activities, giveaways, and other events.
 
-The current interface is the **SpinOrder Draft Randomizer**, a generic 12-team Fantasy Football Draft example using `Team A` through `Team L`.
+The current static PWA opens on a responsive SpinOrder landing page and leads into the **SpinOrder Draft Randomizer**, a generic 12-team Fantasy Football Draft example using `Team A` through `Team L`. The general event setup form remains future work.
 
 ## Live application
 
@@ -13,7 +13,7 @@ The original [boc-randomizer-app.vercel.app](https://boc-randomizer-app.vercel.a
 ## Product status
 
 - Public product name: SpinOrder
-- Current interface: SpinOrder Draft Randomizer static PWA with a generic 12-team Fantasy Football Draft example
+- Current interface: SpinOrder landing page plus the SpinOrder Draft Randomizer static PWA with a generic 12-team Fantasy Football Draft example
 - Production: `https://www.spinorder.com/` on Vercel
 - Next: migrate to Next.js + TypeScript and implement the general event builder
 - Domain registration and DNS: GoDaddy
