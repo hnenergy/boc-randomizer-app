@@ -27,7 +27,7 @@ See [docs/ROADMAP.md](docs/ROADMAP.md) for the working checklist and [docs/DEVEL
 
 LFN Legacy Apps is the publisher of SpinOrder. Its approved publisher mark is a minimal, front-facing navy elephant outline with two eyes and a curled trunk, stored at [`assets/brand/lfn-legacy-apps-elephant.png`](assets/brand/lfn-legacy-apps-elephant.png). It is not the SpinOrder product logo.
 
-SpinOrder will receive a separate product logo and app icon. The LFN Legacy Apps mark is intended for subtle publisher attribution, such as in the site footer. Production SVG and light/dark versions of the publisher mark remain future work. See [Brand architecture](docs/BRAND.md) for the recorded decisions.
+The approved SpinOrder product logo is the five-section blue wheel stored at [`assets/brand/spinorder-logo.svg`](assets/brand/spinorder-logo.svg). A separate SpinOrder app icon still needs to be created. The LFN Legacy Apps mark is intended for subtle publisher attribution, such as in the site footer. Production SVG and light/dark versions of the publisher mark remain future work. See [Brand architecture](docs/BRAND.md) for the recorded decisions.
 
 ## Current prototype
 

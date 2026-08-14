@@ -10,7 +10,9 @@ The elephant is the **LFN Legacy Apps publisher mark**. It is not the SpinOrder 
 
 ## SpinOrder product identity
 
-SpinOrder will receive a separate product logo and app icon designed for the product's own identity and installation surfaces.
+The approved SpinOrder product logo is [`assets/brand/spinorder-logo.svg`](../assets/brand/spinorder-logo.svg). It is a transparent, circular wheel with five equal sections in flat blue shades, a small top pointer, and a short lower-right motion accent.
+
+This product logo is separate from the LFN Legacy Apps elephant publisher mark. A dedicated SpinOrder app icon still needs to be created for installation surfaces.
 
 ## Intended publisher placement
 
@@ -22,5 +24,4 @@ The following production assets remain to be created:
 
 - A production SVG of the LFN Legacy Apps publisher mark
 - Light and dark variants of the publisher mark
-- A separate SpinOrder product logo
 - A separate SpinOrder app icon

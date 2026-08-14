@@ -44,7 +44,8 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Approve the front-facing, navy, outline elephant with two minimal eyes and a curled trunk as the **LFN Legacy Apps publisher mark**; source: [`assets/brand/lfn-legacy-apps-elephant.png`](../assets/brand/lfn-legacy-apps-elephant.png)
 - [x] Record that the LFN Legacy Apps publisher mark is not the SpinOrder product logo
 - [ ] Create production SVG, light, and dark versions of the LFN Legacy Apps publisher mark
-- [ ] Create a separate SpinOrder product logo and app icon
+- [x] Approve the five-section blue wheel in [`assets/brand/spinorder-logo.svg`](../assets/brand/spinorder-logo.svg) as the separate SpinOrder product logo
+- [ ] Create a separate SpinOrder app icon
 - [ ] Add the LFN Legacy Apps mark as a small publisher attribution in the site footer
 
 **Exit:** name, domain direction, design direction, and enhancement backlog are approved.
