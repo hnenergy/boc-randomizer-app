@@ -11,7 +11,7 @@
 - Domain status: both custom domains show **Valid Configuration** in Vercel
 - Fallback deployment: `https://boc-randomizer-app.vercel.app/`
 - Verified: HTTPS, desktop browser, iPhone Safari, and custom-domain PWA installation
-- Current interface: **BOC Randomizer** until the SpinOrder rebrand is implemented and tested
+- Current interface: **SpinOrder Draft Randomizer**
 
 ## Recommended hosting
 

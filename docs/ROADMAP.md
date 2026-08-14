@@ -6,9 +6,13 @@ Update this file in every completed feature branch. Check an item only after its
 
 - [x] Preserve the current BOC PWA prototype and behavior
 - [x] Confirm the current package contains `index.html`, manifest, service worker, and icons
+- [x] Replace the private roster with a generic 12-team Fantasy Football Draft example and invalidate saved drafts that use the previous roster
+- [x] Display SpinOrder in the wheel hub and restore the latest selection message after refresh
+- [x] Rebrand the current interface and PWA metadata as SpinOrder Draft Randomizer
+- [x] Label the generic 12-team example Team A through Team L to distinguish teams from numbered draft positions
 - [ ] Install the official Codex extension in VS Code and sign in
 - [ ] Open the unzipped `boc-randomizer-app` folder as the active VS Code folder
-- [ ] Run the current application locally through an HTTP server
+- [x] Run the current application locally through an HTTP server
 - [ ] Verify spin, completed draft, new draft, refresh recovery, and mobile responsive mode
 - [ ] Initialize a Git repository and create the baseline commit
 - [ ] Create a GitHub repository and push the baseline

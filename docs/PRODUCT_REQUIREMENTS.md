@@ -4,7 +4,7 @@
 
 **SpinOrder** is a free, no-login web application that creates a randomized order for almost any event. Examples include fantasy-football drafts, golf groupings, baseball or basketball activities, classroom order, giveaways, and generic competitions.
 
-The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as the canonical production URL. The current deployed interface remains **BOC Randomizer** until the SpinOrder rebrand is implemented and tested; BOC Randomizer will remain the football preset.
+The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as the canonical production URL. The current deployed interface is **SpinOrder Draft Randomizer**; the BOC football preset remains part of the planned reusable product.
 
 ## Goals
 

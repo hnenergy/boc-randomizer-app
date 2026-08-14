@@ -38,7 +38,7 @@ Copy the unzipped `boc-randomizer-app` folder into a stable development director
 ```bash
 git init
 git add .
-git commit -m "chore: preserve BOC randomizer prototype"
+git commit -m "chore: preserve SpinOrder Draft Randomizer prototype"
 ```
 
 Create an empty GitHub repository, then follow GitHub's displayed commands to add the remote and push. Do not commit from inside the ZIP.

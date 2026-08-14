@@ -1,7 +1,7 @@
 {
-  "name": "BOC Randomizer",
-  "short_name": "BOC Draft",
-  "description": "Randomize BOC fantasy football draft positions from 12 to 1.",
+  "name": "SpinOrder Draft Randomizer",
+  "short_name": "SpinOrder Draft",
+  "description": "Randomize 12-team fantasy football draft positions from 12 to 1.",
   "id": "./",
   "start_url": "./",
   "scope": "./",

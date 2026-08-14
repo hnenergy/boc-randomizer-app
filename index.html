@@ -6,11 +6,11 @@
 <meta name="theme-color" content="#07110b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="BOC Randomizer">
+<meta name="apple-mobile-web-app-title" content="SpinOrder Draft Randomizer">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>BOC Randomizer</title>
+<title>SpinOrder Draft Randomizer</title>
 <style>
 :root{--bg:#05080d;--panel:#0d1420;--panel2:#07100b;--text:#f8fafc;--muted:#9ca3af;--lime:#76ff3b;--pointer:#76ff3b}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -41,7 +41,7 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
   <header class="topbar">
     <div class="brand">
       <div class="brand-badge">🏈</div>
-      <div><h1>BOC Randomizer</h1><div class="tagline">12 teams • 12 picks • 12 → 1</div></div>
+      <div><h1>SpinOrder Draft Randomizer</h1><div class="tagline">12 teams • 12 picks • 12 → 1</div></div>
     </div>
     <button id="reset">↻ NEW DRAFT</button>
   </header>
@@ -57,7 +57,7 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
         <div class="pointer-dot" id="pointerDot"></div>
         <div class="wheel" id="wheel">
           <div class="labels" id="labels"></div>
-          <div class="hub"><span>🏆</span><small>BOC</small></div>
+          <div class="hub"><span>🏆</span><small>SpinOrder</small></div>
         </div>
       </div>
 
@@ -76,15 +76,15 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
   </div>
 </div>
 <script>
-const original=["Vem/Han","Caitlyn/Tito","Denise/Kim","Huy/Duy","Pete/Happ","Peter V","PT","Nhin","Ky","Khai","Wren","Hai"];
+const original=Array.from({length:12},(_,i)=>`Team ${String.fromCharCode(65+i)}`);
 const colors=["#dc2626","#ea580c","#eab308","#45a315","#0f766e","#1464c0","#6d28d9","#b91c67","#8b451f","#626262","#0f8aa0","#0a58b0"];
+const DRAFT_STORAGE_KEY='spinorder-draft-v3',LEGACY_DRAFT_STORAGE_KEYS=['boc-draft-v2','boc-draft'];
 let remaining=original.map((name,i)=>({name,color:colors[i]}));
 let picks={}; let currentRank=12; let tickerTimer=null; let locked=false; let installPrompt=null;
 const wheel=document.getElementById('wheel'),labels=document.getElementById('labels'),ticker=document.getElementById('ticker'),spin=document.getElementById('spin'),reset=document.getElementById('reset'),status=document.getElementById('status'),pickNum=document.getElementById('pickNum'),nextText=document.getElementById('nextText'),results=document.getElementById('results'),pointer=document.getElementById('pointer'),pointerDot=document.getElementById('pointerDot'),install=document.getElementById('install'),installHelp=document.getElementById('installHelp');
-function saveDraft(){try{localStorage.setItem('boc-draft',JSON.stringify({remaining,picks,currentRank}))}catch{}}
-function loadDraft(){try{const saved=JSON.parse(localStorage.getItem('boc-draft'));if(!saved||!Array.isArray(saved.remaining)||typeof saved.currentRank!=='number')return;remaining=saved.remaining;picks=saved.picks||{};currentRank=saved.currentRank}catch{}}
+function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:3,remaining,picks,currentRank,tickerText:ticker.textContent}))}catch{}}
+function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==3||!Array.isArray(saved.remaining)||typeof saved.currentRank!=='number')return;remaining=saved.remaining;picks=saved.picks||{};currentRank=saved.currentRank;if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
 function rand(max){if(window.crypto?.getRandomValues){const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]%max}return Math.floor(Math.random()*max)}
-function splitName(name){if(name.includes('/')) return name.replace('/','/<br>'); if(name==='Peter V')return 'Peter<br>V'; return name}
 function setPointerColor(c){document.documentElement.style.setProperty('--pointer',c);pointer.style.setProperty('--pc',c)}
 function drawWheel(){
   labels.innerHTML=''; const n=remaining.length; const seg=360/n;
@@ -100,7 +100,7 @@ function drawWheel(){
     const radialH=Math.max(34,(outerR-hubR)*.48);
     let fs=Math.max(10,Math.min(16,D*.029));
     if(e.name.length>10) fs-=1; if(n>=10 && e.name.length>11) fs-=1;
-    const el=document.createElement('div'); el.className='team-label'; el.innerHTML=splitName(e.name);
+    const el=document.createElement('div'); el.className='team-label'; el.textContent=e.name;
     el.style.width=maxW+'px'; el.style.height=radialH+'px'; el.style.fontSize=fs+'px'; el.style.left=x+'px'; el.style.top=y+'px'; el.style.transform='translate(-50%,-50%)';
     labels.appendChild(el);
   });
@@ -118,7 +118,7 @@ async function spinOnce(){
   wheel.style.transition='transform 4.2s cubic-bezier(.12,.68,.12,1)'; wheel.style.transform=`rotate(${turns*360+target}deg)`;
   setTimeout(()=>{
     stopTicker(); setPointerColor(selected.color); ticker.textContent=`🎯 #${currentRank}: ${selected.name}`; ticker.classList.add('pop'); setTimeout(()=>ticker.classList.remove('pop'),500);
-    picks[currentRank]=selected; remaining.splice(idx,1); currentRank--; drawResults(); status.textContent=`Selected: ${selected.name}`;
+    picks[currentRank]=selected; remaining.splice(idx,1); currentRank--; drawResults(); status.textContent=`Selected: ${selected.name}`; saveDraft();
     setTimeout(()=>{
       wheel.style.transition='none'; wheel.style.transform='rotate(0deg)';
       requestAnimationFrame(()=>requestAnimationFrame(()=>{drawWheel(); wheel.style.transition='transform 4.2s cubic-bezier(.12,.68,.12,1)'}));
@@ -127,7 +127,7 @@ async function spinOnce(){
     },650);
   },4300);
 }
-function resetDraft(){stopTicker();remaining=original.map((name,i)=>({name,color:colors[i]}));picks={};currentRank=12;locked=false;ticker.textContent='Press SPIN to select Pick #12';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem('boc-draft');drawResults();drawWheel();updateUI();reset.disabled=false}
+function resetDraft(){stopTicker();remaining=original.map((name,i)=>({name,color:colors[i]}));picks={};currentRank=12;locked=false;ticker.textContent='Press SPIN to select Pick #12';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();updateUI();reset.disabled=false}
 spin.addEventListener('click',()=>currentRank<1?resetDraft():spinOnce());
 reset.addEventListener('click',resetDraft);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;install.classList.add('show')});
