@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#07110b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="SpinOrder Draft Randomizer">
+<meta name="apple-mobile-web-app-title" content="SpinOrder">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -17,18 +17,21 @@
 html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#05080d;color:var(--text)}
 body{min-height:100vh;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));background:radial-gradient(circle at 50% -10%,rgba(118,255,59,.12),transparent 30%),linear-gradient(180deg,#05070b,#09121a 58%,#061008);overscroll-behavior:none}
 [hidden]{display:none!important}
-button:focus-visible,a:focus-visible{outline:3px solid #65b7ff;outline-offset:4px}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #65b7ff;outline-offset:4px}
 .landing{width:min(100%,1080px);min-height:calc(100vh - 150px);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);align-items:center;gap:clamp(30px,7vw,84px);padding:clamp(28px,7vw,80px) 0}
 .landing-copy{max-width:650px}.landing-logo{width:clamp(132px,21vw,210px);height:auto;display:block;margin-bottom:24px}.landing-kicker{margin:0 0 10px;color:#65b7ff;font-size:clamp(18px,2.4vw,23px);font-weight:900;letter-spacing:.08em;text-transform:uppercase}.landing h1{margin:0;font-size:clamp(46px,9vw,88px);line-height:.9;letter-spacing:-.04em}.landing-headline{margin:22px 0 12px;font-size:clamp(22px,4vw,38px);font-weight:900;line-height:1.08}.landing-intro{margin:0;color:#cbd5e1;font-size:clamp(16px,2vw,19px);line-height:1.65}.landing-card{padding:clamp(22px,4vw,34px);border-radius:28px;background:linear-gradient(155deg,rgba(18,97,201,.25),rgba(6,39,91,.65));border:1px solid rgba(101,183,255,.28);box-shadow:0 24px 70px rgba(0,0,0,.34)}.landing-card h2{margin:0 0 14px;font-size:22px}.example-list,.trust-list{margin:0;padding:0;list-style:none}.example-list{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}.example-list li{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.08);color:#e5eefc;font-size:13px;font-weight:800}.trust-list{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:28px}.trust-list li{position:relative;padding-left:24px;color:#f8fafc;font-weight:800;line-height:1.35}.trust-list li::before{content:"✓";position:absolute;left:0;color:#65b7ff;font-weight:1000}.create-button{width:100%;min-height:58px;color:#fff;background:linear-gradient(135deg,#1687ff,#0a3d85);box-shadow:0 14px 30px rgba(22,135,255,.28)}
 .publisher-footer{width:min(100%,1080px);margin:24px auto 0;padding:18px 0 4px;display:flex;align-items:center;justify-content:center;gap:10px;color:#8fa3bd;font-size:12px;text-align:center}.publisher-footer img{width:30px;height:30px;object-fit:contain;flex:0 0 auto}
+.setup-shell{width:min(100%,880px);margin:0 auto;padding:24px 0}.setup-nav{margin-bottom:18px}.setup-back{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}.setup-panel{padding:clamp(22px,5vw,42px);border-radius:28px;background:linear-gradient(180deg,rgba(15,35,65,.98),rgba(6,18,38,.98));border:1px solid rgba(101,183,255,.25);box-shadow:0 24px 70px rgba(0,0,0,.34)}.setup-heading{display:flex;align-items:center;gap:18px;margin-bottom:30px}.setup-heading img{width:76px;height:76px;object-fit:contain}.setup-heading h1{margin:0 0 6px}.setup-heading p{margin:0;color:#afc3dd;line-height:1.5}.setup-form{display:grid;gap:28px}.form-field{display:grid;gap:9px}.form-field>label,.setup-form legend{font-size:17px;font-weight:900}.form-field input[type="text"]{width:100%;min-height:52px;border:1px solid #47627f;border-radius:13px;padding:12px 14px;background:#071423;color:#fff;font:inherit;font-size:16px}.form-field input[type="text"]::placeholder{color:#71849a}.form-field input[aria-invalid="true"]{border-color:#ff8b8b}.field-hint{margin:0;color:#91a7c1;font-size:13px}.field-error{min-height:18px;margin:0;color:#ffb1b1;font-size:14px;font-weight:800}.setup-form fieldset{min-width:0;margin:0;padding:0;border:0}.setup-form legend{margin-bottom:12px}.choice-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.choice-card{position:relative;display:grid;place-items:center;gap:6px;min-width:0;min-height:94px;padding:12px 8px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d;color:#e8f2ff;text-align:center;font-size:14px;font-weight:900;cursor:pointer}.choice-card input{position:absolute;opacity:0;pointer-events:none}.choice-card:has(input:checked){border-color:#65b7ff;background:#103d70}.choice-card:has(input:focus-visible){outline:3px solid #65b7ff;outline-offset:3px}.choice-icon{font-size:28px;line-height:1}.label-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.label-card{min-height:54px}.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mode-card{position:relative;display:flex;align-items:center;gap:11px;padding:16px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d;font-weight:900}.mode-card:has(input:checked){border-color:#65b7ff;background:#103d70}.mode-card:has(input:focus-visible){outline:3px solid #65b7ff;outline-offset:3px}.mode-card.disabled{opacity:.58;cursor:not-allowed}.coming-soon{margin-left:auto;padding:4px 7px;border-radius:999px;background:#263b54;color:#d8e8fa;font-size:11px}.continue-button{min-height:58px;color:#fff;background:linear-gradient(135deg,#1687ff,#0a3d85);box-shadow:0 14px 30px rgba(22,135,255,.24)}
+.choice-card:has(input:checked)::after{content:"✓";position:absolute;top:6px;right:8px;color:#fff;font-size:15px}
+.label-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .shell{max-width:1160px;margin:auto}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-.topbar-actions{display:flex;align-items:center;gap:10px}.back-home{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}
+.topbar-actions{display:flex;align-items:center;gap:10px}.edit-setup{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}
 .brand{display:flex;align-items:center;gap:14px}.brand-badge{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:38px;background:linear-gradient(145deg,#162215,#050a06);border:2px solid var(--lime);box-shadow:0 0 20px rgba(118,255,59,.18)}
 h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}.tagline{margin:6px 0 0;color:#aab2c0;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
 .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:20px}.card{background:linear-gradient(180deg,rgba(15,23,36,.96),rgba(6,12,20,.98));border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:0 22px 60px rgba(0,0,0,.38)}
 .main{padding:20px}.side{padding:20px}.pick-label{text-align:center;font-size:13px;font-weight:900;letter-spacing:.16em;color:#9ca3af}.pick-number{text-align:center;font-size:48px;font-weight:1000;color:var(--lime);line-height:1.05;margin:2px 0 7px}.ticker{height:50px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:21px;font-weight:1000;background:#07101c;border:1px solid rgba(255,255,255,.07);border-radius:14px;margin-bottom:18px;padding:0 14px}
-.wheel-wrap{position:relative;width:min(76vw,540px);aspect-ratio:1;margin:26px auto 22px}.pointer{--pc:var(--pointer);position:absolute;z-index:20;top:-46px;left:50%;transform:translateX(-50%);width:78px;height:78px;display:grid;place-items:center;font-size:62px;line-height:1;filter:drop-shadow(0 0 10px var(--pc)) drop-shadow(0 5px 8px rgba(0,0,0,.85));transition:filter .3s ease}.pointer::after{content:"";position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:18px solid var(--pc);filter:drop-shadow(0 0 6px var(--pc));transition:border-top-color .3s ease}.pointer-football{display:block;transform:rotate(90deg);transform-origin:center}.pointer-dot{display:none}
+.wheel-wrap{position:relative;width:min(76vw,540px);aspect-ratio:1;margin:26px auto 22px}.pointer{--pc:var(--pointer);position:absolute;z-index:20;top:-46px;left:50%;transform:translateX(-50%);width:78px;height:78px;display:grid;place-items:center;font-size:62px;line-height:1;filter:drop-shadow(0 0 10px var(--pc)) drop-shadow(0 5px 8px rgba(0,0,0,.85));transition:filter .3s ease}.pointer::after{content:"";position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:18px solid var(--pc);filter:drop-shadow(0 0 6px var(--pc));transition:border-top-color .3s ease}.pointer-symbol{display:block;transform-origin:center}.pointer-symbol.football{transform:rotate(90deg)}.pointer-dot{display:none}
 .wheel{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:9px solid #e5e7eb;box-shadow:0 0 0 6px rgba(118,255,59,.14),0 20px 45px rgba(0,0,0,.45),inset 0 0 28px rgba(0,0,0,.22);transition:transform 4.2s cubic-bezier(.12,.68,.12,1);transform:rotate(0deg)}
 .wheel:before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 38% 30%,rgba(255,255,255,.12),transparent 18%),repeating-radial-gradient(circle at 50% 50%,rgba(255,255,255,.018) 0 1px,transparent 1px 4px);z-index:3;pointer-events:none}.labels{position:absolute;inset:0;z-index:5;pointer-events:none}.team-label{position:absolute;left:50%;top:50%;transform-origin:center;text-align:center;font-weight:1000;line-height:1.04;text-shadow:0 2px 5px rgba(0,0,0,.9);white-space:normal;overflow-wrap:anywhere;word-break:normal;display:flex;align-items:center;justify-content:center}
 .hub{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 38% 30%,#273241,#070a0d 67%);border:5px solid #e5e7eb;box-shadow:0 0 0 5px rgba(118,255,59,.15),0 8px 20px rgba(0,0,0,.5)}.hub span{font-size:50px}.hub small{position:absolute;bottom:13px;font-size:10px;font-weight:1000;letter-spacing:.12em;color:#d1d5db}
@@ -38,9 +41,9 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
 .install{display:none;margin-top:12px;width:100%;color:#071006;background:#fff}.install.show{display:block}.install-help{display:none;margin-top:10px;color:#cbd5e1;font-size:13px;line-height:1.45}.install-help.show{display:block}
 .flash{animation:flash .12s infinite alternate}@keyframes flash{to{filter:brightness(1.6);transform:scale(1.015)}}
 .pop{animation:pop .45s ease}@keyframes pop{50%{transform:scale(1.05)}}
-@media(max-width:880px){body{padding:12px}.landing{grid-template-columns:1fr;min-height:auto;padding:32px 0 20px}.landing-logo{margin-left:auto;margin-right:auto}.landing-copy{text-align:center;margin:auto}.grid{grid-template-columns:1fr}.side{order:2}.wheel-wrap{width:min(90vw,530px)}.brand-badge{width:52px;height:52px;font-size:31px}.main,.side{padding:16px}}
-@media(max-width:600px){.topbar{align-items:flex-start;flex-wrap:wrap}.topbar-actions{width:100%;justify-content:space-between}.landing-card{border-radius:22px}.trust-list{grid-template-columns:1fr}.publisher-footer{align-items:flex-start}.wheel-wrap{width:min(91vw,430px)}.tagline{font-size:11px}.hub{width:92px;height:92px}.hub span{font-size:38px}.ticker{font-size:18px}.pick-number{font-size:40px}.result-row{grid-template-columns:40px 10px 1fr;padding:9px 10px}}
-@media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing h1{font-size:44px}.landing-card{padding:19px}.topbar-actions button{padding:11px 13px;font-size:14px}.brand{gap:10px}.brand-badge{width:46px;height:46px;font-size:27px}}
+@media(max-width:880px){body{padding:12px}.landing{grid-template-columns:1fr;min-height:auto;padding:32px 0 20px}.landing-logo{margin-left:auto;margin-right:auto}.landing-copy{text-align:center;margin:auto}.choice-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.label-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid{grid-template-columns:1fr}.side{order:2}.wheel-wrap{width:min(90vw,530px)}.brand-badge{width:52px;height:52px;font-size:31px}.main,.side{padding:16px}}
+@media(max-width:600px){.topbar{align-items:flex-start;flex-wrap:wrap}.topbar-actions{width:100%;justify-content:space-between}.landing-card,.setup-panel{border-radius:22px}.setup-heading{align-items:flex-start}.setup-heading img{width:58px;height:58px}.choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.label-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mode-grid{grid-template-columns:1fr}.trust-list{grid-template-columns:1fr}.publisher-footer{align-items:flex-start}.wheel-wrap{width:min(91vw,430px)}.tagline{font-size:11px}.hub{width:92px;height:92px}.hub span{font-size:38px}.ticker{font-size:18px}.pick-number{font-size:40px}.result-row{grid-template-columns:40px 10px 1fr;padding:9px 10px}}
+@media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing h1{font-size:44px}.landing-card,.setup-panel{padding:19px}.choice-card{padding-left:5px;padding-right:5px}.topbar-actions button{padding:11px 13px;font-size:14px}.brand{gap:10px}.brand-badge{width:46px;height:46px;font-size:27px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -67,27 +70,88 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
   </main>
 </section>
 
+<section id="setupView" aria-labelledby="setupTitle" hidden>
+  <div class="setup-shell">
+    <nav class="setup-nav" aria-label="Setup navigation">
+      <button class="setup-back" id="setupBack" type="button">← Back</button>
+    </nav>
+    <main class="setup-panel">
+      <div class="setup-heading">
+        <img src="assets/brand/spinorder-logo.svg" alt="">
+        <div><h1 id="setupTitle" tabindex="-1">Set up your randomizer</h1><p>Choose the event details now. Participant names come next.</p></div>
+      </div>
+      <form class="setup-form" id="setupForm" novalidate>
+        <div class="form-field">
+          <label for="eventName">Event name</label>
+          <input id="eventName" name="eventName" type="text" placeholder="Friday Golf Groups" maxlength="80" autocomplete="off" aria-describedby="eventNameError" required>
+          <p class="field-error" id="eventNameError" aria-live="polite"></p>
+        </div>
+
+        <fieldset aria-describedby="activityError">
+          <legend>Activity</legend>
+          <div class="choice-grid">
+            <label class="choice-card"><input type="radio" name="activity" value="Football" checked><span class="choice-icon" aria-hidden="true">🏈</span><span>Football</span></label>
+            <label class="choice-card"><input type="radio" name="activity" value="Baseball"><span class="choice-icon" aria-hidden="true">⚾</span><span>Baseball</span></label>
+            <label class="choice-card"><input type="radio" name="activity" value="Golf"><span class="choice-icon" aria-hidden="true">⛳</span><span>Golf</span></label>
+            <label class="choice-card"><input type="radio" name="activity" value="Basketball"><span class="choice-icon" aria-hidden="true">🏀</span><span>Basketball</span></label>
+            <label class="choice-card"><input type="radio" name="activity" value="Generic"><span class="choice-icon" aria-hidden="true">🔄</span><span>Generic</span></label>
+          </div>
+          <p class="field-error" id="activityError" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset aria-describedby="activityLabelError">
+          <legend>What are you randomizing?</legend>
+          <div class="choice-grid label-grid">
+            <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Draft Order"><span>Draft Order</span></label>
+            <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Random Order" checked><span>Random Order</span></label>
+            <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Drawing Order"><span>Drawing Order</span></label>
+            <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Custom"><span>Custom</span></label>
+          </div>
+          <p class="field-error" id="activityLabelError" aria-live="polite"></p>
+        </fieldset>
+
+        <div class="form-field" id="customLabelField" hidden>
+          <label for="customLabel">Custom activity label</label>
+          <input id="customLabel" name="customLabel" type="text" maxlength="30" autocomplete="off" aria-describedby="customLabelHint customLabelError">
+          <p class="field-hint" id="customLabelHint">For example: Tee Time or Presentation</p>
+          <p class="field-error" id="customLabelError" aria-live="polite"></p>
+        </div>
+
+        <fieldset>
+          <legend>Spin mode</legend>
+          <div class="mode-grid">
+            <label class="mode-card"><input type="radio" name="spinMode" value="manual" checked><span>Manual spin</span></label>
+            <label class="mode-card disabled"><input type="radio" name="spinMode" value="auto" disabled><span>Auto spin</span><span class="coming-soon">Coming soon</span></label>
+          </div>
+        </fieldset>
+
+        <button class="continue-button" type="submit">Continue to Names</button>
+      </form>
+    </main>
+  </div>
+</section>
+
 <section id="randomizerView" aria-labelledby="randomizerTitle" hidden>
 <div class="shell">
   <header class="topbar">
     <div class="brand">
-      <div class="brand-badge">🏈</div>
-      <div><h1 id="randomizerTitle" tabindex="-1">SpinOrder Draft Randomizer</h1><div class="tagline">12 teams • 12 picks • 12 → 1</div></div>
+      <div class="brand-badge" id="eventIcon" aria-hidden="true">🏈</div>
+      <div><h1 id="randomizerTitle" tabindex="-1">SpinOrder</h1><div class="tagline" id="eventTagline">Random Order • 12 teams • 12 → 1</div></div>
     </div>
     <div class="topbar-actions">
-      <button class="back-home" id="backHome" type="button">← Home</button>
-      <button id="reset">↻ NEW DRAFT</button>
+      <button class="edit-setup" id="editSetup" type="button">← Edit Setup</button>
+      <button id="reset">↻ Reset Random Order</button>
     </div>
   </header>
 
   <div class="grid">
     <main class="card main">
-      <div class="pick-label">CURRENT PICK</div>
+      <div class="pick-label">CURRENT POSITION</div>
       <div class="pick-number" id="pickNum">#12</div>
-      <div class="ticker" id="ticker">Press SPIN to select Pick #12</div>
+      <div class="ticker" id="ticker">Press SPIN to select Position #12</div>
 
       <div class="wheel-wrap">
-        <div class="pointer" id="pointer" aria-label="football pointer"><span class="pointer-football">🏈</span></div>
+        <div class="pointer" id="pointer" aria-label="Football pointer"><span class="pointer-symbol football" id="pointerSymbol">🏈</span></div>
         <div class="pointer-dot" id="pointerDot"></div>
         <div class="wheel" id="wheel">
           <div class="labels" id="labels"></div>
@@ -100,10 +164,10 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
     </main>
 
     <aside class="card side">
-      <h2>🏈 Draft Order</h2>
+      <h2 id="resultsTitle">🏈 Random Order Results</h2>
       <div class="next" id="nextText">Next position: #12</div>
       <div class="results" id="results"></div>
-      <div class="footer-note">Each spin selects one team and removes it from the wheel. Picks count down from <b>12 → 1</b>. The final remaining team becomes <b>Pick #1</b>.</div>
+      <div class="footer-note" id="randomizerHelp">Each spin assigns one team and removes it from the wheel. Positions count down from <b>12 → 1</b>. The final remaining team receives <b>Position #1</b>.</div>
       <button class="install" id="install">⬇ INSTALL APP</button>
       <div class="install-help" id="installHelp">On iPhone: open this page in Safari, tap <b>Share</b>, then choose <b>Add to Home Screen</b>.</div>
     </aside>
@@ -115,6 +179,7 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
   <img src="assets/brand/lfn-legacy-apps-elephant.png" alt="LFN Legacy Apps elephant publisher logo">
   <span>© 2026 LFN Legacy Apps. All rights reserved. SpinOrder™</span>
 </footer>
+<script src="setup-state.js"></script>
 <script>
 const original=Array.from({length:12},(_,i)=>`Team ${String.fromCharCode(65+i)}`);
 const colors=["#dc2626","#ea580c","#eab308","#45a315","#0f766e","#1464c0","#6d28d9","#b91c67","#8b451f","#626262","#0f8aa0","#0a58b0"];
@@ -122,20 +187,50 @@ const DRAFT_STORAGE_KEY='spinorder-draft-v3',LEGACY_DRAFT_STORAGE_KEYS=['boc-dra
 let remaining=original.map((name,i)=>({name,color:colors[i]}));
 let picks={}; let currentRank=12; let tickerTimer=null; let locked=false; let installPrompt=null;
 const wheel=document.getElementById('wheel'),labels=document.getElementById('labels'),ticker=document.getElementById('ticker'),spin=document.getElementById('spin'),reset=document.getElementById('reset'),status=document.getElementById('status'),pickNum=document.getElementById('pickNum'),nextText=document.getElementById('nextText'),results=document.getElementById('results'),pointer=document.getElementById('pointer'),pointerDot=document.getElementById('pointerDot'),install=document.getElementById('install'),installHelp=document.getElementById('installHelp');
-const landingView=document.getElementById('landingView'),randomizerView=document.getElementById('randomizerView'),createRandomizer=document.getElementById('createRandomizer'),backHome=document.getElementById('backHome'),landingTitle=document.getElementById('landingTitle'),randomizerTitle=document.getElementById('randomizerTitle');
-function showView(showRandomizer,moveFocus=false){
-  landingView.hidden=showRandomizer;randomizerView.hidden=!showRandomizer;
-  document.title=showRandomizer?'SpinOrder Draft Randomizer':'SpinOrder — Free Randomizer for Any Activity';
-  if(showRandomizer)requestAnimationFrame(()=>{if(!locked)drawWheel()});
-  if(moveFocus)requestAnimationFrame(()=>(showRandomizer?randomizerTitle:landingTitle).focus());
+const landingView=document.getElementById('landingView'),setupView=document.getElementById('setupView'),randomizerView=document.getElementById('randomizerView'),createRandomizer=document.getElementById('createRandomizer'),setupBack=document.getElementById('setupBack'),editSetup=document.getElementById('editSetup'),landingTitle=document.getElementById('landingTitle'),setupTitle=document.getElementById('setupTitle'),randomizerTitle=document.getElementById('randomizerTitle');
+const setupForm=document.getElementById('setupForm'),eventNameInput=document.getElementById('eventName'),customLabelField=document.getElementById('customLabelField'),customLabelInput=document.getElementById('customLabel'),eventIcon=document.getElementById('eventIcon'),eventTagline=document.getElementById('eventTagline'),pointerSymbol=document.getElementById('pointerSymbol'),resultsTitle=document.getElementById('resultsTitle'),randomizerHelp=document.getElementById('randomizerHelp');
+function loadSetupValues(){try{return SpinOrderSetup.load(window.sessionStorage)}catch{return {...SpinOrderSetup.DEFAULT_VALUES}}}
+let setupValues=loadSetupValues();
+function routeFromHash(){return location.hash==='#setup'?'setup':location.hash==='#randomizer'?'randomizer':'landing'}
+function showView(view,moveFocus=false){
+  landingView.hidden=view!=='landing';setupView.hidden=view!=='setup';randomizerView.hidden=view!=='randomizer';
+  document.title=view==='landing'?'SpinOrder — Free Randomizer for Any Activity':view==='setup'?'Create a Randomizer — SpinOrder':`${setupValues.eventName||'SpinOrder'} — SpinOrder`;
+  if(view==='randomizer')requestAnimationFrame(()=>{applySetupToRandomizer();if(!locked)drawWheel()});
+  if(moveFocus){const target=view==='landing'?landingTitle:view==='setup'?setupTitle:randomizerTitle;requestAnimationFrame(()=>target.focus())}
 }
-function openRandomizer(){
-  if(location.hash!=='#randomizer')history.pushState({spinorderView:'randomizer'},'','#randomizer');
-  showView(true,true);
+function openSetup(){
+  if(location.hash!=='#setup')history.pushState({spinorderView:'setup'},'','#setup');
+  showView('setup',true);
 }
-function returnHome(){
+function backFromSetup(){
+  if(history.state?.spinorderView==='setup')history.back();
+  else{history.replaceState(null,'',location.pathname+location.search);showView('landing',true)}
+}
+function editCurrentSetup(){
   if(history.state?.spinorderView==='randomizer')history.back();
-  else{history.replaceState(null,'',location.pathname+location.search);showView(false,true)}
+  else{history.pushState({spinorderView:'setup'},'','#setup');showView('setup',true)}
+}
+function formValues(){const data=new FormData(setupForm);return {eventName:data.get('eventName'),activity:data.get('activity'),activityLabel:data.get('activityLabel'),customLabel:data.get('customLabel'),spinMode:data.get('spinMode')}}
+function toggleCustomLabel(){const custom=setupForm.elements.activityLabel.value==='Custom';customLabelField.hidden=!custom;customLabelInput.required=custom;if(!custom){customLabelInput.removeAttribute('aria-invalid');document.getElementById('customLabelError').textContent=''}}
+function populateSetupForm(values){
+  eventNameInput.value=values.eventName;customLabelInput.value=values.customLabel;
+  const activity=setupForm.querySelector(`[name="activity"][value="${values.activity}"]`);if(activity)activity.checked=true;
+  const label=setupForm.querySelector(`[name="activityLabel"][value="${values.activityLabel}"]`);if(label)label.checked=true;
+  toggleCustomLabel();
+}
+function saveSetupProgress(){setupValues=SpinOrderSetup.normalize(formValues());try{SpinOrderSetup.save(window.sessionStorage,setupValues)}catch{}}
+function clearSetupErrors(){for(const name of ['eventName','activity','activityLabel','customLabel']){document.getElementById(`${name}Error`).textContent=''}eventNameInput.removeAttribute('aria-invalid');customLabelInput.removeAttribute('aria-invalid')}
+function showSetupErrors(errors){
+  clearSetupErrors();
+  for(const [name,message] of Object.entries(errors)){document.getElementById(`${name}Error`).textContent=message;if(name==='eventName')eventNameInput.setAttribute('aria-invalid','true');if(name==='customLabel')customLabelInput.setAttribute('aria-invalid','true')}
+  const first=errors.eventName?eventNameInput:errors.customLabel?customLabelInput:setupForm.querySelector(errors.activity?'[name="activity"]':'[name="activityLabel"]');if(first)first.focus();
+}
+function applySetupToRandomizer(){
+  const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,eventName=setupValues.eventName||'SpinOrder';
+  eventIcon.textContent=icon;randomizerTitle.textContent=eventName;eventTagline.textContent=`${label} • ${setupValues.activity} • 12 teams • 12 → 1`;
+  pointerSymbol.textContent=icon;pointerSymbol.classList.toggle('football',setupValues.activity==='Football');pointer.setAttribute('aria-label',`${setupValues.activity} pointer`);
+  resultsTitle.textContent=`${icon} ${label} Results`;randomizerHelp.textContent=`Building the ${label}: each spin assigns one team and removes it from the wheel. Positions count down from 12 → 1. The final remaining team receives Position #1.`;
+  reset.textContent=`↻ Reset ${label}`;updateUI();
 }
 function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:3,remaining,picks,currentRank,tickerText:ticker.textContent}))}catch{}}
 function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==3||!Array.isArray(saved.remaining)||typeof saved.currentRank!=='number')return;remaining=saved.remaining;picks=saved.picks||{};currentRank=saved.currentRank;if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
@@ -164,7 +259,7 @@ function drawResults(){
   results.innerHTML='';
   for(let r=12;r>=1;r--){const row=document.createElement('div');row.className='result-row';const p=picks[r];row.innerHTML=`<div class="rank">#${r}</div><div class="dot" style="background:${p?p.color:'#334155'}"></div><div class="${p?'team':'pending'}">${p?p.name:'Pending'}</div>`;results.appendChild(row)}
 }
-function updateUI(){pickNum.textContent=currentRank>=1?`#${currentRank}`:'DONE';spin.textContent=currentRank>=1?`🏈 SPIN FOR #${currentRank}`:'↻ START NEW DRAFT';spin.disabled=locked;status.textContent=currentRank>=1?`${remaining.length} team${remaining.length===1?'':'s'} remaining`:'Draft complete — tap below to play again!';nextText.textContent=currentRank>=1?`Next position: #${currentRank}`:'All 12 picks are complete.'}
+function updateUI(){const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football;pickNum.textContent=currentRank>=1?`#${currentRank}`:'DONE';spin.textContent=currentRank>=1?`${icon} SPIN FOR #${currentRank}`:`↻ Reset ${label}`;spin.disabled=locked;status.textContent=currentRank>=1?`${remaining.length} team${remaining.length===1?'':'s'} remaining in this ${label}`:`${label} complete — tap below to reset!`;nextText.textContent=currentRank>=1?`Next position in ${label}: #${currentRank}`:`All 12 ${label} positions are complete.`}
 function startTicker(){ticker.classList.add('flash');tickerTimer=setInterval(()=>ticker.textContent=remaining[rand(remaining.length)].name,70)}
 function stopTicker(){clearInterval(tickerTimer);ticker.classList.remove('flash')}
 async function spinOnce(){
@@ -173,7 +268,7 @@ async function spinOnce(){
   wheel.style.transition='transform 4.2s cubic-bezier(.12,.68,.12,1)'; wheel.style.transform=`rotate(${turns*360+target}deg)`;
   setTimeout(()=>{
     stopTicker(); setPointerColor(selected.color); ticker.textContent=`🎯 #${currentRank}: ${selected.name}`; ticker.classList.add('pop'); setTimeout(()=>ticker.classList.remove('pop'),500);
-    picks[currentRank]=selected; remaining.splice(idx,1); currentRank--; drawResults(); status.textContent=`Selected: ${selected.name}`; saveDraft();
+    picks[currentRank]=selected; remaining.splice(idx,1); currentRank--; drawResults(); status.textContent=`Selected for ${SpinOrderSetup.displayLabel(setupValues)}: ${selected.name}`; saveDraft();
     setTimeout(()=>{
       wheel.style.transition='none'; wheel.style.transform='rotate(0deg)';
       requestAnimationFrame(()=>requestAnimationFrame(()=>{drawWheel(); wheel.style.transition='transform 4.2s cubic-bezier(.12,.68,.12,1)'}));
@@ -182,19 +277,28 @@ async function spinOnce(){
     },650);
   },4300);
 }
-function resetDraft(){stopTicker();remaining=original.map((name,i)=>({name,color:colors[i]}));picks={};currentRank=12;locked=false;ticker.textContent='Press SPIN to select Pick #12';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();updateUI();reset.disabled=false}
+function resetDraft(){stopTicker();remaining=original.map((name,i)=>({name,color:colors[i]}));picks={};currentRank=12;locked=false;ticker.textContent='Press SPIN to select Position #12';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();updateUI();reset.disabled=false}
 spin.addEventListener('click',()=>currentRank<1?resetDraft():spinOnce());
 reset.addEventListener('click',resetDraft);
-createRandomizer.addEventListener('click',openRandomizer);
-backHome.addEventListener('click',returnHome);
-window.addEventListener('popstate',()=>showView(location.hash==='#randomizer',true));
-window.addEventListener('hashchange',()=>showView(location.hash==='#randomizer',true));
+createRandomizer.addEventListener('click',openSetup);
+setupBack.addEventListener('click',backFromSetup);
+editSetup.addEventListener('click',editCurrentSetup);
+setupForm.addEventListener('input',saveSetupProgress);
+setupForm.addEventListener('change',()=>{toggleCustomLabel();saveSetupProgress()});
+setupForm.addEventListener('submit',event=>{
+  event.preventDefault();const result=SpinOrderSetup.validate(formValues());
+  if(!result.valid){showSetupErrors(result.errors);return}
+  clearSetupErrors();setupValues=result.values;try{SpinOrderSetup.save(window.sessionStorage,setupValues)}catch{}
+  applySetupToRandomizer();history.pushState({spinorderView:'randomizer'},'','#randomizer');showView('randomizer',true);
+});
+window.addEventListener('popstate',()=>showView(routeFromHash(),true));
+window.addEventListener('hashchange',()=>showView(routeFromHash(),true));
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;install.classList.add('show')});
 install.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;install.classList.remove('show')});
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!navigator.standalone)installHelp.classList.add('show');
 window.addEventListener('resize',()=>{if(!locked)drawWheel()});
 if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
-loadDraft();drawResults();drawWheel();updateUI();showView(location.hash==='#randomizer');
+populateSetupForm(setupValues);loadDraft();drawResults();drawWheel();applySetupToRandomizer();showView(routeFromHash());
 </script>
 </body>
 </html>
