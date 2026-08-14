@@ -1,7 +1,7 @@
 {
-  "name": "SpinOrder Draft Randomizer",
-  "short_name": "SpinOrder Draft",
-  "description": "Randomize 12-team fantasy football draft positions from 12 to 1.",
+  "name": "SpinOrder Randomizer",
+  "short_name": "SpinOrder",
+  "description": "Create a free random order for a competition or activity.",
   "id": "./",
   "start_url": "./",
   "scope": "./",

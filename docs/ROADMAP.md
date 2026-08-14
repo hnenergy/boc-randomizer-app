@@ -68,15 +68,15 @@ Update this file in every completed feature branch. Check an item only after its
 
 - [x] Build the responsive public splash/landing page with SpinOrder and LFN Legacy Apps brand attribution
 - [x] Add **Create Randomizer** call to action and in-page navigation to the existing draft randomizer
-- [ ] Add event-name field and validation
-- [ ] Add Football, Baseball, Golf, Basketball, and Generic themes
+- [x] Add event-name field and accessible validation
+- [x] Add Football, Baseball, Golf, Basketball, and Generic activity selection with matching randomizer icons
 - [ ] Add editable 2–25 name list
 - [ ] Add comma/newline paste support
 - [ ] Add local `.txt` and simple `.csv` upload
 - [ ] Normalize blanks/whitespace and reject duplicates or more than 25 names
-- [ ] Add manual vs auto mode selection
+- [x] Add Manual spin selection and show Auto spin as disabled **Coming soon**
 - [ ] Add ascending vs descending rank direction
-- [ ] Let users choose Draft, Order, Grouping, Lineup, Draw, or a custom activity label; use the selected terminology instead of hard-coded "Draft" wording in headings, buttons, status messages, results, downloads, sharing, print output, and email drafts, with the BOC football preset defaulting to Draft
+- [x] Let users choose Draft Order, Random Order, Drawing Order, or a custom label and apply that terminology to supporting text, progress, results, completion, position labels, and reset controls while keeping the event name as the randomizer heading
 - [ ] Add review screen and edit/back behavior
 
 **Exit:** a valid custom event can be created without login or network data storage.
