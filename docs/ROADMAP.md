@@ -66,8 +66,8 @@ Update this file in every completed feature branch. Check an item only after its
 
 ## Phase 3 — General event builder
 
-- [ ] Build the public splash/landing page
-- [ ] Add **Create Randomizer** call to action
+- [x] Build the responsive public splash/landing page with SpinOrder and LFN Legacy Apps brand attribution
+- [x] Add **Create Randomizer** call to action and in-page navigation to the existing draft randomizer
 - [ ] Add event-name field and validation
 - [ ] Add Football, Baseball, Golf, Basketball, and Generic themes
 - [ ] Add editable 2–25 name list

@@ -10,14 +10,20 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>SpinOrder Draft Randomizer</title>
+<title>SpinOrder — Free Randomizer for Any Activity</title>
 <style>
 :root{--bg:#05080d;--panel:#0d1420;--panel2:#07100b;--text:#f8fafc;--muted:#9ca3af;--lime:#76ff3b;--pointer:#76ff3b}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#05080d;color:var(--text)}
 body{min-height:100vh;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));background:radial-gradient(circle at 50% -10%,rgba(118,255,59,.12),transparent 30%),linear-gradient(180deg,#05070b,#09121a 58%,#061008);overscroll-behavior:none}
+[hidden]{display:none!important}
+button:focus-visible,a:focus-visible{outline:3px solid #65b7ff;outline-offset:4px}
+.landing{width:min(100%,1080px);min-height:calc(100vh - 150px);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);align-items:center;gap:clamp(30px,7vw,84px);padding:clamp(28px,7vw,80px) 0}
+.landing-copy{max-width:650px}.landing-logo{width:clamp(132px,21vw,210px);height:auto;display:block;margin-bottom:24px}.landing-kicker{margin:0 0 10px;color:#65b7ff;font-size:clamp(18px,2.4vw,23px);font-weight:900;letter-spacing:.08em;text-transform:uppercase}.landing h1{margin:0;font-size:clamp(46px,9vw,88px);line-height:.9;letter-spacing:-.04em}.landing-headline{margin:22px 0 12px;font-size:clamp(22px,4vw,38px);font-weight:900;line-height:1.08}.landing-intro{margin:0;color:#cbd5e1;font-size:clamp(16px,2vw,19px);line-height:1.65}.landing-card{padding:clamp(22px,4vw,34px);border-radius:28px;background:linear-gradient(155deg,rgba(18,97,201,.25),rgba(6,39,91,.65));border:1px solid rgba(101,183,255,.28);box-shadow:0 24px 70px rgba(0,0,0,.34)}.landing-card h2{margin:0 0 14px;font-size:22px}.example-list,.trust-list{margin:0;padding:0;list-style:none}.example-list{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}.example-list li{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.08);color:#e5eefc;font-size:13px;font-weight:800}.trust-list{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:28px}.trust-list li{position:relative;padding-left:24px;color:#f8fafc;font-weight:800;line-height:1.35}.trust-list li::before{content:"✓";position:absolute;left:0;color:#65b7ff;font-weight:1000}.create-button{width:100%;min-height:58px;color:#fff;background:linear-gradient(135deg,#1687ff,#0a3d85);box-shadow:0 14px 30px rgba(22,135,255,.28)}
+.publisher-footer{width:min(100%,1080px);margin:24px auto 0;padding:18px 0 4px;display:flex;align-items:center;justify-content:center;gap:10px;color:#8fa3bd;font-size:12px;text-align:center}.publisher-footer img{width:30px;height:30px;object-fit:contain;flex:0 0 auto}
 .shell{max-width:1160px;margin:auto}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.topbar-actions{display:flex;align-items:center;gap:10px}.back-home{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}
 .brand{display:flex;align-items:center;gap:14px}.brand-badge{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:38px;background:linear-gradient(145deg,#162215,#050a06);border:2px solid var(--lime);box-shadow:0 0 20px rgba(118,255,59,.18)}
 h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}.tagline{margin:6px 0 0;color:#aab2c0;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
 .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:20px}.card{background:linear-gradient(180deg,rgba(15,23,36,.96),rgba(6,12,20,.98));border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:0 22px 60px rgba(0,0,0,.38)}
@@ -32,18 +38,46 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
 .install{display:none;margin-top:12px;width:100%;color:#071006;background:#fff}.install.show{display:block}.install-help{display:none;margin-top:10px;color:#cbd5e1;font-size:13px;line-height:1.45}.install-help.show{display:block}
 .flash{animation:flash .12s infinite alternate}@keyframes flash{to{filter:brightness(1.6);transform:scale(1.015)}}
 .pop{animation:pop .45s ease}@keyframes pop{50%{transform:scale(1.05)}}
-@media(max-width:880px){body{padding:12px}.grid{grid-template-columns:1fr}.side{order:2}.wheel-wrap{width:min(90vw,530px)}.brand-badge{width:52px;height:52px;font-size:31px}.main,.side{padding:16px}}
-@media(max-width:520px){.topbar{align-items:flex-start}.tagline{font-size:11px}.wheel-wrap{width:min(91vw,430px)}.hub{width:92px;height:92px}.hub span{font-size:38px}.ticker{font-size:18px}.pick-number{font-size:40px}.result-row{grid-template-columns:40px 10px 1fr;padding:9px 10px}}
+@media(max-width:880px){body{padding:12px}.landing{grid-template-columns:1fr;min-height:auto;padding:32px 0 20px}.landing-logo{margin-left:auto;margin-right:auto}.landing-copy{text-align:center;margin:auto}.grid{grid-template-columns:1fr}.side{order:2}.wheel-wrap{width:min(90vw,530px)}.brand-badge{width:52px;height:52px;font-size:31px}.main,.side{padding:16px}}
+@media(max-width:600px){.topbar{align-items:flex-start;flex-wrap:wrap}.topbar-actions{width:100%;justify-content:space-between}.landing-card{border-radius:22px}.trust-list{grid-template-columns:1fr}.publisher-footer{align-items:flex-start}.wheel-wrap{width:min(91vw,430px)}.tagline{font-size:11px}.hub{width:92px;height:92px}.hub span{font-size:38px}.ticker{font-size:18px}.pick-number{font-size:40px}.result-row{grid-template-columns:40px 10px 1fr;padding:9px 10px}}
+@media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing h1{font-size:44px}.landing-card{padding:19px}.topbar-actions button{padding:11px 13px;font-size:14px}.brand{gap:10px}.brand-badge{width:46px;height:46px;font-size:27px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
+<section id="landingView" aria-labelledby="landingTitle">
+  <main class="landing">
+    <div class="landing-copy">
+      <img class="landing-logo" src="assets/brand/spinorder-logo.svg" alt="SpinOrder five-section wheel logo">
+      <p class="landing-kicker">SpinOrder</p>
+      <h1 id="landingTitle" tabindex="-1">Make the order. Make it fair.</h1>
+      <p class="landing-headline">A free randomizer for any competition or activity.</p>
+      <p class="landing-intro">Create a fair order for a fantasy football draft, golf groups, team assignments, classroom activities, generic drawings, and more.</p>
+    </div>
+    <section class="landing-card" aria-labelledby="landingExamples">
+      <h2 id="landingExamples">Ready for whatever you’re organizing</h2>
+      <ul class="example-list" aria-label="Randomizer examples">
+        <li>Fantasy football</li><li>Golf groups</li><li>Team assignments</li><li>Classroom order</li><li>Generic drawings</li>
+      </ul>
+      <ul class="trust-list" aria-label="SpinOrder benefits">
+        <li>Free to use</li><li>No login required</li><li>No account required</li><li>Designed for one-time randomizers</li>
+      </ul>
+      <button class="create-button" id="createRandomizer" type="button">Create Randomizer</button>
+    </section>
+  </main>
+</section>
+
+<section id="randomizerView" aria-labelledby="randomizerTitle" hidden>
 <div class="shell">
   <header class="topbar">
     <div class="brand">
       <div class="brand-badge">🏈</div>
-      <div><h1>SpinOrder Draft Randomizer</h1><div class="tagline">12 teams • 12 picks • 12 → 1</div></div>
+      <div><h1 id="randomizerTitle" tabindex="-1">SpinOrder Draft Randomizer</h1><div class="tagline">12 teams • 12 picks • 12 → 1</div></div>
     </div>
-    <button id="reset">↻ NEW DRAFT</button>
+    <div class="topbar-actions">
+      <button class="back-home" id="backHome" type="button">← Home</button>
+      <button id="reset">↻ NEW DRAFT</button>
+    </div>
   </header>
 
   <div class="grid">
@@ -75,6 +109,12 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
     </aside>
   </div>
 </div>
+</section>
+
+<footer class="publisher-footer">
+  <img src="assets/brand/lfn-legacy-apps-elephant.png" alt="LFN Legacy Apps elephant publisher logo">
+  <span>© 2026 LFN Legacy Apps. All rights reserved. SpinOrder™</span>
+</footer>
 <script>
 const original=Array.from({length:12},(_,i)=>`Team ${String.fromCharCode(65+i)}`);
 const colors=["#dc2626","#ea580c","#eab308","#45a315","#0f766e","#1464c0","#6d28d9","#b91c67","#8b451f","#626262","#0f8aa0","#0a58b0"];
@@ -82,6 +122,21 @@ const DRAFT_STORAGE_KEY='spinorder-draft-v3',LEGACY_DRAFT_STORAGE_KEYS=['boc-dra
 let remaining=original.map((name,i)=>({name,color:colors[i]}));
 let picks={}; let currentRank=12; let tickerTimer=null; let locked=false; let installPrompt=null;
 const wheel=document.getElementById('wheel'),labels=document.getElementById('labels'),ticker=document.getElementById('ticker'),spin=document.getElementById('spin'),reset=document.getElementById('reset'),status=document.getElementById('status'),pickNum=document.getElementById('pickNum'),nextText=document.getElementById('nextText'),results=document.getElementById('results'),pointer=document.getElementById('pointer'),pointerDot=document.getElementById('pointerDot'),install=document.getElementById('install'),installHelp=document.getElementById('installHelp');
+const landingView=document.getElementById('landingView'),randomizerView=document.getElementById('randomizerView'),createRandomizer=document.getElementById('createRandomizer'),backHome=document.getElementById('backHome'),landingTitle=document.getElementById('landingTitle'),randomizerTitle=document.getElementById('randomizerTitle');
+function showView(showRandomizer,moveFocus=false){
+  landingView.hidden=showRandomizer;randomizerView.hidden=!showRandomizer;
+  document.title=showRandomizer?'SpinOrder Draft Randomizer':'SpinOrder — Free Randomizer for Any Activity';
+  if(showRandomizer)requestAnimationFrame(()=>{if(!locked)drawWheel()});
+  if(moveFocus)requestAnimationFrame(()=>(showRandomizer?randomizerTitle:landingTitle).focus());
+}
+function openRandomizer(){
+  if(location.hash!=='#randomizer')history.pushState({spinorderView:'randomizer'},'','#randomizer');
+  showView(true,true);
+}
+function returnHome(){
+  if(history.state?.spinorderView==='randomizer')history.back();
+  else{history.replaceState(null,'',location.pathname+location.search);showView(false,true)}
+}
 function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:3,remaining,picks,currentRank,tickerText:ticker.textContent}))}catch{}}
 function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==3||!Array.isArray(saved.remaining)||typeof saved.currentRank!=='number')return;remaining=saved.remaining;picks=saved.picks||{};currentRank=saved.currentRank;if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
 function rand(max){if(window.crypto?.getRandomValues){const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]%max}return Math.floor(Math.random()*max)}
@@ -130,12 +185,16 @@ async function spinOnce(){
 function resetDraft(){stopTicker();remaining=original.map((name,i)=>({name,color:colors[i]}));picks={};currentRank=12;locked=false;ticker.textContent='Press SPIN to select Pick #12';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();updateUI();reset.disabled=false}
 spin.addEventListener('click',()=>currentRank<1?resetDraft():spinOnce());
 reset.addEventListener('click',resetDraft);
+createRandomizer.addEventListener('click',openRandomizer);
+backHome.addEventListener('click',returnHome);
+window.addEventListener('popstate',()=>showView(location.hash==='#randomizer',true));
+window.addEventListener('hashchange',()=>showView(location.hash==='#randomizer',true));
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;install.classList.add('show')});
 install.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;install.classList.remove('show')});
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!navigator.standalone)installHelp.classList.add('show');
 window.addEventListener('resize',()=>{if(!locked)drawWheel()});
 if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
-loadDraft();drawResults();drawWheel();updateUI();
+loadDraft();drawResults();drawWheel();updateUI();showView(location.hash==='#randomizer');
 </script>
 </body>
 </html>
