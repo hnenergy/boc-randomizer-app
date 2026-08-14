@@ -1,5 +1,18 @@
 # Deployment and Domain Guide
 
+## Current production configuration
+
+- Public product name: **SpinOrder**
+- Canonical production URL: `https://www.spinorder.com/`
+- Redirect: `https://spinorder.com/` redirects to the canonical `www` address
+- Registrar: GoDaddy
+- DNS provider: GoDaddy
+- Hosting provider: Vercel
+- Domain status: both custom domains show **Valid Configuration** in Vercel
+- Fallback deployment: `https://boc-randomizer-app.vercel.app/`
+- Verified: HTTPS, desktop browser, iPhone Safari, and custom-domain PWA installation
+- Current interface: **BOC Randomizer** until the SpinOrder rebrand is implemented and tested
+
 ## Recommended hosting
 
 Use Vercel for the Next.js application. Preview deployments make every pull request testable on an HTTPS URL, including real iPhone Safari and PWA behavior. Confirm current plan limits before relying on any free tier for commercial ad-supported traffic.
@@ -34,8 +47,8 @@ Never copy DNS values from this document; use the current values displayed by th
 - [ ] Home, create, preset, how-to, privacy, terms, about, and contact pages work
 - [ ] Manual and auto mode pass with 2 and 25 names
 - [ ] Upload, refresh recovery, copy, download, share, and email-draft fallbacks work
-- [ ] Chrome desktop and real iPhone Safari pass
-- [ ] PWA installs from the live HTTPS domain
+- [x] Chrome desktop and real iPhone Safari pass on the current static deployment
+- [x] PWA installs from the live custom HTTPS domain
 - [ ] Offline fallback behaves correctly
 - [ ] Canonical URL, robots, sitemap, and social cards are correct
 - [ ] Lighthouse and accessibility checks meet release targets
@@ -54,4 +67,3 @@ Never copy DNS values from this document; use the current values displayed by th
 ## Rollback
 
 Tag stable production releases in Git. If a deployment introduces a critical regression, promote the previous known-good Vercel deployment or revert the faulty Git commit through a new reviewed commit. Record the incident and add a regression test before relaunching.
-

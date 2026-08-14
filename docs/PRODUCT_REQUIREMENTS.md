@@ -2,9 +2,9 @@
 
 ## Working product definition
 
-**Randomizer App** is a free, no-login web application that creates a randomized order for almost any event. Examples include fantasy-football drafts, golf groupings, baseball or basketball activities, classroom order, giveaways, and generic competitions.
+**SpinOrder** is a free, no-login web application that creates a randomized order for almost any event. Examples include fantasy-football drafts, golf groupings, baseball or basketball activities, classroom order, giveaways, and generic competitions.
 
-The final public brand and domain are a Phase 0 decision. “BOC Randomizer” remains the football preset name until rebranding is approved.
+The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as the canonical production URL. The current deployed interface remains **BOC Randomizer** until the SpinOrder rebrand is implemented and tested; BOC Randomizer will remain the football preset.
 
 ## Goals
 
@@ -104,4 +104,3 @@ The final public brand and domain are a Phase 0 decision. “BOC Randomizer” r
 - Uploaded `.txt` and simple `.csv` files are parsed locally.
 - Sharing actions produce the same order shown on screen.
 - No network request contains names, emails, event titles, or results.
-

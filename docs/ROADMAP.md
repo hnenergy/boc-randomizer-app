@@ -17,6 +17,10 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Verify the production HTTPS URL in iPhone Safari
 - [x] Verify **Add to Home Screen** and launch the installed PWA
 - [x] Record the Vercel URL in `README.md`
+- [x] Configure `https://www.spinorder.com/` as the canonical production domain with HTTPS
+- [x] Redirect `https://spinorder.com/` to the canonical `www` address
+- [x] Verify desktop, iPhone Safari, and custom-domain PWA behavior
+- [x] Retain the original Vercel URL as a deployment fallback
 
 **Exit:** the unchanged current application is running from a stable Vercel HTTPS URL and is installable on iPhone.
 
@@ -25,8 +29,9 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Define expanded product requirements
 - [x] Define MVP architecture and privacy boundary
 - [x] Create Codex repo instructions and project playbook
-- [ ] Choose the public product name
-- [ ] Shortlist and verify domain availability and trademark conflicts
+- [x] Choose SpinOrder as the public product name
+- [x] Purchase `spinorder.com` through GoDaddy and configure GoDaddy DNS
+- [ ] Verify trademark conflicts
 - [ ] Decide brand colors, typography, and logo direction
 - [ ] Create a GitHub project board with one issue per approved feature
 
@@ -108,9 +113,10 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Use the existing Vercel project for preview deployments
 - [ ] Run production build and complete desktop/mobile QA
 - [ ] Deploy production application over HTTPS
-- [ ] Buy and connect the approved custom domain
-- [ ] Verify DNS, SSL, canonical redirects, sitemap, and analytics
-- [ ] Test iPhone Safari and Add to Home Screen on the live domain
+- [x] Buy and connect the approved custom domain
+- [x] Verify GoDaddy DNS, Vercel **Valid Configuration** status for both domains, SSL, and the apex-to-`www` redirect
+- [ ] Verify sitemap and analytics
+- [x] Test HTTPS, desktop, iPhone Safari, and Add to Home Screen on the live custom domain
 - [ ] Run Lighthouse and resolve release-blocking issues
 - [ ] Create tagged `v1.0.0` release and rollback notes
 
