@@ -22,7 +22,7 @@ Before editing:
 - Use TypeScript with strict mode; avoid `any`.
 - Keep randomization logic in pure, tested functions separate from animation.
 - Use `crypto.getRandomValues()` with rejection sampling; do not use modulo-biased selection.
-- Support 2–25 normalized, unique participant names.
+- Support 2–20 normalized, unique manually entered names and 2–60 names from validated local imports.
 - Treat pasted, comma-delimited, newline-delimited, `.txt`, and `.csv` input consistently.
 - Never upload participant names in the MVP. Store only the active event in browser storage.
 - Never claim an email was sent when using `mailto:`; say the email app was opened with a prepared draft.
@@ -40,4 +40,3 @@ Before editing:
 - Empty, duplicate, oversized, malformed-file, refresh, and completed-event states are checked.
 - Metadata, canonical URL, social preview, sitemap, and robots behavior remain valid for public pages.
 - Documentation and the checklist are updated in the same change.
-

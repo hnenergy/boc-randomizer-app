@@ -45,7 +45,7 @@ Never copy DNS values from this document; use the current values displayed by th
 - [ ] No secrets or personal test data are committed
 - [ ] Environment variables are documented and scoped correctly
 - [ ] Home, create, preset, how-to, privacy, terms, about, and contact pages work
-- [ ] Manual and auto mode pass with 2 and 25 names
+- [ ] Manual mode passes with 2 and 20 manually entered names and 60 imported names
 - [ ] Upload, refresh recovery, copy, download, share, and email-draft fallbacks work
 - [x] Chrome desktop and real iPhone Safari pass on the current static deployment
 - [x] PWA installs from the live custom HTTPS domain

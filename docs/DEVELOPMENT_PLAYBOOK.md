@@ -127,7 +127,7 @@ Suggested commit style:
 ```text
 feat: add event setup form
 fix: prevent duplicate participant names
-test: cover 25-name auto spin
+test: cover 60-name imported randomizer
 docs: update phase 2 checklist
 ```
 
@@ -152,7 +152,7 @@ Also test manually:
 - Keyboard-only flow
 - Refresh mid-event
 - Offline reload after first visit
-- 2 names, 25 names, duplicates, blank rows, long names, malformed upload
+- 2 names, 20 manual names, 60 imported names, duplicates, blank rows, long names, malformed upload
 
 ## 9. Recommended implementation order
 

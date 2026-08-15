@@ -70,21 +70,21 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Add **Create Randomizer** call to action and in-page navigation to the existing draft randomizer
 - [x] Add event-name field and accessible validation
 - [x] Add Football, Baseball, Golf, Basketball, and Generic activity selection with matching randomizer icons
-- [ ] Add editable 2–25 name list
-- [ ] Add comma/newline paste support
-- [ ] Add local `.txt` and simple `.csv` upload
-- [ ] Normalize blanks/whitespace and reject duplicates or more than 25 names
+- [x] Add editable participant lists with a 20-name manual/example limit, a 60-name import limit, clear confirmation, and optional Team 1–Team 12 examples
+- [x] Add comma/newline parsing for local name imports
+- [x] Add local `.txt` and quoted `.csv` upload with header handling and a 100 KB limit
+- [x] Normalize whitespace and reject blanks, case-insensitive duplicates, overlength names, or names beyond the active manual/import limit
 - [x] Add Manual spin selection and show Auto spin as disabled **Coming soon**
-- [ ] Add ascending vs descending rank direction
+- [x] Add Position 1 first and Last position first reveal order, lock it after the first spin, and restore editing on reset
 - [x] Let users choose Draft Order, Random Order, Drawing Order, or a custom label and apply that terminology to supporting text, progress, results, completion, position labels, and reset controls while keeping the event name as the randomizer heading
-- [ ] Add review screen and edit/back behavior
+- [x] Add setup/name edit controls and browser Back behavior; a separate review screen remains future work
 
 **Exit:** a valid custom event can be created without login or network data storage.
 
 ## Phase 4 — Randomizer experience
 
 - [ ] Extract and unit-test unbiased randomization logic
-- [ ] Render readable wheel labels for 2–25 names
+- [x] Render functional wheel labels and position-sorted results for 2–60 names
 - [ ] Add theme-specific center art, pointer, colors, and accessible labels
 - [ ] Implement manual one-spin-at-a-time mode
 - [ ] Implement auto mode with visible three-second countdown
