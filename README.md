@@ -2,7 +2,7 @@
 
 A free, installable web application for creating fair randomized orders for fantasy drafts, golf groups, sports competitions, classroom activities, giveaways, and other events.
 
-The current static PWA opens on a responsive SpinOrder landing page, collects an event name, activity, order terminology, and manual spin mode in a setup form, then leads into the existing 12-team randomizer using `Team A` through `Team L`. Terminology choices are Draft Order, Random Order, Drawing Order, or a custom label. Participant entry remains future work.
+The current static PWA opens on a responsive SpinOrder landing page, collects event settings, accepts 2–20 manually entered names or 2–60 names from a local `.txt`/`.csv` import, and then creates the randomizer. Terminology choices are Draft Order, Random Order, Drawing Order, or a custom label. Example names are available on request as `Team 1` through `Team 12` but are never loaded automatically.
 
 ## Live application
 
@@ -13,7 +13,7 @@ The original [boc-randomizer-app.vercel.app](https://boc-randomizer-app.vercel.a
 ## Product status
 
 - Public product name: SpinOrder
-- Current interface: SpinOrder landing page and setup form plus the existing static 12-team randomizer
+- Current interface: SpinOrder landing page, setup form, participant entry, and a dynamic randomizer supporting 20 manual or 60 imported names
 - Production: `https://www.spinorder.com/` on Vercel
 - Next: migrate to Next.js + TypeScript and implement the general event builder
 - Domain registration and DNS: GoDaddy
@@ -38,6 +38,12 @@ npx serve .
 ```
 
 Opening `index.html` directly will not fully test service workers or PWA installation.
+
+Run the dependency-free tests with:
+
+```bash
+node --test tests/*.test.js
+```
 
 ## Planned development stack
 

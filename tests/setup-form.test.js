@@ -27,6 +27,13 @@ test('predefined and custom activity labels validate correctly', () => {
   assert.equal(setup.displayLabel(custom.values), 'Tee Time');
 });
 
+test('reveal order defaults to last position first and validates both directions', () => {
+  assert.equal(setup.DEFAULT_VALUES.revealOrder, 'last');
+  assert.equal(setup.validate({...setup.DEFAULT_VALUES, eventName: 'Event', revealOrder: 'first'}).valid, true);
+  assert.equal(setup.validate({...setup.DEFAULT_VALUES, eventName: 'Event', revealOrder: 'last'}).valid, true);
+  assert.equal(setup.validate({...setup.DEFAULT_VALUES, eventName: 'Event', revealOrder: 'sideways'}).valid, false);
+});
+
 test('Auto spin cannot be selected in normalized or submitted setup state', () => {
   assert.equal(setup.normalize({...setup.DEFAULT_VALUES, spinMode: 'auto'}).spinMode, 'manual');
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
@@ -37,7 +44,7 @@ test('Auto spin cannot be selected in normalized or submitted setup state', () =
 test('valid setup restores from versioned session storage and malformed data is ignored', () => {
   const data = new Map();
   const storage = {setItem: (key, value) => data.set(key, value), getItem: key => data.get(key) ?? null};
-  const values = {eventName: 'Friday Golf', activity: 'Golf', activityLabel: 'Drawing Order', customLabel: '', spinMode: 'manual'};
+  const values = {eventName: 'Friday Golf', activity: 'Golf', activityLabel: 'Drawing Order', customLabel: '', spinMode: 'manual', revealOrder: 'first'};
   assert.equal(setup.save(storage, values), true);
   assert.deepEqual(setup.load(storage), values);
   data.set(setup.STORAGE_KEY, '{bad json');
@@ -59,4 +66,9 @@ test('landing, setup, and randomizer navigation and applied configuration are wi
   assert.match(html, /randomizerTitle\.textContent=eventName/);
   assert.match(html, /reset\.textContent=`↻ Reset \$\{label\}`/);
   assert.equal((html.match(/type="radio" name="activityLabel"/g) || []).length, 4);
+});
+
+test('setup Back routes directly to the landing page regardless of prior history', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+  assert.match(html, /function backFromSetup\(\)\{\s*history\.replaceState\(\{spinorderView:'landing'\},'',location\.pathname\+location\.search\);showView\('landing',true\)\s*\}/);
 });

@@ -4,7 +4,7 @@
 
 **SpinOrder** is a free, no-login web application that creates a randomized order for almost any event. Examples include fantasy-football drafts, golf groupings, baseball or basketball activities, classroom order, giveaways, and generic competitions.
 
-The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as the canonical production URL. The current static interface includes the landing page and initial event setup fields before continuing to the existing 12-team randomizer; participant entry remains the next incremental feature.
+The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as the canonical production URL. The current static interface includes the landing page, event setup, local participant entry/import, and a dynamic randomizer supporting 20 manual or 60 imported names.
 
 ## Goals
 
@@ -29,7 +29,7 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 2. Visitor selects **Create Randomizer**.
 3. Visitor enters an event name.
 4. Visitor chooses Football, Baseball, Golf, Basketball, or Generic.
-5. Visitor enters 2–25 participant names by typing/pasting or uploading `.txt`/`.csv`.
+5. Visitor enters 2–20 names manually or imports 2–60 from `.txt`/`.csv`.
 6. Visitor chooses Manual Spin or Auto Spin.
 7. Visitor reviews the event and starts it.
 8. The app assigns one position per spin and removes the selected name.
@@ -42,7 +42,7 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 ### Landing page
 
 - Clear headline, concise explanation, examples, and primary **Create Randomizer** button
-- Explain “free,” “no login,” “private on this device,” and “up to 25 names”
+- Explain “free,” “no login,” “private on this device,” and the manual/import name limits
 - Links to focused use-case pages and trust/legal pages
 
 ### Event builder
@@ -51,13 +51,17 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - Theme: Football, Baseball, Golf, Basketball, Generic
 - Order terminology: Draft Order, Random Order, Drawing Order, or a custom label up to 30 characters; Random Order is the default
 - Setup selections are stored only for the current browser session
+- Reveal order: Position 1 first or Last position first; Last position first is the default and locks after the first completed spin until reset
 - Manual spin is currently available; Auto spin remains visibly disabled until implemented
-- Names: minimum 2, maximum 25 after normalization
+- Names: minimum 2; maximum 20 for manual/example lists or 60 for imported lists after normalization
+- Name length: maximum 50 characters
 - Add/remove/reorder names before starting
 - Accept typing, paste, comma/newline input, `.txt`, and simple `.csv`
 - Trim whitespace, remove blank values, flag duplicates, and show an actionable error
+- Accept local `.txt` and `.csv` files up to 100 KB, including quoted CSV values and optional Name, Participant, or Team headers; never upload or retain source files
+- Store the working participant list only in versioned browser-session storage
 - Mode: Manual or Auto
-- Rank direction: `1 → N` by default; BOC preset uses `N → 1`
+- Reveal order controls whether positions are assigned `1 → N` or `N → 1`; results remain sorted by position
 - Review screen before starting
 
 ### Randomization
@@ -99,7 +103,7 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 
 ## Acceptance criteria for MVP
 
-- A new visitor can complete a 2-name and a 25-name event on mobile and desktop.
+- A new visitor can complete a 2-name, 20-name manual, and 60-name imported event on mobile and desktop.
 - Manual and auto modes produce exactly one unique position per participant.
 - Auto mode allows pause and observes a three-second inter-spin countdown.
 - Reloading during an event restores a valid state.

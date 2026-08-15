@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#07110b">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SpinOrder">
@@ -17,16 +18,19 @@
 html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#05080d;color:var(--text)}
 body{min-height:100vh;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));background:radial-gradient(circle at 50% -10%,rgba(118,255,59,.12),transparent 30%),linear-gradient(180deg,#05070b,#09121a 58%,#061008);overscroll-behavior:none}
 [hidden]{display:none!important}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #65b7ff;outline-offset:4px}
+button:focus-visible,a:focus-visible,input:focus-visible,.secondary-action:focus-visible,.drop-zone:focus-visible{outline:3px solid #65b7ff;outline-offset:4px}
 .landing{width:min(100%,1080px);min-height:calc(100vh - 150px);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);align-items:center;gap:clamp(30px,7vw,84px);padding:clamp(28px,7vw,80px) 0}
 .landing-copy{max-width:650px}.landing-logo{width:clamp(132px,21vw,210px);height:auto;display:block;margin-bottom:24px}.landing-kicker{margin:0 0 10px;color:#65b7ff;font-size:clamp(18px,2.4vw,23px);font-weight:900;letter-spacing:.08em;text-transform:uppercase}.landing h1{margin:0;font-size:clamp(46px,9vw,88px);line-height:.9;letter-spacing:-.04em}.landing-headline{margin:22px 0 12px;font-size:clamp(22px,4vw,38px);font-weight:900;line-height:1.08}.landing-intro{margin:0;color:#cbd5e1;font-size:clamp(16px,2vw,19px);line-height:1.65}.landing-card{padding:clamp(22px,4vw,34px);border-radius:28px;background:linear-gradient(155deg,rgba(18,97,201,.25),rgba(6,39,91,.65));border:1px solid rgba(101,183,255,.28);box-shadow:0 24px 70px rgba(0,0,0,.34)}.landing-card h2{margin:0 0 14px;font-size:22px}.example-list,.trust-list{margin:0;padding:0;list-style:none}.example-list{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}.example-list li{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.08);color:#e5eefc;font-size:13px;font-weight:800}.trust-list{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:28px}.trust-list li{position:relative;padding-left:24px;color:#f8fafc;font-weight:800;line-height:1.35}.trust-list li::before{content:"✓";position:absolute;left:0;color:#65b7ff;font-weight:1000}.create-button{width:100%;min-height:58px;color:#fff;background:linear-gradient(135deg,#1687ff,#0a3d85);box-shadow:0 14px 30px rgba(22,135,255,.28)}
 .publisher-footer{width:min(100%,1080px);margin:24px auto 0;padding:18px 0 4px;display:flex;align-items:center;justify-content:center;gap:10px;color:#8fa3bd;font-size:12px;text-align:center}.publisher-footer img{width:30px;height:30px;object-fit:contain;flex:0 0 auto}
 .setup-shell{width:min(100%,880px);margin:0 auto;padding:24px 0}.setup-nav{margin-bottom:18px}.setup-back{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}.setup-panel{padding:clamp(22px,5vw,42px);border-radius:28px;background:linear-gradient(180deg,rgba(15,35,65,.98),rgba(6,18,38,.98));border:1px solid rgba(101,183,255,.25);box-shadow:0 24px 70px rgba(0,0,0,.34)}.setup-heading{display:flex;align-items:center;gap:18px;margin-bottom:30px}.setup-heading img{width:76px;height:76px;object-fit:contain}.setup-heading h1{margin:0 0 6px}.setup-heading p{margin:0;color:#afc3dd;line-height:1.5}.setup-form{display:grid;gap:28px}.form-field{display:grid;gap:9px}.form-field>label,.setup-form legend{font-size:17px;font-weight:900}.form-field input[type="text"]{width:100%;min-height:52px;border:1px solid #47627f;border-radius:13px;padding:12px 14px;background:#071423;color:#fff;font:inherit;font-size:16px}.form-field input[type="text"]::placeholder{color:#71849a}.form-field input[aria-invalid="true"]{border-color:#ff8b8b}.field-hint{margin:0;color:#91a7c1;font-size:13px}.field-error{min-height:18px;margin:0;color:#ffb1b1;font-size:14px;font-weight:800}.setup-form fieldset{min-width:0;margin:0;padding:0;border:0}.setup-form legend{margin-bottom:12px}.choice-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.choice-card{position:relative;display:grid;place-items:center;gap:6px;min-width:0;min-height:94px;padding:12px 8px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d;color:#e8f2ff;text-align:center;font-size:14px;font-weight:900;cursor:pointer}.choice-card input{position:absolute;opacity:0;pointer-events:none}.choice-card:has(input:checked){border-color:#65b7ff;background:#103d70}.choice-card:has(input:focus-visible){outline:3px solid #65b7ff;outline-offset:3px}.choice-icon{font-size:28px;line-height:1}.label-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.label-card{min-height:54px}.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mode-card{position:relative;display:flex;align-items:center;gap:11px;padding:16px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d;font-weight:900}.mode-card:has(input:checked){border-color:#65b7ff;background:#103d70}.mode-card:has(input:focus-visible){outline:3px solid #65b7ff;outline-offset:3px}.mode-card.disabled{opacity:.58;cursor:not-allowed}.coming-soon{margin-left:auto;padding:4px 7px;border-radius:999px;background:#263b54;color:#d8e8fa;font-size:11px}.continue-button{min-height:58px;color:#fff;background:linear-gradient(135deg,#1687ff,#0a3d85);box-shadow:0 14px 30px rgba(22,135,255,.24)}
 .choice-card:has(input:checked)::after{content:"✓";position:absolute;top:6px;right:8px;color:#fff;font-size:15px}
 .label-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.participants-shell{width:min(100%,900px);margin:0 auto;padding:24px 0}.participants-panel{padding:clamp(20px,5vw,40px);border-radius:28px;background:linear-gradient(180deg,rgba(15,35,65,.98),rgba(6,18,38,.98));border:1px solid rgba(101,183,255,.25);box-shadow:0 24px 70px rgba(0,0,0,.34)}.participants-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:24px}.participants-heading h1{margin:0 0 7px}.participants-heading p{margin:0;color:#afc3dd}.name-count{flex:0 0 auto;padding:8px 11px;border-radius:999px;background:#12345a;color:#ddecff;font-size:13px;font-weight:900}.name-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}.name-entry input,.participant-row input{min-width:0;width:100%;min-height:48px;border:1px solid #47627f;border-radius:12px;padding:10px 12px;background:#071423;color:#fff;font:inherit;font-size:16px}.name-entry button{color:#fff;background:#1261c9}.participant-tools{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.secondary-action{padding:11px 14px;color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.3);cursor:pointer}.danger-action{padding:11px 14px;color:#ffd7d7;background:#3b1720;border:1px solid rgba(255,139,139,.35)}.participant-list{display:grid;gap:9px;margin:0;padding:0;list-style:none;counter-reset:participants}.participant-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:9px;padding:9px;border-radius:14px;background:#091827;border:1px solid rgba(255,255,255,.08);counter-increment:participants}.participant-row::before{content:counter(participants) ".";color:#91a7c1;font-weight:900;text-align:right}.remove-name{padding:10px 12px;color:#ffd7d7;background:#3b1720}.upload-box{display:grid;gap:9px;margin-top:24px;padding:18px;border:1px dashed #476b91;border-radius:16px;background:rgba(7,20,35,.65)}.upload-box label{font-weight:900}.upload-box input{max-width:100%;font:inherit;color:#dcecff}.participant-message{min-height:22px;margin:10px 0 0;color:#b9d7fa;font-size:14px;font-weight:800}.participant-error{color:#ffb1b1}.participants-submit{width:100%;min-height:58px;margin-top:22px;color:#fff;background:linear-gradient(135deg,#1687ff,#0a3d85)}
+.drop-zone{display:grid;place-items:center;gap:8px;min-height:140px;padding:20px;border:2px dashed #54799f;border-radius:15px;text-align:center;cursor:pointer;transition:border-color .15s ease,background .15s ease}.drop-zone.drag-valid{border-color:#65b7ff;background:#103d70}.drop-zone strong{font-size:17px}.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.reveal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.reveal-card{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:10px;padding:16px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d}.reveal-card:has(input:checked){border-color:#65b7ff;background:#103d70}.reveal-card strong,.reveal-card small{display:block}.reveal-card small{margin-top:5px;color:#a9bdd5;line-height:1.4}.reveal-lock{margin:10px 0 0;color:#ffd39b;font-size:13px;font-weight:800}
+.participant-source{max-width:240px;margin-top:7px;color:#9fc8f5;font-size:12px;font-weight:800;text-align:right;overflow-wrap:anywhere}
 .shell{max-width:1160px;margin:auto}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-.topbar-actions{display:flex;align-items:center;gap:10px}.edit-setup{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}
+.topbar-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.edit-setup,.edit-names{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}
 .brand{display:flex;align-items:center;gap:14px}.brand-badge{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:38px;background:linear-gradient(145deg,#162215,#050a06);border:2px solid var(--lime);box-shadow:0 0 20px rgba(118,255,59,.18)}
 h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}.tagline{margin:6px 0 0;color:#aab2c0;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
 .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:20px}.card{background:linear-gradient(180deg,rgba(15,23,36,.96),rgba(6,12,20,.98));border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:0 22px 60px rgba(0,0,0,.38)}
@@ -42,8 +46,8 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
 .flash{animation:flash .12s infinite alternate}@keyframes flash{to{filter:brightness(1.6);transform:scale(1.015)}}
 .pop{animation:pop .45s ease}@keyframes pop{50%{transform:scale(1.05)}}
 @media(max-width:880px){body{padding:12px}.landing{grid-template-columns:1fr;min-height:auto;padding:32px 0 20px}.landing-logo{margin-left:auto;margin-right:auto}.landing-copy{text-align:center;margin:auto}.choice-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.label-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid{grid-template-columns:1fr}.side{order:2}.wheel-wrap{width:min(90vw,530px)}.brand-badge{width:52px;height:52px;font-size:31px}.main,.side{padding:16px}}
-@media(max-width:600px){.topbar{align-items:flex-start;flex-wrap:wrap}.topbar-actions{width:100%;justify-content:space-between}.landing-card,.setup-panel{border-radius:22px}.setup-heading{align-items:flex-start}.setup-heading img{width:58px;height:58px}.choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.label-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mode-grid{grid-template-columns:1fr}.trust-list{grid-template-columns:1fr}.publisher-footer{align-items:flex-start}.wheel-wrap{width:min(91vw,430px)}.tagline{font-size:11px}.hub{width:92px;height:92px}.hub span{font-size:38px}.ticker{font-size:18px}.pick-number{font-size:40px}.result-row{grid-template-columns:40px 10px 1fr;padding:9px 10px}}
-@media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing h1{font-size:44px}.landing-card,.setup-panel{padding:19px}.choice-card{padding-left:5px;padding-right:5px}.topbar-actions button{padding:11px 13px;font-size:14px}.brand{gap:10px}.brand-badge{width:46px;height:46px;font-size:27px}}
+@media(max-width:600px){.topbar{align-items:flex-start;flex-wrap:wrap}.topbar-actions{width:100%;justify-content:flex-start}.landing-card,.setup-panel,.participants-panel{border-radius:22px}.setup-heading{align-items:flex-start}.setup-heading img{width:58px;height:58px}.participants-heading{display:grid}.choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.label-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mode-grid,.reveal-grid{grid-template-columns:1fr}.trust-list{grid-template-columns:1fr}.publisher-footer{align-items:flex-start}.wheel-wrap{width:min(91vw,430px)}.tagline{font-size:11px}.hub{width:92px;height:92px}.hub span{font-size:38px}.ticker{font-size:18px}.pick-number{font-size:40px}.result-row{grid-template-columns:40px 10px 1fr;padding:9px 10px}}
+@media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing h1{font-size:44px}.landing-card,.setup-panel,.participants-panel{padding:19px}.choice-card{padding-left:5px;padding-right:5px}.name-entry{grid-template-columns:1fr}.participant-row{grid-template-columns:26px minmax(0,1fr) auto;padding:7px}.topbar-actions button{padding:10px 11px;font-size:13px}.brand{gap:10px}.brand-badge{width:46px;height:46px;font-size:27px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -102,8 +106,8 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
         <fieldset aria-describedby="activityLabelError">
           <legend>What are you randomizing?</legend>
           <div class="choice-grid label-grid">
-            <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Draft Order"><span>Draft Order</span></label>
             <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Random Order" checked><span>Random Order</span></label>
+            <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Draft Order"><span>Draft Order</span></label>
             <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Drawing Order"><span>Drawing Order</span></label>
             <label class="choice-card label-card"><input type="radio" name="activityLabel" value="Custom"><span>Custom</span></label>
           </div>
@@ -118,6 +122,16 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
         </div>
 
         <fieldset>
+          <legend>Reveal order</legend>
+          <div class="reveal-grid">
+            <label class="reveal-card"><input type="radio" name="revealOrder" value="last" checked><span><strong>Last position first</strong><small>The first spin assigns position N, then counts down to 1.</small></span></label>
+            <label class="reveal-card"><input type="radio" name="revealOrder" value="first"><span><strong>Position 1 first</strong><small>The first spin assigns position 1, then counts up.</small></span></label>
+          </div>
+          <p class="reveal-lock" id="revealOrderLock" hidden>Reveal order is locked after the first completed spin. Reset the randomizer to change it.</p>
+          <p class="field-error" id="revealOrderError" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset>
           <legend>Spin mode</legend>
           <div class="mode-grid">
             <label class="mode-card"><input type="radio" name="spinMode" value="manual" checked><span>Manual spin</span></label>
@@ -125,7 +139,40 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
           </div>
         </fieldset>
 
-        <button class="continue-button" type="submit">Continue to Names</button>
+        <button class="continue-button" id="setupContinue" type="submit">Continue to Names</button>
+      </form>
+    </main>
+  </div>
+</section>
+
+<section id="participantsView" aria-labelledby="participantsTitle" hidden>
+  <div class="participants-shell">
+    <nav class="setup-nav" aria-label="Participant navigation"><button class="setup-back" id="namesBack" type="button">← Back to Setup</button></nav>
+    <main class="participants-panel">
+      <div class="participants-heading">
+        <div><h1 id="participantsTitle" tabindex="-1">Add participant names</h1><p>Enter up to 20 names manually, or import up to 60. Nothing is uploaded.</p></div>
+        <div><div class="name-count" id="nameCount" aria-live="polite">0 of 20 names</div><div class="participant-source" id="importSource"></div></div>
+      </div>
+      <form id="participantsForm" novalidate>
+        <label for="nameInput"><b>Participant name</b></label>
+        <div class="name-entry">
+          <input id="nameInput" type="text" maxlength="50" autocomplete="off" aria-describedby="participantMessage">
+          <button id="addName" type="button">Add Name</button>
+        </div>
+        <div class="participant-tools">
+          <button class="secondary-action" id="exampleNames" type="button">Use Example Names</button>
+          <button class="danger-action" id="clearNames" type="button">Clear All</button>
+        </div>
+        <ol class="participant-list" id="participantList" aria-label="Participant names"></ol>
+        <div class="upload-box">
+          <strong>Import names from .txt or .csv</strong>
+          <label class="secondary-action" id="chooseFile" for="nameFile" role="button" tabindex="0">Import File</label>
+          <label class="drop-zone" id="dropZone" for="nameFile" role="button" tabindex="0" aria-describedby="fileHint participantMessage"><strong>Drop a .txt or .csv file here</strong><span>or click this area to choose a file</span></label>
+          <input class="visually-hidden" id="nameFile" type="file" accept=".txt,.csv,text/plain,text/csv" tabindex="-1">
+          <span class="field-hint" id="fileHint">Maximum 100 KB and 60 valid names. Files stay on this device.</span>
+        </div>
+        <p class="participant-message" id="participantMessage" role="status" aria-live="polite"></p>
+        <button class="participants-submit" id="createFromNames" type="submit" disabled>Create Randomizer</button>
       </form>
     </main>
   </div>
@@ -140,6 +187,7 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
     </div>
     <div class="topbar-actions">
       <button class="edit-setup" id="editSetup" type="button">← Edit Setup</button>
+      <button class="edit-names" id="editNames" type="button">✎ Edit Names</button>
       <button id="reset">↻ Reset Random Order</button>
     </div>
   </header>
@@ -180,64 +228,90 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
   <span>© 2026 LFN Legacy Apps. All rights reserved. SpinOrder™</span>
 </footer>
 <script src="setup-state.js"></script>
+<script src="participant-state.js"></script>
 <script>
-const original=Array.from({length:12},(_,i)=>`Team ${String.fromCharCode(65+i)}`);
 const colors=["#dc2626","#ea580c","#eab308","#45a315","#0f766e","#1464c0","#6d28d9","#b91c67","#8b451f","#626262","#0f8aa0","#0a58b0"];
-const DRAFT_STORAGE_KEY='spinorder-draft-v3',LEGACY_DRAFT_STORAGE_KEYS=['boc-draft-v2','boc-draft'];
-let remaining=original.map((name,i)=>({name,color:colors[i]}));
-let picks={}; let currentRank=12; let tickerTimer=null; let locked=false; let installPrompt=null;
+const DRAFT_STORAGE_KEY='spinorder-event-v5',LEGACY_DRAFT_STORAGE_KEYS=['spinorder-event-v4','spinorder-draft-v3','boc-draft-v2','boc-draft'];
+function loadParticipantState(){try{return SpinOrderParticipants.load(window.sessionStorage)}catch{return {names:[],mode:'manual',filename:''}}}
+const restoredParticipants=loadParticipantState();let participantNames=restoredParticipants.names,participantMode=restoredParticipants.mode,importedFilename=restoredParticipants.filename,eventParticipants=[...participantNames],remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors);
+let picks={},positionQueue=SpinOrderParticipants.revealPositions(eventParticipants.length,'last');let currentRank=positionQueue[0]||0;let tickerTimer=null,locked=false,installPrompt=null,clearConfirmation=false,hasCompletedSpin=false;
 const wheel=document.getElementById('wheel'),labels=document.getElementById('labels'),ticker=document.getElementById('ticker'),spin=document.getElementById('spin'),reset=document.getElementById('reset'),status=document.getElementById('status'),pickNum=document.getElementById('pickNum'),nextText=document.getElementById('nextText'),results=document.getElementById('results'),pointer=document.getElementById('pointer'),pointerDot=document.getElementById('pointerDot'),install=document.getElementById('install'),installHelp=document.getElementById('installHelp');
-const landingView=document.getElementById('landingView'),setupView=document.getElementById('setupView'),randomizerView=document.getElementById('randomizerView'),createRandomizer=document.getElementById('createRandomizer'),setupBack=document.getElementById('setupBack'),editSetup=document.getElementById('editSetup'),landingTitle=document.getElementById('landingTitle'),setupTitle=document.getElementById('setupTitle'),randomizerTitle=document.getElementById('randomizerTitle');
-const setupForm=document.getElementById('setupForm'),eventNameInput=document.getElementById('eventName'),customLabelField=document.getElementById('customLabelField'),customLabelInput=document.getElementById('customLabel'),eventIcon=document.getElementById('eventIcon'),eventTagline=document.getElementById('eventTagline'),pointerSymbol=document.getElementById('pointerSymbol'),resultsTitle=document.getElementById('resultsTitle'),randomizerHelp=document.getElementById('randomizerHelp');
+const landingView=document.getElementById('landingView'),setupView=document.getElementById('setupView'),participantsView=document.getElementById('participantsView'),randomizerView=document.getElementById('randomizerView'),createRandomizer=document.getElementById('createRandomizer'),setupBack=document.getElementById('setupBack'),namesBack=document.getElementById('namesBack'),editSetup=document.getElementById('editSetup'),editNames=document.getElementById('editNames'),landingTitle=document.getElementById('landingTitle'),setupTitle=document.getElementById('setupTitle'),participantsTitle=document.getElementById('participantsTitle'),randomizerTitle=document.getElementById('randomizerTitle');
+const setupForm=document.getElementById('setupForm'),setupContinue=document.getElementById('setupContinue'),eventNameInput=document.getElementById('eventName'),customLabelField=document.getElementById('customLabelField'),customLabelInput=document.getElementById('customLabel'),revealOrderLock=document.getElementById('revealOrderLock'),eventIcon=document.getElementById('eventIcon'),eventTagline=document.getElementById('eventTagline'),pointerSymbol=document.getElementById('pointerSymbol'),resultsTitle=document.getElementById('resultsTitle'),randomizerHelp=document.getElementById('randomizerHelp');
+const participantsForm=document.getElementById('participantsForm'),nameInput=document.getElementById('nameInput'),addNameButton=document.getElementById('addName'),participantList=document.getElementById('participantList'),nameCount=document.getElementById('nameCount'),importSource=document.getElementById('importSource'),participantMessage=document.getElementById('participantMessage'),exampleNamesButton=document.getElementById('exampleNames'),clearNamesButton=document.getElementById('clearNames'),chooseFile=document.getElementById('chooseFile'),dropZone=document.getElementById('dropZone'),nameFile=document.getElementById('nameFile'),createFromNames=document.getElementById('createFromNames');
 function loadSetupValues(){try{return SpinOrderSetup.load(window.sessionStorage)}catch{return {...SpinOrderSetup.DEFAULT_VALUES}}}
 let setupValues=loadSetupValues();
-function routeFromHash(){return location.hash==='#setup'?'setup':location.hash==='#randomizer'?'randomizer':'landing'}
+positionQueue=SpinOrderParticipants.revealPositions(eventParticipants.length,setupValues.revealOrder);currentRank=positionQueue[0]||0;
+function routeFromHash(){if(location.hash==='#setup')return'setup';if(location.hash==='#participants')return'participants';if(location.hash==='#randomizer')return SpinOrderParticipants.validateList(participantNames).valid?'randomizer':'participants';return'landing'}
 function showView(view,moveFocus=false){
-  landingView.hidden=view!=='landing';setupView.hidden=view!=='setup';randomizerView.hidden=view!=='randomizer';
-  document.title=view==='landing'?'SpinOrder — Free Randomizer for Any Activity':view==='setup'?'Create a Randomizer — SpinOrder':`${setupValues.eventName||'SpinOrder'} — SpinOrder`;
+  landingView.hidden=view!=='landing';setupView.hidden=view!=='setup';participantsView.hidden=view!=='participants';randomizerView.hidden=view!=='randomizer';
+  document.title=view==='landing'?'SpinOrder — Free Randomizer for Any Activity':view==='setup'?'Create a Randomizer — SpinOrder':view==='participants'?'Add Names — SpinOrder':`${setupValues.eventName||'SpinOrder'} — SpinOrder`;
   if(view==='randomizer')requestAnimationFrame(()=>{applySetupToRandomizer();if(!locked)drawWheel()});
-  if(moveFocus){const target=view==='landing'?landingTitle:view==='setup'?setupTitle:randomizerTitle;requestAnimationFrame(()=>target.focus())}
+  if(view==='setup'||view==='randomizer')syncEditingAvailability();
+  if(view==='participants')renderParticipants();
+  if(moveFocus){const target=view==='landing'?landingTitle:view==='setup'?setupTitle:view==='participants'?participantsTitle:randomizerTitle;requestAnimationFrame(()=>target.focus())}
 }
 function openSetup(){
   if(location.hash!=='#setup')history.pushState({spinorderView:'setup'},'','#setup');
   showView('setup',true);
 }
 function backFromSetup(){
-  if(history.state?.spinorderView==='setup')history.back();
-  else{history.replaceState(null,'',location.pathname+location.search);showView('landing',true)}
+  history.replaceState({spinorderView:'landing'},'',location.pathname+location.search);showView('landing',true)
 }
 function editCurrentSetup(){
-  if(history.state?.spinorderView==='randomizer')history.back();
-  else{history.pushState({spinorderView:'setup'},'','#setup');showView('setup',true)}
+  history.pushState({spinorderView:'setup'},'','#setup');showView('setup',true)
 }
-function formValues(){const data=new FormData(setupForm);return {eventName:data.get('eventName'),activity:data.get('activity'),activityLabel:data.get('activityLabel'),customLabel:data.get('customLabel'),spinMode:data.get('spinMode')}}
+function openParticipants(){history.pushState({spinorderView:'participants'},'','#participants');showView('participants',true)}
+function backFromParticipants(){history.pushState({spinorderView:'setup'},'','#setup');showView('setup',true)}
+function editParticipantNames(){if(!hasCompletedSpin)openParticipants()}
+function formValues(){const data=new FormData(setupForm);return {eventName:data.get('eventName'),activity:data.get('activity'),activityLabel:data.get('activityLabel'),customLabel:data.get('customLabel'),spinMode:data.get('spinMode'),revealOrder:data.get('revealOrder')||setupValues.revealOrder}}
 function toggleCustomLabel(){const custom=setupForm.elements.activityLabel.value==='Custom';customLabelField.hidden=!custom;customLabelInput.required=custom;if(!custom){customLabelInput.removeAttribute('aria-invalid');document.getElementById('customLabelError').textContent=''}}
 function populateSetupForm(values){
   eventNameInput.value=values.eventName;customLabelInput.value=values.customLabel;
   const activity=setupForm.querySelector(`[name="activity"][value="${values.activity}"]`);if(activity)activity.checked=true;
   const label=setupForm.querySelector(`[name="activityLabel"][value="${values.activityLabel}"]`);if(label)label.checked=true;
+  const reveal=setupForm.querySelector(`[name="revealOrder"][value="${values.revealOrder}"]`);if(reveal)reveal.checked=true;
   toggleCustomLabel();
 }
 function saveSetupProgress(){setupValues=SpinOrderSetup.normalize(formValues());try{SpinOrderSetup.save(window.sessionStorage,setupValues)}catch{}}
-function clearSetupErrors(){for(const name of ['eventName','activity','activityLabel','customLabel']){document.getElementById(`${name}Error`).textContent=''}eventNameInput.removeAttribute('aria-invalid');customLabelInput.removeAttribute('aria-invalid')}
+function clearSetupErrors(){for(const name of ['eventName','activity','activityLabel','customLabel','revealOrder']){document.getElementById(`${name}Error`).textContent=''}eventNameInput.removeAttribute('aria-invalid');customLabelInput.removeAttribute('aria-invalid')}
 function showSetupErrors(errors){
   clearSetupErrors();
   for(const [name,message] of Object.entries(errors)){document.getElementById(`${name}Error`).textContent=message;if(name==='eventName')eventNameInput.setAttribute('aria-invalid','true');if(name==='customLabel')customLabelInput.setAttribute('aria-invalid','true')}
   const first=errors.eventName?eventNameInput:errors.customLabel?customLabelInput:setupForm.querySelector(errors.activity?'[name="activity"]':'[name="activityLabel"]');if(first)first.focus();
 }
+function syncEditingAvailability(){editNames.hidden=hasCompletedSpin;for(const control of setupForm.elements.revealOrder)control.disabled=hasCompletedSpin;revealOrderLock.hidden=!hasCompletedSpin;setupContinue.textContent=hasCompletedSpin?'Save Setup Changes':'Continue to Names'}
+function announceParticipants(message,error=false){participantMessage.textContent=message;participantMessage.classList.toggle('participant-error',error)}
+function participantLimit(){return participantMode==='import'?SpinOrderParticipants.IMPORT_MAX_NAMES:SpinOrderParticipants.MANUAL_MAX_NAMES}
+function saveParticipants(){try{SpinOrderParticipants.save(window.sessionStorage,{names:participantNames,mode:participantMode,filename:importedFilename})}catch{}}
+function renderParticipants(){
+  participantList.replaceChildren();
+  participantNames.forEach((name,index)=>{
+    const row=document.createElement('li');row.className='participant-row';
+    const input=document.createElement('input');input.type='text';input.value=name;input.maxLength=50;input.setAttribute('aria-label',`Edit participant ${index+1}: ${name}`);
+    input.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();input.blur()}});
+    input.addEventListener('change',()=>{const result=SpinOrderParticipants.edit(participantNames,index,input.value);if(!result.valid){announceParticipants(result.error,true);input.value=participantNames[index];return}participantNames=result.names;saveParticipants();renderParticipants();announceParticipants(`${participantNames[index]} updated.`)});
+    const removeButton=document.createElement('button');removeButton.type='button';removeButton.className='remove-name';removeButton.textContent='Remove';removeButton.setAttribute('aria-label',`Remove ${name}`);
+    removeButton.addEventListener('click',()=>{participantNames=SpinOrderParticipants.remove(participantNames,index);saveParticipants();renderParticipants();announceParticipants(`${name} removed. ${participantNames.length} of ${participantLimit()} names.`)});
+    row.append(input,removeButton);participantList.appendChild(row);
+  });
+  const limit=participantLimit();nameCount.textContent=`${participantNames.length} of ${limit} names`;importSource.textContent=participantMode==='import'&&importedFilename?`Imported from ${importedFilename}`:'';addNameButton.disabled=participantNames.length>=limit;createFromNames.disabled=!SpinOrderParticipants.validateList(participantNames,true,limit).valid;if(participantMode==='import'&&importedFilename&&!participantMessage.textContent)announceParticipants(`${participantNames.length} names restored from ${importedFilename}`);
+}
+function addParticipant(){const limit=participantLimit(),result=SpinOrderParticipants.add(participantNames,nameInput.value,limit);if(!result.valid){announceParticipants(result.error,true);nameInput.focus();return}participantNames=result.names;const added=participantNames.at(-1);nameInput.value='';saveParticipants();renderParticipants();announceParticipants(`${added} added. ${participantNames.length} of ${limit} names.`);nameInput.focus()}
+function initializeRandomizer(names){eventParticipants=[...names];remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors);picks={};positionQueue=SpinOrderParticipants.revealPositions(eventParticipants.length,setupValues.revealOrder);currentRank=positionQueue[0]||0;hasCompletedSpin=false;locked=false;stopTicker();ticker.textContent=`Press SPIN to select Position #${currentRank}`;setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();applySetupToRandomizer();updateUI();syncEditingAvailability();reset.disabled=false}
 function applySetupToRandomizer(){
   const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,eventName=setupValues.eventName||'SpinOrder';
-  eventIcon.textContent=icon;randomizerTitle.textContent=eventName;eventTagline.textContent=`${label} • ${setupValues.activity} • 12 teams • 12 → 1`;
+  const total=eventParticipants.length,direction=setupValues.revealOrder==='first'?`1 → ${total}`:`${total} → 1`;eventIcon.textContent=icon;randomizerTitle.textContent=eventName;eventTagline.textContent=`${label} • ${setupValues.activity} • ${total} names • ${direction}`;
   pointerSymbol.textContent=icon;pointerSymbol.classList.toggle('football',setupValues.activity==='Football');pointer.setAttribute('aria-label',`${setupValues.activity} pointer`);
-  resultsTitle.textContent=`${icon} ${label} Results`;randomizerHelp.textContent=`Building the ${label}: each spin assigns one team and removes it from the wheel. Positions count down from 12 → 1. The final remaining team receives Position #1.`;
+  resultsTitle.textContent=`${icon} ${label} Results`;randomizerHelp.textContent=`Building the ${label}: each spin assigns the next position in ${direction} reveal order and removes one name from the wheel.`;
   reset.textContent=`↻ Reset ${label}`;updateUI();
 }
-function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:3,remaining,picks,currentRank,tickerText:ticker.textContent}))}catch{}}
-function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==3||!Array.isArray(saved.remaining)||typeof saved.currentRank!=='number')return;remaining=saved.remaining;picks=saved.picks||{};currentRank=saved.currentRank;if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
+function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:5,participantNames:eventParticipants,remaining,picks,positionQueue,currentRank,hasCompletedSpin,tickerText:ticker.textContent}))}catch{}}
+function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==5||!Array.isArray(saved.participantNames)||JSON.stringify(saved.participantNames)!==JSON.stringify(participantNames)||!Array.isArray(saved.remaining)||!Array.isArray(saved.positionQueue)||typeof saved.currentRank!=='number')return;eventParticipants=[...participantNames];remaining=saved.remaining;picks=saved.picks||{};positionQueue=saved.positionQueue;currentRank=saved.currentRank;hasCompletedSpin=Boolean(saved.hasCompletedSpin||Object.keys(picks).length);if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
 function rand(max){if(window.crypto?.getRandomValues){const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]%max}return Math.floor(Math.random()*max)}
 function setPointerColor(c){document.documentElement.style.setProperty('--pointer',c);pointer.style.setProperty('--pc',c)}
 function drawWheel(){
-  labels.innerHTML=''; const n=remaining.length; const seg=360/n;
+  labels.replaceChildren(); const n=remaining.length;if(!n){wheel.style.background='#172033';return} const seg=360/n;
   wheel.style.background=`conic-gradient(${remaining.map((e,i)=>`${e.color} ${i*seg}deg ${(i+1)*seg}deg`).join(',')})`;
   const D=wheel.getBoundingClientRect().width||520;
   const center=D/2; const hubR=Math.max(48,D*.105); const outerR=D*.46;
@@ -246,20 +320,20 @@ function drawWheel(){
     const r=(hubR+outerR)/2 + (n<=5?6:0);
     const x=center+Math.cos(rad)*r, y=center+Math.sin(rad)*r;
     const angularWidth=2*Math.PI*r/n;
-    const maxW=Math.max(58,Math.min(118,angularWidth*.78));
+    const minWidth=n>=41?12:n>=20?28:n>=13?42:58,maxWidth=n>=41?24:118;const maxW=Math.max(minWidth,Math.min(maxWidth,angularWidth*.72));
     const radialH=Math.max(34,(outerR-hubR)*.48);
-    let fs=Math.max(10,Math.min(16,D*.029));
+    let fs=Math.max(n>=41?5:n>=20?7:n>=13?9:10,Math.min(16,D*.029));
     if(e.name.length>10) fs-=1; if(n>=10 && e.name.length>11) fs-=1;
-    const el=document.createElement('div'); el.className='team-label'; el.textContent=e.name;
+    const el=document.createElement('div'); el.className='team-label';el.textContent=n>=41&&e.name.length>8?`${e.name.slice(0,7)}…`:e.name;el.title=e.name;
     el.style.width=maxW+'px'; el.style.height=radialH+'px'; el.style.fontSize=fs+'px'; el.style.left=x+'px'; el.style.top=y+'px'; el.style.transform='translate(-50%,-50%)';
     labels.appendChild(el);
   });
 }
 function drawResults(){
-  results.innerHTML='';
-  for(let r=12;r>=1;r--){const row=document.createElement('div');row.className='result-row';const p=picks[r];row.innerHTML=`<div class="rank">#${r}</div><div class="dot" style="background:${p?p.color:'#334155'}"></div><div class="${p?'team':'pending'}">${p?p.name:'Pending'}</div>`;results.appendChild(row)}
+  results.replaceChildren();
+  for(const rank of SpinOrderParticipants.positions(eventParticipants.length)){const row=document.createElement('div');row.className='result-row';const participant=picks[rank];const rankElement=document.createElement('div');rankElement.className='rank';rankElement.textContent=`#${rank}`;const dot=document.createElement('div');dot.className='dot';dot.style.background=participant?participant.color:'#334155';const team=document.createElement('div');team.className=participant?'team':'pending';team.textContent=participant?participant.name:'Pending';row.append(rankElement,dot,team);results.appendChild(row)}
 }
-function updateUI(){const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football;pickNum.textContent=currentRank>=1?`#${currentRank}`:'DONE';spin.textContent=currentRank>=1?`${icon} SPIN FOR #${currentRank}`:`↻ Reset ${label}`;spin.disabled=locked;status.textContent=currentRank>=1?`${remaining.length} team${remaining.length===1?'':'s'} remaining in this ${label}`:`${label} complete — tap below to reset!`;nextText.textContent=currentRank>=1?`Next position in ${label}: #${currentRank}`:`All 12 ${label} positions are complete.`}
+function updateUI(){const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,total=eventParticipants.length;pickNum.textContent=currentRank>=1?`#${currentRank}`:'DONE';spin.textContent=currentRank>=1?`${icon} SPIN FOR #${currentRank}`:`↻ Reset ${label}`;spin.disabled=locked||total<2;status.textContent=currentRank>=1?`${remaining.length} name${remaining.length===1?'':'s'} remaining in this ${label}`:`${label} complete — tap below to reset!`;nextText.textContent=currentRank>=1?`Next position in ${label}: #${currentRank}`:`All ${total} ${label} positions are complete.`}
 function startTicker(){ticker.classList.add('flash');tickerTimer=setInterval(()=>ticker.textContent=remaining[rand(remaining.length)].name,70)}
 function stopTicker(){clearInterval(tickerTimer);ticker.classList.remove('flash')}
 async function spinOnce(){
@@ -268,29 +342,46 @@ async function spinOnce(){
   wheel.style.transition='transform 4.2s cubic-bezier(.12,.68,.12,1)'; wheel.style.transform=`rotate(${turns*360+target}deg)`;
   setTimeout(()=>{
     stopTicker(); setPointerColor(selected.color); ticker.textContent=`🎯 #${currentRank}: ${selected.name}`; ticker.classList.add('pop'); setTimeout(()=>ticker.classList.remove('pop'),500);
-    picks[currentRank]=selected; remaining.splice(idx,1); currentRank--; drawResults(); status.textContent=`Selected for ${SpinOrderSetup.displayLabel(setupValues)}: ${selected.name}`; saveDraft();
+    picks[currentRank]=selected;remaining.splice(idx,1);positionQueue.shift();currentRank=positionQueue[0]||0;hasCompletedSpin=true;drawResults();status.textContent=`Selected for ${SpinOrderSetup.displayLabel(setupValues)}: ${selected.name}`;syncEditingAvailability();saveDraft();
     setTimeout(()=>{
       wheel.style.transition='none'; wheel.style.transform='rotate(0deg)';
       requestAnimationFrame(()=>requestAnimationFrame(()=>{drawWheel(); wheel.style.transition='transform 4.2s cubic-bezier(.12,.68,.12,1)'}));
-      if(currentRank===1 && remaining.length===1){const finalPick=remaining[0];picks[1]=finalPick;remaining=[];currentRank=0;drawResults();ticker.textContent=`🎯 #1: ${finalPick.name}`;setPointerColor(finalPick.color)}
+      if(positionQueue.length===1&&remaining.length===1){const finalPick=remaining[0],finalPosition=positionQueue.shift();picks[finalPosition]=finalPick;remaining=[];currentRank=0;drawResults();ticker.textContent=`🎯 #${finalPosition}: ${finalPick.name}`;setPointerColor(finalPick.color)}
       locked=false; saveDraft(); updateUI(); reset.disabled=false;
     },650);
   },4300);
 }
-function resetDraft(){stopTicker();remaining=original.map((name,i)=>({name,color:colors[i]}));picks={};currentRank=12;locked=false;ticker.textContent='Press SPIN to select Position #12';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();updateUI();reset.disabled=false}
+function resetDraft(){initializeRandomizer(eventParticipants)}
 spin.addEventListener('click',()=>currentRank<1?resetDraft():spinOnce());
 reset.addEventListener('click',resetDraft);
 createRandomizer.addEventListener('click',openSetup);
 setupBack.addEventListener('click',backFromSetup);
 editSetup.addEventListener('click',editCurrentSetup);
+editNames.addEventListener('click',editParticipantNames);
+namesBack.addEventListener('click',backFromParticipants);
 setupForm.addEventListener('input',saveSetupProgress);
 setupForm.addEventListener('change',()=>{toggleCustomLabel();saveSetupProgress()});
 setupForm.addEventListener('submit',event=>{
   event.preventDefault();const result=SpinOrderSetup.validate(formValues());
   if(!result.valid){showSetupErrors(result.errors);return}
   clearSetupErrors();setupValues=result.values;try{SpinOrderSetup.save(window.sessionStorage,setupValues)}catch{}
-  applySetupToRandomizer();history.pushState({spinorderView:'randomizer'},'','#randomizer');showView('randomizer',true);
+  if(hasCompletedSpin){history.pushState({spinorderView:'randomizer'},'','#randomizer');showView('randomizer',true)}else openParticipants();
 });
+async function importParticipantFile(file){if(!file)return;const fileCheck=SpinOrderParticipants.validateFile(file.name,file.size);if(!fileCheck.valid){announceParticipants(fileCheck.error,true);return}try{const imported=SpinOrderParticipants.importNames(file.name,file.size,await file.text());if(!imported.valid){announceParticipants(imported.error,true);return}participantNames=imported.names;participantMode='import';importedFilename=imported.filename;saveParticipants();renderParticipants();announceParticipants(imported.summary)}catch{announceParticipants('The file could not be read. Try another .txt or .csv file.',true)}}
+function registerParticipantListeners(){
+  addNameButton.addEventListener('click',addParticipant);
+  nameInput.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();addParticipant()}});
+  exampleNamesButton.addEventListener('click',()=>{participantNames=SpinOrderParticipants.exampleNames();participantMode='manual';importedFilename='';clearConfirmation=false;clearNamesButton.textContent='Clear All';saveParticipants();renderParticipants();announceParticipants('12 example names loaded.')});
+  clearNamesButton.addEventListener('click',()=>{if(!participantNames.length){announceParticipants('The participant list is already empty.');return}if(!clearConfirmation){clearConfirmation=true;clearNamesButton.textContent='Confirm Clear All';announceParticipants('Press Confirm Clear All to remove every name.');return}participantNames=[];participantMode='manual';importedFilename='';clearConfirmation=false;clearNamesButton.textContent='Clear All';saveParticipants();renderParticipants();announceParticipants('All names cleared. Manual entry allows up to 20 names.')});
+  for(const pickerControl of [chooseFile,dropZone])pickerControl.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();nameFile.click()}});
+  for(const eventName of ['dragenter','dragover'])dropZone.addEventListener(eventName,event=>{event.preventDefault();const item=event.dataTransfer?.items?.[0],file=event.dataTransfer?.files?.[0],name=file?.name||'',type=file?.type||item?.type||'';dropZone.classList.toggle('drag-valid',/\.(txt|csv)$/i.test(name)||(!name&&/^(text\/plain|text\/csv|application\/csv)$/i.test(type)))});
+  for(const eventName of ['dragleave','dragend'])dropZone.addEventListener(eventName,event=>{event.preventDefault();dropZone.classList.remove('drag-valid')});
+  dropZone.addEventListener('drop',event=>{event.preventDefault();dropZone.classList.remove('drag-valid');importParticipantFile(event.dataTransfer?.files?.[0])});
+  document.addEventListener('dragover',event=>event.preventDefault());document.addEventListener('drop',event=>event.preventDefault());
+  nameFile.addEventListener('change',()=>{const file=nameFile.files?.[0];importParticipantFile(file).finally(()=>{nameFile.value=''})});
+  participantsForm.addEventListener('submit',event=>{event.preventDefault();const result=SpinOrderParticipants.validateList(participantNames,true,participantLimit());if(!result.valid){announceParticipants(result.error,true);return}participantNames=result.names;saveParticipants();initializeRandomizer(participantNames);history.pushState({spinorderView:'randomizer'},'','#randomizer');showView('randomizer',true)});
+}
+registerParticipantListeners();
 window.addEventListener('popstate',()=>showView(routeFromHash(),true));
 window.addEventListener('hashchange',()=>showView(routeFromHash(),true));
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;install.classList.add('show')});
@@ -298,7 +389,7 @@ install.addEventListener('click',async()=>{if(!installPrompt)return;installPromp
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!navigator.standalone)installHelp.classList.add('show');
 window.addEventListener('resize',()=>{if(!locked)drawWheel()});
 if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
-populateSetupForm(setupValues);loadDraft();drawResults();drawWheel();applySetupToRandomizer();showView(routeFromHash());
+populateSetupForm(setupValues);renderParticipants();loadDraft();drawResults();drawWheel();applySetupToRandomizer();showView(routeFromHash());
 </script>
 </body>
 </html>
