@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="basketball-title">
+  <title id="basketball-title">Basketball</title>
+  <circle cx="32" cy="32" r="28" fill="#F97316" stroke="#111827" stroke-width="4"/>
+  <path d="M32 4v56M4 32h56M13 12c17 11 22 29 11 47M51 12C34 23 29 41 40 59" fill="none" stroke="#111827" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

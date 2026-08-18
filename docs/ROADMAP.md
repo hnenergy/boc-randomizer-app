@@ -44,11 +44,12 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Approve the front-facing, navy, outline elephant with two minimal eyes and a curled trunk as the **LFN Legacy Apps publisher mark**; source: [`assets/brand/lfn-legacy-apps-elephant.png`](../assets/brand/lfn-legacy-apps-elephant.png)
 - [x] Record that the LFN Legacy Apps publisher mark is not the SpinOrder product logo
 - [ ] Create production SVG, light, and dark versions of the LFN Legacy Apps publisher mark
+- [x] Create alpha-preserving light-blue and light-gray PNG variants from the approved navy elephant source
 - [x] Approve the five-section blue wheel in [`assets/brand/spinorder-logo.svg`](../assets/brand/spinorder-logo.svg) as the official SpinOrder product and website logo
 - [x] Finalize the playful football favicon and PWA app icons for the current static application
-- [ ] Consider theme-specific icons for future activity themes
+- [x] Add activity-specific browser favicons while preserving the football PWA and Apple touch icons
 - [ ] Revisit whether the approved SpinOrder wheel should become the favicon and PWA icon in a later release
-- [ ] Add the LFN Legacy Apps mark as a small publisher attribution in the site footer
+- [x] Add the light-blue LFN Legacy Apps mark as a small publisher attribution in the dark site footer
 
 **Exit:** name, domain direction, design direction, and enhancement backlog are approved.
 
