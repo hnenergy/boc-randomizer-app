@@ -19,7 +19,7 @@ test('participant listener initialization registers valid callbacks and both imp
   const literalRegistrations=[...html.matchAll(/\.addEventListener\(\s*(['"])[^'"]+\1\s*,\s*/g)],loopRegistrations=[...html.matchAll(/\.addEventListener\(\s*eventName\s*,\s*/g)];
   assert.equal(literalRegistrations.length+loopRegistrations.length,(html.match(/\.addEventListener\(/g)||[]).length,'every addEventListener call must include an event type and callback');
   assert.equal(loopRegistrations.length,2,'both drag-state loops should register their eventName with a callback');
-  const body=html.match(/function registerParticipantListeners\(\)\{([\s\S]*?)\n\}\nregisterParticipantListeners\(\);/);
+  const body=html.match(/function registerParticipantListeners\(\)\{([\s\S]*?)\r?\n\}\r?\nregisterParticipantListeners\(\);/);
   assert.ok(body,'participant listener initializer must run during startup');
   class Target{constructor(){this.listeners=new Map();this.classList={toggle(){},remove(){}};this.files=[];this.value='';this.click=()=>{}}addEventListener(...args){assert.equal(args.length,2);assert.equal(typeof args[0],'string');assert.equal(typeof args[1],'function');this.listeners.set(args[0],args[1])}}
   const addNameButton=new Target(),nameInput=new Target(),exampleNamesButton=new Target(),clearNamesButton=new Target(),chooseFile=new Target(),dropZone=new Target(),nameFile=new Target(),participantsForm=new Target(),document=new Target();

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="generic-title">
+  <title id="generic-title">SpinOrder wheel</title>
+  <defs>
+    <mask id="generic-separators" x="0" y="0" width="512" height="512" maskUnits="userSpaceOnUse">
+      <rect width="512" height="512" fill="#fff"/>
+      <path d="M153.73 111.23L250.12 243.91M358.27 111.23L261.88 243.91M421.48 305.77L265.51 255.09M256 426L256 262M90.52 305.77L246.49 255.09" fill="none" stroke="#000" stroke-width="8" stroke-linecap="butt"/>
+      <circle cx="256" cy="252" r="12" fill="#000"/>
+    </mask>
+  </defs>
+  <g mask="url(#generic-separators)">
+    <path fill="#06275B" d="M256 252L153.73 111.23A174 174 0 0 1 358.27 111.23Z"/>
+    <path fill="#0A3D85" d="M256 252L358.27 111.23A174 174 0 0 1 421.48 305.77Z"/>
+    <path fill="#1261C9" d="M256 252L421.48 305.77A174 174 0 0 1 256 426Z"/>
+    <path fill="#1687FF" d="M256 252L256 426A174 174 0 0 1 90.52 305.77Z"/>
+    <path fill="#0E55AD" d="M256 252L90.52 305.77A174 174 0 0 1 153.73 111.23Z"/>
+  </g>
+  <path fill="#1687FF" d="M237.5 62H274.5L256 94Z"/>
+  <path d="M432.73 334.41A195 195 0 0 1 338.41 428.73" fill="none" stroke="#1687FF" stroke-width="10" stroke-linecap="round"/>
+</svg>

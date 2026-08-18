@@ -12,15 +12,15 @@ The elephant is the **LFN Legacy Apps publisher mark**. It is not the SpinOrder 
 
 The official SpinOrder product and website logo is [`assets/brand/spinorder-logo.svg`](../assets/brand/spinorder-logo.svg). It is a transparent, circular wheel with five equal sections in flat blue shades, a small top pointer, and a short lower-right motion accent.
 
-This product logo is separate from the LFN Legacy Apps elephant publisher mark. The current static application uses a playful football icon as its favicon and PWA app icon; the official wheel logo is not currently used for those roles. Future activity themes may receive theme-specific icons while retaining the SpinOrder product identity.
+This product logo is separate from the LFN Legacy Apps elephant publisher mark. Browser tabs use activity-specific SVG favicons from [`assets/icons/`](../assets/icons/): the approved wider football, a baseball, golf ball and flag, basketball, or the approved SpinOrder wheel for Generic. These dynamic browser favicons do not change the installed PWA icons, Apple touch icon, or manifest branding, which remain the approved playful football design.
 
 ## Intended publisher placement
 
-The LFN Legacy Apps mark should appear only as subtle publisher attribution, such as a small mark in the site footer. It should remain visually secondary to the SpinOrder product identity and should not compete with the randomizer controls or results.
+The LFN Legacy Apps mark appears only as subtle publisher attribution. The current dark footer uses [`lfn-legacy-apps-elephant-light-blue.png`](../assets/brand/lfn-legacy-apps-elephant-light-blue.png), mechanically recolored to `#7CC4FF`; [`lfn-legacy-apps-elephant-light-gray.png`](../assets/brand/lfn-legacy-apps-elephant-light-gray.png) provides a `#D1D5DB` alternative. Both preserve the source PNG's dimensions, geometry, transparency, and antialiasing. The mark remains visually secondary to the SpinOrder product identity and does not compete with randomizer controls or results.
 
 ## Future brand assets
 
 The following production assets remain to be created:
 
 - A production SVG of the LFN Legacy Apps publisher mark
-- Light and dark variants of the publisher mark
+- Any additional production dark treatment beyond the approved navy source and current lighter PNG variants

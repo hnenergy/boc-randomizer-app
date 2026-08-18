@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SpinOrder">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" id="browserFavicon" href="assets/icons/football.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>SpinOrder — Free Randomizer for Any Activity</title>
 <style>
@@ -224,10 +224,11 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
 </section>
 
 <footer class="publisher-footer">
-  <img src="assets/brand/lfn-legacy-apps-elephant.png" alt="LFN Legacy Apps elephant publisher logo">
+  <img src="assets/brand/lfn-legacy-apps-elephant-light-blue.png" alt="LFN Legacy Apps elephant publisher logo">
   <span>© 2026 LFN Legacy Apps. All rights reserved. SpinOrder™</span>
 </footer>
 <script src="setup-state.js"></script>
+<script src="favicon-state.js"></script>
 <script src="participant-state.js"></script>
 <script>
 const colors=["#dc2626","#ea580c","#eab308","#45a315","#0f766e","#1464c0","#6d28d9","#b91c67","#8b451f","#626262","#0f8aa0","#0a58b0"];
@@ -245,6 +246,7 @@ positionQueue=SpinOrderParticipants.revealPositions(eventParticipants.length,set
 function routeFromHash(){if(location.hash==='#setup')return'setup';if(location.hash==='#participants')return'participants';if(location.hash==='#randomizer')return SpinOrderParticipants.validateList(participantNames).valid?'randomizer':'participants';return'landing'}
 function showView(view,moveFocus=false){
   landingView.hidden=view!=='landing';setupView.hidden=view!=='setup';participantsView.hidden=view!=='participants';randomizerView.hidden=view!=='randomizer';
+  SpinOrderFavicons.update(document,setupValues.activity);
   document.title=view==='landing'?'SpinOrder — Free Randomizer for Any Activity':view==='setup'?'Create a Randomizer — SpinOrder':view==='participants'?'Add Names — SpinOrder':`${setupValues.eventName||'SpinOrder'} — SpinOrder`;
   if(view==='randomizer')requestAnimationFrame(()=>{applySetupToRandomizer();if(!locked)drawWheel()});
   if(view==='setup'||view==='randomizer')syncEditingAvailability();
@@ -360,7 +362,7 @@ editSetup.addEventListener('click',editCurrentSetup);
 editNames.addEventListener('click',editParticipantNames);
 namesBack.addEventListener('click',backFromParticipants);
 setupForm.addEventListener('input',saveSetupProgress);
-setupForm.addEventListener('change',()=>{toggleCustomLabel();saveSetupProgress()});
+setupForm.addEventListener('change',()=>{toggleCustomLabel();saveSetupProgress();SpinOrderFavicons.update(document,setupValues.activity)});
 setupForm.addEventListener('submit',event=>{
   event.preventDefault();const result=SpinOrderSetup.validate(formValues());
   if(!result.valid){showSetupErrors(result.errors);return}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="football-title">
+  <title id="football-title">Football</title>
+  <rect width="512" height="512" rx="112" fill="#07110b"/>
+  <circle cx="256" cy="256" r="208" fill="#111827" stroke="#76ff3b" stroke-width="18"/>
+  <g transform="rotate(-35 256 256)">
+    <path d="M104 256c40-115.2 264-115.2 304 0-40 115.2-264 115.2-304 0Z" fill="#8b451f" stroke="#f8fafc" stroke-width="15"/>
+    <path d="M193 256h126M218 222v68M256 222v68M294 222v68" fill="none" stroke="#f8fafc" stroke-width="15" stroke-linecap="round"/>
+  </g>
+</svg>
