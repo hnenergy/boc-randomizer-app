@@ -40,7 +40,7 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
 .wheel:before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 38% 30%,rgba(255,255,255,.12),transparent 18%),repeating-radial-gradient(circle at 50% 50%,rgba(255,255,255,.018) 0 1px,transparent 1px 4px);z-index:3;pointer-events:none}.labels{position:absolute;inset:0;z-index:5;pointer-events:none}.team-label{position:absolute;left:50%;top:50%;transform-origin:center;text-align:center;font-weight:1000;line-height:1.04;text-shadow:0 2px 5px rgba(0,0,0,.9);white-space:normal;overflow-wrap:anywhere;word-break:normal;display:flex;align-items:center;justify-content:center}
 .hub{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 38% 30%,#273241,#070a0d 67%);border:5px solid #e5e7eb;box-shadow:0 0 0 5px rgba(118,255,59,.15),0 8px 20px rgba(0,0,0,.5)}.hub span{font-size:50px}.hub small{position:absolute;bottom:13px;font-size:10px;font-weight:1000;letter-spacing:.12em;color:#d1d5db}
 .controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}button{border:0;border-radius:15px;padding:14px 24px;font-size:16px;font-weight:1000;cursor:pointer;transition:transform .15s ease,opacity .15s ease}button:disabled{opacity:.45;cursor:not-allowed}button:hover:not(:disabled){transform:translateY(-2px)}#spin{min-width:220px;color:#071006;background:linear-gradient(135deg,#a6ff6b,#5ee62c);box-shadow:0 10px 24px rgba(118,255,59,.18)}#reset{color:#fff;background:#263041}.status{text-align:center;min-height:24px;margin-top:12px;font-weight:800;color:#d1d5db}
-.side h2{margin:0 0 6px;font-size:25px}.next{color:#aab2c0;font-size:14px;margin-bottom:14px}.results{display:grid;gap:8px}.result-row{display:grid;grid-template-columns:46px 12px 1fr;align-items:center;gap:10px;background:#07101a;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:10px 12px;min-height:47px}.rank{font-size:17px;font-weight:1000}.dot{width:12px;height:12px;border-radius:50%;background:#334155}.team{font-weight:900}.pending{color:#64748b;font-weight:700}
+.side h2{margin:0 0 6px;font-size:25px}.next{display:flex;align-items:baseline;justify-content:space-between;gap:12px;color:#aab2c0;font-size:13px;font-weight:900;letter-spacing:.08em;margin-bottom:14px}.next strong{color:var(--lime);font-size:24px;letter-spacing:0}.results{display:grid;gap:8px}.result-row{display:grid;grid-template-columns:46px 12px 1fr;align-items:center;gap:10px;background:#07101a;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:10px 12px;min-height:47px}.rank{font-size:17px;font-weight:1000}.dot{width:12px;height:12px;border-radius:50%;background:#334155}.team{font-weight:900}.pending{color:#64748b;font-weight:700}
 .footer-note{margin-top:14px;padding:13px 14px;border-radius:14px;background:#07100b;border:1px solid rgba(118,255,59,.2);color:#cbd5e1;font-size:13px;line-height:1.45}.footer-note b{color:var(--lime)}
 .install{display:none;margin-top:12px;width:100%;color:#071006;background:#fff}.install.show{display:block}.install-help{display:none;margin-top:10px;color:#cbd5e1;font-size:13px;line-height:1.45}.install-help.show{display:block}
 .flash{animation:flash .12s infinite alternate}@keyframes flash{to{filter:brightness(1.6);transform:scale(1.015)}}
@@ -196,7 +196,7 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
     <main class="card main">
       <div class="pick-label">CURRENT POSITION</div>
       <div class="pick-number" id="pickNum">#12</div>
-      <div class="ticker" id="ticker">Press SPIN to select Position #12</div>
+      <div class="ticker" id="ticker">Ready to spin</div>
 
       <div class="wheel-wrap">
         <div class="pointer" id="pointer" aria-label="Football pointer"><span class="pointer-symbol football" id="pointerSymbol">🏈</span></div>
@@ -207,13 +207,13 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
         </div>
       </div>
 
-      <div class="controls"><button id="spin">🏈 SPIN FOR #12</button></div>
-      <div class="status" id="status">12 teams remaining</div>
+      <div class="controls"><button id="spin">🏈 SPIN</button></div>
+      <div class="status" id="status" role="status" aria-live="polite">12 teams remaining</div>
     </main>
 
     <aside class="card side">
       <h2 id="resultsTitle">🏈 Random Order Results</h2>
-      <div class="next" id="nextText">Next position: #12</div>
+      <div class="next"><span>SELECTED POSITION</span><strong id="selectedPosition">#12</strong></div>
       <div class="results" id="results"></div>
       <div class="footer-note" id="randomizerHelp">Each spin assigns one team and removes it from the wheel. Positions count down from <b>12 → 1</b>. The final remaining team receives <b>Position #1</b>.</div>
       <button class="install" id="install">⬇ INSTALL APP</button>
@@ -230,19 +230,20 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
 <script src="setup-state.js"></script>
 <script src="favicon-state.js"></script>
 <script src="participant-state.js"></script>
+<script src="position-state.js"></script>
 <script>
 const colors=["#dc2626","#ea580c","#eab308","#45a315","#0f766e","#1464c0","#6d28d9","#b91c67","#8b451f","#626262","#0f8aa0","#0a58b0"];
-const DRAFT_STORAGE_KEY='spinorder-event-v5',LEGACY_DRAFT_STORAGE_KEYS=['spinorder-event-v4','spinorder-draft-v3','boc-draft-v2','boc-draft'];
+const DRAFT_STORAGE_KEY='spinorder-event-v6',LEGACY_DRAFT_STORAGE_KEYS=['spinorder-event-v5','spinorder-event-v4','spinorder-draft-v3','boc-draft-v2','boc-draft'];
 function loadParticipantState(){try{return SpinOrderParticipants.load(window.sessionStorage)}catch{return {names:[],mode:'manual',filename:''}}}
 const restoredParticipants=loadParticipantState();let participantNames=restoredParticipants.names,participantMode=restoredParticipants.mode,importedFilename=restoredParticipants.filename,eventParticipants=[...participantNames],remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors);
-let picks={},positionQueue=SpinOrderParticipants.revealPositions(eventParticipants.length,'last');let currentRank=positionQueue[0]||0;let tickerTimer=null,locked=false,installPrompt=null,clearConfirmation=false,hasCompletedSpin=false;
-const wheel=document.getElementById('wheel'),labels=document.getElementById('labels'),ticker=document.getElementById('ticker'),spin=document.getElementById('spin'),reset=document.getElementById('reset'),status=document.getElementById('status'),pickNum=document.getElementById('pickNum'),nextText=document.getElementById('nextText'),results=document.getElementById('results'),pointer=document.getElementById('pointer'),pointerDot=document.getElementById('pointerDot'),install=document.getElementById('install'),installHelp=document.getElementById('installHelp');
+let picks={},positionState=SpinOrderPositions.create(eventParticipants.length,'last');let tickerTimer=null,locked=false,installPrompt=null,clearConfirmation=false,hasCompletedSpin=false;
+const wheel=document.getElementById('wheel'),labels=document.getElementById('labels'),ticker=document.getElementById('ticker'),spin=document.getElementById('spin'),reset=document.getElementById('reset'),status=document.getElementById('status'),pickNum=document.getElementById('pickNum'),selectedPosition=document.getElementById('selectedPosition'),results=document.getElementById('results'),pointer=document.getElementById('pointer'),pointerDot=document.getElementById('pointerDot'),install=document.getElementById('install'),installHelp=document.getElementById('installHelp');
 const landingView=document.getElementById('landingView'),setupView=document.getElementById('setupView'),participantsView=document.getElementById('participantsView'),randomizerView=document.getElementById('randomizerView'),createRandomizer=document.getElementById('createRandomizer'),setupBack=document.getElementById('setupBack'),namesBack=document.getElementById('namesBack'),editSetup=document.getElementById('editSetup'),editNames=document.getElementById('editNames'),landingTitle=document.getElementById('landingTitle'),setupTitle=document.getElementById('setupTitle'),participantsTitle=document.getElementById('participantsTitle'),randomizerTitle=document.getElementById('randomizerTitle');
 const setupForm=document.getElementById('setupForm'),setupContinue=document.getElementById('setupContinue'),eventNameInput=document.getElementById('eventName'),customLabelField=document.getElementById('customLabelField'),customLabelInput=document.getElementById('customLabel'),revealOrderLock=document.getElementById('revealOrderLock'),eventIcon=document.getElementById('eventIcon'),eventTagline=document.getElementById('eventTagline'),pointerSymbol=document.getElementById('pointerSymbol'),resultsTitle=document.getElementById('resultsTitle'),randomizerHelp=document.getElementById('randomizerHelp');
 const participantsForm=document.getElementById('participantsForm'),nameInput=document.getElementById('nameInput'),addNameButton=document.getElementById('addName'),participantList=document.getElementById('participantList'),nameCount=document.getElementById('nameCount'),importSource=document.getElementById('importSource'),participantMessage=document.getElementById('participantMessage'),exampleNamesButton=document.getElementById('exampleNames'),clearNamesButton=document.getElementById('clearNames'),chooseFile=document.getElementById('chooseFile'),dropZone=document.getElementById('dropZone'),nameFile=document.getElementById('nameFile'),createFromNames=document.getElementById('createFromNames');
 function loadSetupValues(){try{return SpinOrderSetup.load(window.sessionStorage)}catch{return {...SpinOrderSetup.DEFAULT_VALUES}}}
 let setupValues=loadSetupValues();
-positionQueue=SpinOrderParticipants.revealPositions(eventParticipants.length,setupValues.revealOrder);currentRank=positionQueue[0]||0;
+positionState=SpinOrderPositions.create(eventParticipants.length,setupValues.revealOrder);
 function routeFromHash(){if(location.hash==='#setup')return'setup';if(location.hash==='#participants')return'participants';if(location.hash==='#randomizer')return SpinOrderParticipants.validateList(participantNames).valid?'randomizer':'participants';return'landing'}
 function showView(view,moveFocus=false){
   landingView.hidden=view!=='landing';setupView.hidden=view!=='setup';participantsView.hidden=view!=='participants';randomizerView.hidden=view!=='randomizer';
@@ -300,7 +301,7 @@ function renderParticipants(){
   const limit=participantLimit();nameCount.textContent=`${participantNames.length} of ${limit} names`;importSource.textContent=participantMode==='import'&&importedFilename?`Imported from ${importedFilename}`:'';addNameButton.disabled=participantNames.length>=limit;createFromNames.disabled=!SpinOrderParticipants.validateList(participantNames,true,limit).valid;if(participantMode==='import'&&importedFilename&&!participantMessage.textContent)announceParticipants(`${participantNames.length} names restored from ${importedFilename}`);
 }
 function addParticipant(){const limit=participantLimit(),result=SpinOrderParticipants.add(participantNames,nameInput.value,limit);if(!result.valid){announceParticipants(result.error,true);nameInput.focus();return}participantNames=result.names;const added=participantNames.at(-1);nameInput.value='';saveParticipants();renderParticipants();announceParticipants(`${added} added. ${participantNames.length} of ${limit} names.`);nameInput.focus()}
-function initializeRandomizer(names){eventParticipants=[...names];remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors);picks={};positionQueue=SpinOrderParticipants.revealPositions(eventParticipants.length,setupValues.revealOrder);currentRank=positionQueue[0]||0;hasCompletedSpin=false;locked=false;stopTicker();ticker.textContent=`Press SPIN to select Position #${currentRank}`;setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();applySetupToRandomizer();updateUI();syncEditingAvailability();reset.disabled=false}
+function initializeRandomizer(names){eventParticipants=[...names];remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors);picks={};positionState=SpinOrderPositions.create(eventParticipants.length,setupValues.revealOrder);hasCompletedSpin=false;locked=false;stopTicker();ticker.textContent='Ready to spin';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();applySetupToRandomizer();updateUI();syncEditingAvailability();reset.disabled=false}
 function applySetupToRandomizer(){
   const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,eventName=setupValues.eventName||'SpinOrder';
   const total=eventParticipants.length,direction=setupValues.revealOrder==='first'?`1 → ${total}`:`${total} → 1`;eventIcon.textContent=icon;randomizerTitle.textContent=eventName;eventTagline.textContent=`${label} • ${setupValues.activity} • ${total} names • ${direction}`;
@@ -308,8 +309,8 @@ function applySetupToRandomizer(){
   resultsTitle.textContent=`${icon} ${label} Results`;randomizerHelp.textContent=`Building the ${label}: each spin assigns the next position in ${direction} reveal order and removes one name from the wheel.`;
   reset.textContent=`↻ Reset ${label}`;updateUI();
 }
-function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:5,participantNames:eventParticipants,remaining,picks,positionQueue,currentRank,hasCompletedSpin,tickerText:ticker.textContent}))}catch{}}
-function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==5||!Array.isArray(saved.participantNames)||JSON.stringify(saved.participantNames)!==JSON.stringify(participantNames)||!Array.isArray(saved.remaining)||!Array.isArray(saved.positionQueue)||typeof saved.currentRank!=='number')return;eventParticipants=[...participantNames];remaining=saved.remaining;picks=saved.picks||{};positionQueue=saved.positionQueue;currentRank=saved.currentRank;hasCompletedSpin=Boolean(saved.hasCompletedSpin||Object.keys(picks).length);if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
+function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:6,participantNames:eventParticipants,remaining,picks,tickerText:ticker.textContent}))}catch{}}
+function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==6||!Array.isArray(saved.participantNames)||JSON.stringify(saved.participantNames)!==JSON.stringify(participantNames)||!Array.isArray(saved.remaining)||!saved.picks||typeof saved.picks!=='object')return;const restoredPositionState=SpinOrderPositions.restore(participantNames.length,setupValues.revealOrder,Object.keys(saved.picks));if(saved.remaining.length!==restoredPositionState.remaining.length)return;eventParticipants=[...participantNames];remaining=saved.remaining;picks=saved.picks;positionState=restoredPositionState;hasCompletedSpin=positionState.completed.length>0;if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
 function rand(max){if(window.crypto?.getRandomValues){const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]%max}return Math.floor(Math.random()*max)}
 function setPointerColor(c){document.documentElement.style.setProperty('--pointer',c);pointer.style.setProperty('--pc',c)}
 function drawWheel(){
@@ -335,26 +336,28 @@ function drawResults(){
   results.replaceChildren();
   for(const rank of SpinOrderParticipants.positions(eventParticipants.length)){const row=document.createElement('div');row.className='result-row';const participant=picks[rank];const rankElement=document.createElement('div');rankElement.className='rank';rankElement.textContent=`#${rank}`;const dot=document.createElement('div');dot.className='dot';dot.style.background=participant?participant.color:'#334155';const team=document.createElement('div');team.className=participant?'team':'pending';team.textContent=participant?participant.name:'Pending';row.append(rankElement,dot,team);results.appendChild(row)}
 }
-function updateUI(){const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,total=eventParticipants.length;pickNum.textContent=currentRank>=1?`#${currentRank}`:'DONE';spin.textContent=currentRank>=1?`${icon} SPIN FOR #${currentRank}`:`↻ Reset ${label}`;spin.disabled=locked||total<2;status.textContent=currentRank>=1?`${remaining.length} name${remaining.length===1?'':'s'} remaining in this ${label}`:`${label} complete — tap below to reset!`;nextText.textContent=currentRank>=1?`Next position in ${label}: #${currentRank}`:`All ${total} ${label} positions are complete.`}
+function renderPosition(){const position=SpinOrderPositions.displayed(positionState),text=position?`#${position}`:'—';pickNum.textContent=selectedPosition.textContent=text}
+function setStatus(message){if(status.textContent!==message)status.textContent=message}
+function prefersReducedMotion(){return Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches)}
+function updateUI(){const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,total=eventParticipants.length,position=SpinOrderPositions.displayed(positionState),selected=position?picks[position]:null;renderPosition();spin.textContent=`${icon} SPIN`;spin.disabled=locked||total<2||positionState.phase==='complete';if(positionState.phase==='spinning')setStatus(`Spinning for position ${position}`);else if(positionState.phase==='complete')setStatus(`${label} complete. Final position ${position} selected.`);else if(selected)setStatus(`Position ${position} selected: ${selected.name}`);else setStatus(`${remaining.length} name${remaining.length===1?'':'s'} remaining in this ${label}`)}
 function startTicker(){ticker.classList.add('flash');tickerTimer=setInterval(()=>ticker.textContent=remaining[rand(remaining.length)].name,70)}
 function stopTicker(){clearInterval(tickerTimer);ticker.classList.remove('flash')}
 async function spinOnce(){
-  if(locked||!remaining.length)return; locked=true; spin.disabled=true; reset.disabled=true; status.textContent='🔄 SPINNING...'; startTicker(); setPointerColor('#76ff3b');
+  if(locked||!remaining.length)return;const started=SpinOrderPositions.beginSpin(positionState);if(!started.accepted)return;positionState=started.state;const positionToAssign=SpinOrderPositions.displayed(positionState),reducedMotion=prefersReducedMotion(),spinDuration=reducedMotion?0:4300,settleDuration=reducedMotion?0:650;locked=true;renderPosition();updateUI();reset.disabled=true;startTicker();setPointerColor('#76ff3b');
   const idx=rand(remaining.length), selected=remaining[idx], seg=360/remaining.length, selectedCenter=idx*seg+seg/2, target=360-selectedCenter, turns=6+rand(4);
-  wheel.style.transition='transform 4.2s cubic-bezier(.12,.68,.12,1)'; wheel.style.transform=`rotate(${turns*360+target}deg)`;
+  wheel.style.transition=reducedMotion?'none':'transform 4.2s cubic-bezier(.12,.68,.12,1)'; wheel.style.transform=`rotate(${turns*360+target}deg)`;
   setTimeout(()=>{
-    stopTicker(); setPointerColor(selected.color); ticker.textContent=`🎯 #${currentRank}: ${selected.name}`; ticker.classList.add('pop'); setTimeout(()=>ticker.classList.remove('pop'),500);
-    picks[currentRank]=selected;remaining.splice(idx,1);positionQueue.shift();currentRank=positionQueue[0]||0;hasCompletedSpin=true;drawResults();status.textContent=`Selected for ${SpinOrderSetup.displayLabel(setupValues)}: ${selected.name}`;syncEditingAvailability();saveDraft();
+    stopTicker();setPointerColor(selected.color);ticker.textContent=`🎯 ${selected.name}`;if(!reducedMotion){ticker.classList.add('pop');setTimeout(()=>ticker.classList.remove('pop'),500)}
+    picks[positionToAssign]=selected;remaining.splice(idx,1);positionState=SpinOrderPositions.completeSpin(positionState).state;hasCompletedSpin=true;drawResults();renderPosition();setStatus(`Position ${positionToAssign} selected: ${selected.name}`);syncEditingAvailability();saveDraft();
     setTimeout(()=>{
       wheel.style.transition='none'; wheel.style.transform='rotate(0deg)';
-      requestAnimationFrame(()=>requestAnimationFrame(()=>{drawWheel(); wheel.style.transition='transform 4.2s cubic-bezier(.12,.68,.12,1)'}));
-      if(positionQueue.length===1&&remaining.length===1){const finalPick=remaining[0],finalPosition=positionQueue.shift();picks[finalPosition]=finalPick;remaining=[];currentRank=0;drawResults();ticker.textContent=`🎯 #${finalPosition}: ${finalPick.name}`;setPointerColor(finalPick.color)}
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{drawWheel();wheel.style.transition=reducedMotion?'none':'transform 4.2s cubic-bezier(.12,.68,.12,1)'}));
       locked=false; saveDraft(); updateUI(); reset.disabled=false;
-    },650);
-  },4300);
+    },settleDuration);
+  },spinDuration);
 }
 function resetDraft(){initializeRandomizer(eventParticipants)}
-spin.addEventListener('click',()=>currentRank<1?resetDraft():spinOnce());
+spin.addEventListener('click',spinOnce);
 reset.addEventListener('click',resetDraft);
 createRandomizer.addEventListener('click',openSetup);
 setupBack.addEventListener('click',backFromSetup);

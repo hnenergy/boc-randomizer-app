@@ -87,10 +87,10 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Extract and unit-test unbiased randomization logic
 - [x] Render functional wheel labels and position-sorted results for 2–60 names
 - [ ] Add theme-specific center art, pointer, colors, and accessible labels
-- [ ] Implement manual one-spin-at-a-time mode
+- [x] Implement guarded manual one-spin-at-a-time mode with synchronized Current Position and Selected Position displays
 - [ ] Implement auto mode with visible three-second countdown
 - [ ] Add pause, resume, and cancel controls
-- [ ] Add reduced-motion behavior
+- [x] Skip wheel and result animation timing when reduced motion is requested
 - [ ] Save and safely restore an active event locally
 - [ ] Add start-over confirmation and completed-event replay
 - [ ] Test portrait/landscape mobile layouts and long names
