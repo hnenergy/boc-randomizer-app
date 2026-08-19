@@ -62,6 +62,7 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - Store the working participant list only in versioned browser-session storage
 - Mode: Manual or Auto
 - Reveal order controls whether positions are assigned `1 → N` or `N → 1`; results remain sorted by position
+- Current Position and Selected Position use one active-position state: both begin on the first assignable position, advance together only when a spin is accepted, and remain on the completed position while idle and after the final result
 - Review screen before starting
 
 ### Randomization
@@ -70,6 +71,7 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - Selection logic must be independent of animation duration
 - One participant is selected and removed per round
 - Manual mode requires a user action for each round
+- While a manual spin is active, both position displays identify that spin's position and the live status announces “Spinning for position X”; repeat clicks cannot start another round
 - Auto mode pauses for three visible seconds between completed result and next spin
 - Pause/cancel auto mode at any time
 - Persist active event and results locally to recover from refresh
