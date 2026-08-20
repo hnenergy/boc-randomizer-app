@@ -88,8 +88,11 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Render functional wheel labels and position-sorted results for 2–60 names
 - [ ] Add theme-specific center art, pointer, colors, and accessible labels
 - [x] Implement guarded manual one-spin-at-a-time mode with synchronized Current Position and Selected Position displays
-- [ ] Implement auto mode with visible three-second countdown
-- [ ] Add pause, resume, and cancel controls
+- [x] Implement auto mode with a visible three-second countdown using the guarded manual spin execution path
+- [x] Complete Auto Spin deterministically when only one participant and one position remain
+- [x] Add accessible Pause, Resume, and Stop controls with reset, navigation, visibility, and stale-callback safety
+- [x] Allow non-destructive setup and spin-mode editing, with confirmed resets for reveal-order changes
+- [x] Replace the primary completed-position value with `Order Set`
 - [x] Skip wheel and result animation timing when reduced motion is requested
 - [ ] Save and safely restore an active event locally
 - [ ] Add start-over confirmation and completed-event replay

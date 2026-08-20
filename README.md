@@ -2,7 +2,7 @@
 
 A free, installable web application for creating fair randomized orders for fantasy drafts, golf groups, sports competitions, classroom activities, giveaways, and other events.
 
-The current static PWA opens on a responsive SpinOrder landing page, collects event settings, accepts 2–20 manually entered names or 2–60 names from a local `.txt`/`.csv` import, and then creates the randomizer. Terminology choices are Draft Order, Random Order, Drawing Order, or a custom label. Current Position and Selected Position stay synchronized on the position being assigned or most recently completed, advancing only when the next spin is accepted. Example names are available on request as `Team 1` through `Team 12` but are never loaded automatically.
+The current static PWA opens on a responsive SpinOrder landing page, collects event settings, accepts 2–20 manually entered names or 2–60 names from a local `.txt`/`.csv` import, and then creates the randomizer. Terminology choices are Draft Order, Random Order, Drawing Order, or a custom label. Manual mode spins once per click; Auto Spin starts immediately and continues after a visible three-second countdown with Pause, Resume, and Stop controls. Setup can be edited without losing results unless the reveal direction changes, which requires confirmation before resetting the assignments. When Auto Spin leaves only one participant and one position, it completes that deterministic final assignment without another countdown or wheel animation. Current Position and Selected Position stay synchronized during the event and display `Order Set` when every position is assigned. Example names are available on request as `Team 1` through `Team 12` but are never loaded automatically.
 
 ## Live application
 

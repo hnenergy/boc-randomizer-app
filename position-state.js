@@ -36,6 +36,12 @@
     return {accepted: true, position: state.activePosition, state: {...state, remaining, completed, phase: remaining.length ? 'idle' : 'complete'}};
   }
 
+  function completeFinal(state) {
+    if (!state || state.phase !== 'idle' || state.remaining.length !== 1) return {accepted: false, state};
+    const position = state.remaining[0], completed = [...state.completed, position];
+    return {accepted: true, position, state: {...state, remaining: [], completed, activePosition: position, phase: 'complete'}};
+  }
+
   function displayed(state) {
     return state && Number.isInteger(state.activePosition) && state.activePosition >= 1 && state.activePosition <= state.count ? state.activePosition : null;
   }
@@ -44,5 +50,5 @@
     return state && state.phase === 'idle' && state.remaining.length ? state.remaining[0] : null;
   }
 
-  return {revealPositions, create, restore, beginSpin, completeSpin, displayed, next};
+  return {revealPositions, create, restore, beginSpin, completeSpin, completeFinal, displayed, next};
 });

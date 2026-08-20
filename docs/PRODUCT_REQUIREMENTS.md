@@ -51,8 +51,9 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - Theme: Football, Baseball, Golf, Basketball, Generic
 - Order terminology: Draft Order, Random Order, Drawing Order, or a custom label up to 30 characters; Random Order is the default
 - Setup selections are stored only for the current browser session
-- Reveal order: Position 1 first or Last position first; Last position first is the default and locks after the first completed spin until reset
-- Manual spin is currently available; Auto spin remains visibly disabled until implemented
+- Reveal order: Position 1 first or Last position first; Last position first is the default. Changing direction after results exist requires confirmation and resets results while preserving participants.
+- Manual spin is the default. Auto Spin starts immediately, then continues after a visible three-second countdown and provides Pause, Resume, and Stop controls.
+- Spin mode remains editable after results exist; switching modes preserves results, cancels automation, and never starts Auto Spin automatically.
 - Names: minimum 2; maximum 20 for manual/example lists or 60 for imported lists after normalization
 - Name length: maximum 50 characters
 - Add/remove/reorder names before starting
@@ -62,7 +63,7 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - Store the working participant list only in versioned browser-session storage
 - Mode: Manual or Auto
 - Reveal order controls whether positions are assigned `1 → N` or `N → 1`; results remain sorted by position
-- Current Position and Selected Position use one active-position state: both begin on the first assignable position, advance together only when a spin is accepted, and remain on the completed position while idle and after the final result
+- Current Position and Selected Position use one active-position state: both begin on the first assignable position, advance together only when a spin is accepted, and display `Order Set` after completion while retaining the final position internally
 - Review screen before starting
 
 ### Randomization
@@ -72,8 +73,10 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - One participant is selected and removed per round
 - Manual mode requires a user action for each round
 - While a manual spin is active, both position displays identify that spin's position and the live status announces “Spinning for position X”; repeat clicks cannot start another round
-- Auto mode pauses for three visible seconds between completed result and next spin
+- Auto mode pauses for three visible seconds between completed results that still require a random selection; when one participant and one position remain, it assigns them directly without another countdown, animation, or spin sound
 - Pause/cancel auto mode at any time
+- Pausing during a spin allows that result to complete but prevents the next countdown; resuming always starts a fresh three-second countdown
+- Hiding the page or navigating away pauses automation, and restored sessions never restart it automatically
 - Persist active event and results locally to recover from refresh
 - “Start Over” must clearly erase the active local event after confirmation
 
