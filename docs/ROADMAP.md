@@ -89,13 +89,20 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Add theme-specific center art, pointer, colors, and accessible labels
 - [x] Implement guarded manual one-spin-at-a-time mode with synchronized Current Position and Selected Position displays
 - [x] Implement auto mode with a visible three-second countdown using the guarded manual spin execution path
-- [x] Complete Auto Spin deterministically when only one participant and one position remain
+- [x] Complete Manual and Auto Spin deterministically when only one participant and one position remain
+- [x] Reconcile the completed wheel to one full-circle wedge for the final participant
+- [x] Hold the penultimate result for two seconds before deterministic completion, with cancellable stale-timeout protection
+- [x] Retain the landed wedge until the next spin starts while excluding it from future selection
 - [x] Add accessible Pause, Resume, and Stop controls with reset, navigation, visibility, and stale-callback safety
 - [x] Allow non-destructive setup and spin-mode editing, with confirmed resets for reveal-order changes
 - [x] Replace the primary completed-position value with `Order Set`
+- [x] Preserve cumulative wheel orientation between Manual and Auto spins
+- [x] Share recalculated wedge geometry across wheel colors, labels, and landing alignment
+- [x] Render wedges and labels together on a reset-safe DPR-aware canvas beneath the stationary hub and pointer
 - [x] Skip wheel and result animation timing when reduced motion is requested
 - [ ] Save and safely restore an active event locally
-- [ ] Add start-over confirmation and completed-event replay
+- [x] Add a confirmed Home/start-over action that clears only the active SpinOrder event
+- [ ] Add completed-event replay
 - [ ] Test portrait/landscape mobile layouts and long names
 
 **Exit:** manual and auto events always produce a complete, unique order and recover from refresh.

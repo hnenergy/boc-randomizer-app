@@ -64,12 +64,17 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - Mode: Manual or Auto
 - Reveal order controls whether positions are assigned `1 → N` or `N → 1`; results remain sorted by position
 - Current Position and Selected Position use one active-position state: both begin on the first assignable position, advance together only when a spin is accepted, and display `Order Set` after completion while retaining the final position internally
+- A completed selection remains visibly landed during idle, countdown, pause, stop, and setup editing, but is excluded from selection and removed only when the next spin starts.
+- Manual and Auto Spin hold the landed penultimate result and two-wedge wheel for exactly two seconds, then assign the sole remaining participant and position directly without another click, Auto countdown, wheel animation, or spin sound; the completed wheel contains one full-circle wedge labeled with that final participant.
+- Home requires confirmation before clearing the active SpinOrder setup, participants, results, import filename, wheel orientation, and automation state, then restores clean setup defaults.
 - Review screen before starting
 
 ### Randomization
 
 - Use unbiased browser cryptography for selection
 - Selection logic must be independent of animation duration
+- Wheel rotation is cumulative: every Manual or Auto spin begins from the previous landing angle, redraws preserve that angle, and only an explicit results reset restores the initial orientation
+- Every redraw resets a DPR-aware local canvas, calculates section geometry from the current remaining count, and reuses each wedge midpoint for label placement and landing alignment; the shared wrapper alone receives cumulative rotation, and visual labels shrink or truncate without changing accessible or result names
 - One participant is selected and removed per round
 - Manual mode requires a user action for each round
 - While a manual spin is active, both position displays identify that spin's position and the live status announces “Spinning for position X”; repeat clicks cannot start another round

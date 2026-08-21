@@ -70,7 +70,7 @@ test('landing, setup, and randomizer navigation and applied configuration are wi
   assert.match(html, /function applySetupToRandomizer/);
   assert.match(html, /eventIcon\.textContent/);
   assert.match(html, /randomizerTitle\.textContent=eventName/);
-  assert.match(html, /reset\.textContent=`↻ Reset \$\{label\}`/);
+  assert.match(html, /reset\.textContent='↻ Reset Order';reset\.setAttribute\('aria-label',`Reset \$\{label\}`\)/);
   assert.equal((html.match(/type="radio" name="activityLabel"/g) || []).length, 4);
 });
 
