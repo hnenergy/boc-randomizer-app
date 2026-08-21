@@ -25,29 +25,30 @@ button:focus-visible,a:focus-visible,input:focus-visible,.secondary-action:focus
 .setup-shell{width:min(100%,880px);margin:0 auto;padding:24px 0}.setup-nav{margin-bottom:18px}.setup-back{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}.setup-panel{padding:clamp(22px,5vw,42px);border-radius:28px;background:linear-gradient(180deg,rgba(15,35,65,.98),rgba(6,18,38,.98));border:1px solid rgba(101,183,255,.25);box-shadow:0 24px 70px rgba(0,0,0,.34)}.setup-heading{display:flex;align-items:center;gap:18px;margin-bottom:30px}.setup-heading img{width:76px;height:76px;object-fit:contain}.setup-heading h1{margin:0 0 6px}.setup-heading p{margin:0;color:#afc3dd;line-height:1.5}.setup-form{display:grid;gap:28px}.form-field{display:grid;gap:9px}.form-field>label,.setup-form legend{font-size:17px;font-weight:900}.form-field input[type="text"]{width:100%;min-height:52px;border:1px solid #47627f;border-radius:13px;padding:12px 14px;background:#071423;color:#fff;font:inherit;font-size:16px}.form-field input[type="text"]::placeholder{color:#71849a}.form-field input[aria-invalid="true"]{border-color:#ff8b8b}.field-hint{margin:0;color:#91a7c1;font-size:13px}.field-error{min-height:18px;margin:0;color:#ffb1b1;font-size:14px;font-weight:800}.setup-form fieldset{min-width:0;margin:0;padding:0;border:0}.setup-form legend{margin-bottom:12px}.choice-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.choice-card{position:relative;display:grid;place-items:center;gap:6px;min-width:0;min-height:94px;padding:12px 8px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d;color:#e8f2ff;text-align:center;font-size:14px;font-weight:900;cursor:pointer}.choice-card input{position:absolute;opacity:0;pointer-events:none}.choice-card:has(input:checked){border-color:#65b7ff;background:#103d70}.choice-card:has(input:focus-visible){outline:3px solid #65b7ff;outline-offset:3px}.choice-icon{font-size:28px;line-height:1}.label-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.label-card{min-height:54px}.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mode-card{position:relative;display:flex;align-items:center;gap:11px;padding:16px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d;font-weight:900}.mode-card:has(input:checked){border-color:#65b7ff;background:#103d70}.mode-card:has(input:focus-visible){outline:3px solid #65b7ff;outline-offset:3px}.mode-card.disabled{opacity:.58;cursor:not-allowed}.coming-soon{margin-left:auto;padding:4px 7px;border-radius:999px;background:#263b54;color:#d8e8fa;font-size:11px}.continue-button{min-height:58px;color:#fff;background:linear-gradient(135deg,#1687ff,#0a3d85);box-shadow:0 14px 30px rgba(22,135,255,.24)}
 .choice-card:has(input:checked)::after{content:"✓";position:absolute;top:6px;right:8px;color:#fff;font-size:15px}
 .label-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.mode-card{align-items:flex-start}.mode-card strong,.mode-card small{display:block}.mode-card small{margin-top:5px;color:#a9bdd5;font-weight:600;line-height:1.4}.auto-control{padding:12px 16px;color:#fff;background:#1e3a5f}.auto-control.stop{background:#4a2028}
 .participants-shell{width:min(100%,900px);margin:0 auto;padding:24px 0}.participants-panel{padding:clamp(20px,5vw,40px);border-radius:28px;background:linear-gradient(180deg,rgba(15,35,65,.98),rgba(6,18,38,.98));border:1px solid rgba(101,183,255,.25);box-shadow:0 24px 70px rgba(0,0,0,.34)}.participants-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:24px}.participants-heading h1{margin:0 0 7px}.participants-heading p{margin:0;color:#afc3dd}.name-count{flex:0 0 auto;padding:8px 11px;border-radius:999px;background:#12345a;color:#ddecff;font-size:13px;font-weight:900}.name-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}.name-entry input,.participant-row input{min-width:0;width:100%;min-height:48px;border:1px solid #47627f;border-radius:12px;padding:10px 12px;background:#071423;color:#fff;font:inherit;font-size:16px}.name-entry button{color:#fff;background:#1261c9}.participant-tools{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.secondary-action{padding:11px 14px;color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.3);cursor:pointer}.danger-action{padding:11px 14px;color:#ffd7d7;background:#3b1720;border:1px solid rgba(255,139,139,.35)}.participant-list{display:grid;gap:9px;margin:0;padding:0;list-style:none;counter-reset:participants}.participant-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:9px;padding:9px;border-radius:14px;background:#091827;border:1px solid rgba(255,255,255,.08);counter-increment:participants}.participant-row::before{content:counter(participants) ".";color:#91a7c1;font-weight:900;text-align:right}.remove-name{padding:10px 12px;color:#ffd7d7;background:#3b1720}.upload-box{display:grid;gap:9px;margin-top:24px;padding:18px;border:1px dashed #476b91;border-radius:16px;background:rgba(7,20,35,.65)}.upload-box label{font-weight:900}.upload-box input{max-width:100%;font:inherit;color:#dcecff}.participant-message{min-height:22px;margin:10px 0 0;color:#b9d7fa;font-size:14px;font-weight:800}.participant-error{color:#ffb1b1}.participants-submit{width:100%;min-height:58px;margin-top:22px;color:#fff;background:linear-gradient(135deg,#1687ff,#0a3d85)}
-.drop-zone{display:grid;place-items:center;gap:8px;min-height:140px;padding:20px;border:2px dashed #54799f;border-radius:15px;text-align:center;cursor:pointer;transition:border-color .15s ease,background .15s ease}.drop-zone.drag-valid{border-color:#65b7ff;background:#103d70}.drop-zone strong{font-size:17px}.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.reveal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.reveal-card{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:10px;padding:16px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d}.reveal-card:has(input:checked){border-color:#65b7ff;background:#103d70}.reveal-card strong,.reveal-card small{display:block}.reveal-card small{margin-top:5px;color:#a9bdd5;line-height:1.4}.reveal-lock{margin:10px 0 0;color:#ffd39b;font-size:13px;font-weight:800}
+.drop-zone{display:grid;place-items:center;gap:8px;min-height:140px;padding:20px;border:2px dashed #54799f;border-radius:15px;text-align:center;cursor:pointer;transition:border-color .15s ease,background .15s ease}.drop-zone.drag-valid{border-color:#65b7ff;background:#103d70}.drop-zone strong{font-size:17px}.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.reveal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.reveal-card{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:10px;padding:16px;border:2px solid #314d6f;border-radius:16px;background:#0a1a2d}.reveal-card:has(input:checked){border-color:#65b7ff;background:#103d70}.reveal-card strong,.reveal-card small{display:block}.reveal-card small{margin-top:5px;color:#a9bdd5;line-height:1.4}
 .participant-source{max-width:240px;margin-top:7px;color:#9fc8f5;font-size:12px;font-weight:800;text-align:right;overflow-wrap:anywhere}
 .shell{max-width:1160px;margin:auto}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-.topbar-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.edit-setup,.edit-names{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32);padding:12px 16px}
-.brand{display:flex;align-items:center;gap:14px}.brand-badge{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:38px;background:linear-gradient(145deg,#162215,#050a06);border:2px solid var(--lime);box-shadow:0 0 20px rgba(118,255,59,.18)}
+.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}.topbar-actions{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;align-items:stretch;gap:10px;flex:0 0 auto}.topbar-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 16px;border-radius:13px;line-height:1.2;white-space:nowrap}.edit-setup,.edit-names{color:#dcecff;background:#13233a;border:1px solid rgba(101,183,255,.32)}
+.brand{display:flex;align-items:flex-start;gap:14px;min-width:0;flex:1 1 360px}.brand>div:last-child{min-width:0}.brand-badge{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:38px;background:linear-gradient(145deg,#162215,#050a06);border:2px solid var(--lime);box-shadow:0 0 20px rgba(118,255,59,.18)}
 h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}.tagline{margin:6px 0 0;color:#aab2c0;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
 .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:20px}.card{background:linear-gradient(180deg,rgba(15,23,36,.96),rgba(6,12,20,.98));border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:0 22px 60px rgba(0,0,0,.38)}
 .main{padding:20px}.side{padding:20px}.pick-label{text-align:center;font-size:13px;font-weight:900;letter-spacing:.16em;color:#9ca3af}.pick-number{text-align:center;font-size:48px;font-weight:1000;color:var(--lime);line-height:1.05;margin:2px 0 7px}.ticker{height:50px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:21px;font-weight:1000;background:#07101c;border:1px solid rgba(255,255,255,.07);border-radius:14px;margin-bottom:18px;padding:0 14px}
 .wheel-wrap{position:relative;width:min(76vw,540px);aspect-ratio:1;margin:26px auto 22px}.pointer{--pc:var(--pointer);position:absolute;z-index:20;top:-46px;left:50%;transform:translateX(-50%);width:78px;height:78px;display:grid;place-items:center;font-size:62px;line-height:1;filter:drop-shadow(0 0 10px var(--pc)) drop-shadow(0 5px 8px rgba(0,0,0,.85));transition:filter .3s ease}.pointer::after{content:"";position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:18px solid var(--pc);filter:drop-shadow(0 0 6px var(--pc));transition:border-top-color .3s ease}.pointer-symbol{display:block;transform-origin:center}.pointer-symbol.football{transform:rotate(90deg)}.pointer-dot{display:none}
-.wheel{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:9px solid #e5e7eb;box-shadow:0 0 0 6px rgba(118,255,59,.14),0 20px 45px rgba(0,0,0,.45),inset 0 0 28px rgba(0,0,0,.22);transition:transform 4.2s cubic-bezier(.12,.68,.12,1);transform:rotate(0deg)}
-.wheel:before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 38% 30%,rgba(255,255,255,.12),transparent 18%),repeating-radial-gradient(circle at 50% 50%,rgba(255,255,255,.018) 0 1px,transparent 1px 4px);z-index:3;pointer-events:none}.labels{position:absolute;inset:0;z-index:5;pointer-events:none}.team-label{position:absolute;left:50%;top:50%;transform-origin:center;text-align:center;font-weight:1000;line-height:1.04;text-shadow:0 2px 5px rgba(0,0,0,.9);white-space:normal;overflow-wrap:anywhere;word-break:normal;display:flex;align-items:center;justify-content:center}
+.wheel{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:9px solid #e5e7eb;background:#172033;box-shadow:0 0 0 6px rgba(118,255,59,.14),0 20px 45px rgba(0,0,0,.45),inset 0 0 28px rgba(0,0,0,.22);transition:transform 4.2s cubic-bezier(.12,.68,.12,1);transform:rotate(0deg)}
+.wheel:before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 38% 30%,rgba(255,255,255,.12),transparent 18%),repeating-radial-gradient(circle at 50% 50%,rgba(255,255,255,.018) 0 1px,transparent 1px 4px);z-index:3;pointer-events:none}.wheel-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
 .hub{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 38% 30%,#273241,#070a0d 67%);border:5px solid #e5e7eb;box-shadow:0 0 0 5px rgba(118,255,59,.15),0 8px 20px rgba(0,0,0,.5)}.hub span{font-size:50px}.hub small{position:absolute;bottom:13px;font-size:10px;font-weight:1000;letter-spacing:.12em;color:#d1d5db}
-.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}button{border:0;border-radius:15px;padding:14px 24px;font-size:16px;font-weight:1000;cursor:pointer;transition:transform .15s ease,opacity .15s ease}button:disabled{opacity:.45;cursor:not-allowed}button:hover:not(:disabled){transform:translateY(-2px)}#spin{min-width:220px;color:#071006;background:linear-gradient(135deg,#a6ff6b,#5ee62c);box-shadow:0 10px 24px rgba(118,255,59,.18)}#reset{color:#fff;background:#263041}.status{text-align:center;min-height:24px;margin-top:12px;font-weight:800;color:#d1d5db}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}button{border:0;border-radius:15px;padding:14px 24px;font-size:16px;font-weight:1000;cursor:pointer;transition:transform .15s ease,opacity .15s ease}button:disabled{opacity:.45;cursor:not-allowed}button:hover:not(:disabled){transform:translateY(-2px)}#spin{min-width:220px;color:#071006;background:linear-gradient(135deg,#a6ff6b,#5ee62c);box-shadow:0 10px 24px rgba(118,255,59,.18)}#reset{color:#fff;background:#263041}.home-action{color:#fff;background:#0a3d85}.status{text-align:center;min-height:24px;margin-top:12px;font-weight:800;color:#d1d5db}
 .side h2{margin:0 0 6px;font-size:25px}.next{display:flex;align-items:baseline;justify-content:space-between;gap:12px;color:#aab2c0;font-size:13px;font-weight:900;letter-spacing:.08em;margin-bottom:14px}.next strong{color:var(--lime);font-size:24px;letter-spacing:0}.results{display:grid;gap:8px}.result-row{display:grid;grid-template-columns:46px 12px 1fr;align-items:center;gap:10px;background:#07101a;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:10px 12px;min-height:47px}.rank{font-size:17px;font-weight:1000}.dot{width:12px;height:12px;border-radius:50%;background:#334155}.team{font-weight:900}.pending{color:#64748b;font-weight:700}
 .footer-note{margin-top:14px;padding:13px 14px;border-radius:14px;background:#07100b;border:1px solid rgba(118,255,59,.2);color:#cbd5e1;font-size:13px;line-height:1.45}.footer-note b{color:var(--lime)}
 .install{display:none;margin-top:12px;width:100%;color:#071006;background:#fff}.install.show{display:block}.install-help{display:none;margin-top:10px;color:#cbd5e1;font-size:13px;line-height:1.45}.install-help.show{display:block}
 .flash{animation:flash .12s infinite alternate}@keyframes flash{to{filter:brightness(1.6);transform:scale(1.015)}}
 .pop{animation:pop .45s ease}@keyframes pop{50%{transform:scale(1.05)}}
+@media(max-width:1040px){.topbar{flex-wrap:wrap}.topbar-actions{width:100%;grid-auto-flow:row;grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:880px){body{padding:12px}.landing{grid-template-columns:1fr;min-height:auto;padding:32px 0 20px}.landing-logo{margin-left:auto;margin-right:auto}.landing-copy{text-align:center;margin:auto}.choice-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.label-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid{grid-template-columns:1fr}.side{order:2}.wheel-wrap{width:min(90vw,530px)}.brand-badge{width:52px;height:52px;font-size:31px}.main,.side{padding:16px}}
-@media(max-width:600px){.topbar{align-items:flex-start;flex-wrap:wrap}.topbar-actions{width:100%;justify-content:flex-start}.landing-card,.setup-panel,.participants-panel{border-radius:22px}.setup-heading{align-items:flex-start}.setup-heading img{width:58px;height:58px}.participants-heading{display:grid}.choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.label-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mode-grid,.reveal-grid{grid-template-columns:1fr}.trust-list{grid-template-columns:1fr}.publisher-footer{align-items:flex-start}.wheel-wrap{width:min(91vw,430px)}.tagline{font-size:11px}.hub{width:92px;height:92px}.hub span{font-size:38px}.ticker{font-size:18px}.pick-number{font-size:40px}.result-row{grid-template-columns:40px 10px 1fr;padding:9px 10px}}
-@media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing h1{font-size:44px}.landing-card,.setup-panel,.participants-panel{padding:19px}.choice-card{padding-left:5px;padding-right:5px}.name-entry{grid-template-columns:1fr}.participant-row{grid-template-columns:26px minmax(0,1fr) auto;padding:7px}.topbar-actions button{padding:10px 11px;font-size:13px}.brand{gap:10px}.brand-badge{width:46px;height:46px;font-size:27px}}
+@media(max-width:600px){.topbar-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.landing-card,.setup-panel,.participants-panel{border-radius:22px}.setup-heading{align-items:flex-start}.setup-heading img{width:58px;height:58px}.participants-heading{display:grid}.choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.label-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mode-grid,.reveal-grid{grid-template-columns:1fr}.trust-list{grid-template-columns:1fr}.publisher-footer{align-items:flex-start}.wheel-wrap{width:min(91vw,430px)}.tagline{font-size:11px}.hub{width:92px;height:92px}.hub span{font-size:38px}.ticker{font-size:18px}.pick-number{font-size:40px}.result-row{grid-template-columns:40px 10px 1fr;padding:9px 10px}}
+@media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing h1{font-size:44px}.landing-card,.setup-panel,.participants-panel{padding:19px}.choice-card{padding-left:5px;padding-right:5px}.name-entry{grid-template-columns:1fr}.participant-row{grid-template-columns:26px minmax(0,1fr) auto;padding:7px}.topbar-actions button{padding:10px 8px;font-size:13px}.brand{gap:10px}.brand-badge{width:46px;height:46px;font-size:27px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -121,22 +122,22 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
           <p class="field-error" id="customLabelError" aria-live="polite"></p>
         </div>
 
-        <fieldset>
+        <fieldset aria-describedby="revealOrderError">
           <legend>Reveal order</legend>
           <div class="reveal-grid">
             <label class="reveal-card"><input type="radio" name="revealOrder" value="last" checked><span><strong>Last position first</strong><small>The first spin assigns position N, then counts down to 1.</small></span></label>
             <label class="reveal-card"><input type="radio" name="revealOrder" value="first"><span><strong>Position 1 first</strong><small>The first spin assigns position 1, then counts up.</small></span></label>
           </div>
-          <p class="reveal-lock" id="revealOrderLock" hidden>Reveal order is locked after the first completed spin. Reset the randomizer to change it.</p>
           <p class="field-error" id="revealOrderError" aria-live="polite"></p>
         </fieldset>
 
-        <fieldset>
+        <fieldset aria-describedby="spinModeError">
           <legend>Spin mode</legend>
           <div class="mode-grid">
-            <label class="mode-card"><input type="radio" name="spinMode" value="manual" checked><span>Manual spin</span></label>
-            <label class="mode-card disabled"><input type="radio" name="spinMode" value="auto" disabled><span>Auto spin</span><span class="coming-soon">Coming soon</span></label>
+            <label class="mode-card"><input type="radio" name="spinMode" value="manual" checked><span><strong>Manual spin</strong><small>Select Spin for each position.</small></span></label>
+            <label class="mode-card"><input type="radio" name="spinMode" value="auto"><span><strong>Auto spin</strong><small>Spins continue automatically with a 3-second countdown.</small></span></label>
           </div>
+          <p class="field-error" id="spinModeError" aria-live="polite"></p>
         </fieldset>
 
         <button class="continue-button" id="setupContinue" type="submit">Continue to Names</button>
@@ -186,9 +187,10 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
       <div><h1 id="randomizerTitle" tabindex="-1">SpinOrder</h1><div class="tagline" id="eventTagline">Random Order • 12 teams • 12 → 1</div></div>
     </div>
     <div class="topbar-actions">
+      <button class="home-action" id="homeButton" type="button">⌂ Home</button>
       <button class="edit-setup" id="editSetup" type="button">← Edit Setup</button>
       <button class="edit-names" id="editNames" type="button">✎ Edit Names</button>
-      <button id="reset">↻ Reset Random Order</button>
+      <button id="reset" aria-label="Reset Random Order">↻ Reset Order</button>
     </div>
   </header>
 
@@ -201,13 +203,11 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
       <div class="wheel-wrap">
         <div class="pointer" id="pointer" aria-label="Football pointer"><span class="pointer-symbol football" id="pointerSymbol">🏈</span></div>
         <div class="pointer-dot" id="pointerDot"></div>
-        <div class="wheel" id="wheel">
-          <div class="labels" id="labels"></div>
-          <div class="hub"><span>🏆</span><small>SpinOrder</small></div>
-        </div>
+        <div class="wheel" id="wheel"><canvas class="wheel-canvas" id="wheelCanvas" role="img" aria-label="Randomizer wheel"></canvas></div>
+        <div class="hub" id="wheelHub"><span>🏆</span><small>SpinOrder</small></div>
       </div>
 
-      <div class="controls"><button id="spin">🏈 SPIN</button></div>
+      <div class="controls"><button id="spin">🏈 SPIN</button><button class="auto-control" id="pauseAuto" type="button" hidden aria-label="Pause Auto Spin">Pause</button><button class="auto-control" id="resumeAuto" type="button" hidden aria-label="Resume Auto Spin">Resume</button><button class="auto-control stop" id="stopAuto" type="button" hidden aria-label="Stop Auto Spin">Stop</button></div>
       <div class="status" id="status" role="status" aria-live="polite">12 teams remaining</div>
     </main>
 
@@ -231,30 +231,38 @@ h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:.95;letter-spacing:.02em}
 <script src="favicon-state.js"></script>
 <script src="participant-state.js"></script>
 <script src="position-state.js"></script>
+<script src="automation-state.js"></script>
+<script src="wheel-rotation.js"></script>
 <script>
 const colors=["#dc2626","#ea580c","#eab308","#45a315","#0f766e","#1464c0","#6d28d9","#b91c67","#8b451f","#626262","#0f8aa0","#0a58b0"];
 const DRAFT_STORAGE_KEY='spinorder-event-v6',LEGACY_DRAFT_STORAGE_KEYS=['spinorder-event-v5','spinorder-event-v4','spinorder-draft-v3','boc-draft-v2','boc-draft'];
 function loadParticipantState(){try{return SpinOrderParticipants.load(window.sessionStorage)}catch{return {names:[],mode:'manual',filename:''}}}
-const restoredParticipants=loadParticipantState();let participantNames=restoredParticipants.names,participantMode=restoredParticipants.mode,importedFilename=restoredParticipants.filename,eventParticipants=[...participantNames],remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors);
-let picks={},positionState=SpinOrderPositions.create(eventParticipants.length,'last');let tickerTimer=null,locked=false,installPrompt=null,clearConfirmation=false,hasCompletedSpin=false;
-const wheel=document.getElementById('wheel'),labels=document.getElementById('labels'),ticker=document.getElementById('ticker'),spin=document.getElementById('spin'),reset=document.getElementById('reset'),status=document.getElementById('status'),pickNum=document.getElementById('pickNum'),selectedPosition=document.getElementById('selectedPosition'),results=document.getElementById('results'),pointer=document.getElementById('pointer'),pointerDot=document.getElementById('pointerDot'),install=document.getElementById('install'),installHelp=document.getElementById('installHelp');
+const restoredParticipants=loadParticipantState();let participantNames=restoredParticipants.names,participantMode=restoredParticipants.mode,importedFilename=restoredParticipants.filename,eventParticipants=[...participantNames],remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors),wheelParticipants=[...remaining],pendingVisualRemoval=null;
+let picks={},positionState=SpinOrderPositions.create(eventParticipants.length,'last'),wheelRotation=0,wheelSections=[];let tickerTimer=null,spinCompletionTimeoutId=null,spinSettleTimeoutId=null,resultPopTimeoutId=null,finalizationTimeoutId=null,finalizationState='idle',runtimeGeneration=0,locked=false,installPrompt=null,clearConfirmation=false,hasCompletedSpin=false,autoController=null,pendingSetupNavigation=false,setupEditSnapshot=null;
+const wheel=document.getElementById('wheel'),wheelCanvas=document.getElementById('wheelCanvas'),wheelContext=wheelCanvas.getContext('2d'),wheelHub=document.getElementById('wheelHub'),ticker=document.getElementById('ticker'),spin=document.getElementById('spin'),pauseAuto=document.getElementById('pauseAuto'),resumeAuto=document.getElementById('resumeAuto'),stopAuto=document.getElementById('stopAuto'),homeButton=document.getElementById('homeButton'),reset=document.getElementById('reset'),status=document.getElementById('status'),pickNum=document.getElementById('pickNum'),selectedPosition=document.getElementById('selectedPosition'),results=document.getElementById('results'),pointer=document.getElementById('pointer'),pointerDot=document.getElementById('pointerDot'),install=document.getElementById('install'),installHelp=document.getElementById('installHelp');
 const landingView=document.getElementById('landingView'),setupView=document.getElementById('setupView'),participantsView=document.getElementById('participantsView'),randomizerView=document.getElementById('randomizerView'),createRandomizer=document.getElementById('createRandomizer'),setupBack=document.getElementById('setupBack'),namesBack=document.getElementById('namesBack'),editSetup=document.getElementById('editSetup'),editNames=document.getElementById('editNames'),landingTitle=document.getElementById('landingTitle'),setupTitle=document.getElementById('setupTitle'),participantsTitle=document.getElementById('participantsTitle'),randomizerTitle=document.getElementById('randomizerTitle');
-const setupForm=document.getElementById('setupForm'),setupContinue=document.getElementById('setupContinue'),eventNameInput=document.getElementById('eventName'),customLabelField=document.getElementById('customLabelField'),customLabelInput=document.getElementById('customLabel'),revealOrderLock=document.getElementById('revealOrderLock'),eventIcon=document.getElementById('eventIcon'),eventTagline=document.getElementById('eventTagline'),pointerSymbol=document.getElementById('pointerSymbol'),resultsTitle=document.getElementById('resultsTitle'),randomizerHelp=document.getElementById('randomizerHelp');
+const setupForm=document.getElementById('setupForm'),setupContinue=document.getElementById('setupContinue'),eventNameInput=document.getElementById('eventName'),customLabelField=document.getElementById('customLabelField'),customLabelInput=document.getElementById('customLabel'),eventIcon=document.getElementById('eventIcon'),eventTagline=document.getElementById('eventTagline'),pointerSymbol=document.getElementById('pointerSymbol'),resultsTitle=document.getElementById('resultsTitle'),randomizerHelp=document.getElementById('randomizerHelp');
 const participantsForm=document.getElementById('participantsForm'),nameInput=document.getElementById('nameInput'),addNameButton=document.getElementById('addName'),participantList=document.getElementById('participantList'),nameCount=document.getElementById('nameCount'),importSource=document.getElementById('importSource'),participantMessage=document.getElementById('participantMessage'),exampleNamesButton=document.getElementById('exampleNames'),clearNamesButton=document.getElementById('clearNames'),chooseFile=document.getElementById('chooseFile'),dropZone=document.getElementById('dropZone'),nameFile=document.getElementById('nameFile'),createFromNames=document.getElementById('createFromNames');
 function loadSetupValues(){try{return SpinOrderSetup.load(window.sessionStorage)}catch{return {...SpinOrderSetup.DEFAULT_VALUES}}}
 let setupValues=loadSetupValues();
 positionState=SpinOrderPositions.create(eventParticipants.length,setupValues.revealOrder);
+autoController=SpinOrderAutomation.create({onCountdown:value=>setStatus(`Next spin in ${value}`),onSpinRequested:()=>{if(!executeSpin(true))autoController.stop()},onStateChange:()=>updateUI()});
 function routeFromHash(){if(location.hash==='#setup')return'setup';if(location.hash==='#participants')return'participants';if(location.hash==='#randomizer')return SpinOrderParticipants.validateList(participantNames).valid?'randomizer':'participants';return'landing'}
 function showView(view,moveFocus=false){
+  if(view!=='randomizer'&&finalizationState==='finalizing')cancelAllPendingActions();
+  if(view==='setup'&&locked){pauseAutoSafely();pendingSetupNavigation=true;if(location.hash==='#setup')history.replaceState({spinorderView:'randomizer'},'','#randomizer');return}
+  if(view!=='randomizer')pauseAutoSafely();
+  if(view==='setup')autoController.clearCountdownTimers();
   landingView.hidden=view!=='landing';setupView.hidden=view!=='setup';participantsView.hidden=view!=='participants';randomizerView.hidden=view!=='randomizer';
   SpinOrderFavicons.update(document,setupValues.activity);
   document.title=view==='landing'?'SpinOrder — Free Randomizer for Any Activity':view==='setup'?'Create a Randomizer — SpinOrder':view==='participants'?'Add Names — SpinOrder':`${setupValues.eventName||'SpinOrder'} — SpinOrder`;
-  if(view==='randomizer')requestAnimationFrame(()=>{applySetupToRandomizer();if(!locked)drawWheel()});
+  if(view==='randomizer')requestAnimationFrame(()=>{applySetupToRandomizer();if(!locked)drawWheel();if(finalizationState==='idle'&&pendingVisualRemoval&&remaining.length===1&&positionState.remaining.length===1)scheduleDeterministicFinalization()});
   if(view==='setup'||view==='randomizer')syncEditingAvailability();
   if(view==='participants')renderParticipants();
   if(moveFocus){const target=view==='landing'?landingTitle:view==='setup'?setupTitle:view==='participants'?participantsTitle:randomizerTitle;requestAnimationFrame(()=>target.focus())}
 }
 function openSetup(){
+  setupEditSnapshot=null;
   if(location.hash!=='#setup')history.pushState({spinorderView:'setup'},'','#setup');
   showView('setup',true);
 }
@@ -262,28 +270,32 @@ function backFromSetup(){
   history.replaceState({spinorderView:'landing'},'',location.pathname+location.search);showView('landing',true)
 }
 function editCurrentSetup(){
-  history.pushState({spinorderView:'setup'},'','#setup');showView('setup',true)
+  pauseAutoSafely();autoController.clearCountdownTimers();
+  if(finalizationState==='finalizing')cancelAllPendingActions();
+  if(locked||positionState.phase==='spinning'){pendingSetupNavigation=true;editSetup.disabled=true;return}
+  setupEditSnapshot={...setupValues};populateSetupForm(setupValues);history.pushState({spinorderView:'setup'},'','#setup');showView('setup',true)
 }
 function openParticipants(){history.pushState({spinorderView:'participants'},'','#participants');showView('participants',true)}
 function backFromParticipants(){history.pushState({spinorderView:'setup'},'','#setup');showView('setup',true)}
 function editParticipantNames(){if(!hasCompletedSpin)openParticipants()}
-function formValues(){const data=new FormData(setupForm);return {eventName:data.get('eventName'),activity:data.get('activity'),activityLabel:data.get('activityLabel'),customLabel:data.get('customLabel'),spinMode:data.get('spinMode'),revealOrder:data.get('revealOrder')||setupValues.revealOrder}}
+function formValues(){const data=new FormData(setupForm);return {eventName:data.get('eventName'),activity:data.get('activity'),activityLabel:data.get('activityLabel'),customLabel:data.get('customLabel'),spinMode:data.get('spinMode')||setupValues.spinMode,revealOrder:data.get('revealOrder')||setupValues.revealOrder}}
 function toggleCustomLabel(){const custom=setupForm.elements.activityLabel.value==='Custom';customLabelField.hidden=!custom;customLabelInput.required=custom;if(!custom){customLabelInput.removeAttribute('aria-invalid');document.getElementById('customLabelError').textContent=''}}
 function populateSetupForm(values){
   eventNameInput.value=values.eventName;customLabelInput.value=values.customLabel;
   const activity=setupForm.querySelector(`[name="activity"][value="${values.activity}"]`);if(activity)activity.checked=true;
   const label=setupForm.querySelector(`[name="activityLabel"][value="${values.activityLabel}"]`);if(label)label.checked=true;
   const reveal=setupForm.querySelector(`[name="revealOrder"][value="${values.revealOrder}"]`);if(reveal)reveal.checked=true;
+  const mode=setupForm.querySelector(`[name="spinMode"][value="${values.spinMode}"]`);if(mode)mode.checked=true;
   toggleCustomLabel();
 }
-function saveSetupProgress(){setupValues=SpinOrderSetup.normalize(formValues());try{SpinOrderSetup.save(window.sessionStorage,setupValues)}catch{}}
-function clearSetupErrors(){for(const name of ['eventName','activity','activityLabel','customLabel','revealOrder']){document.getElementById(`${name}Error`).textContent=''}eventNameInput.removeAttribute('aria-invalid');customLabelInput.removeAttribute('aria-invalid')}
+function saveSetupProgress(){const draft=SpinOrderSetup.normalize(formValues());try{SpinOrderSetup.save(window.sessionStorage,draft)}catch{}}
+function clearSetupErrors(){for(const name of ['eventName','activity','activityLabel','customLabel','revealOrder','spinMode']){document.getElementById(`${name}Error`).textContent=''}eventNameInput.removeAttribute('aria-invalid');customLabelInput.removeAttribute('aria-invalid')}
 function showSetupErrors(errors){
   clearSetupErrors();
   for(const [name,message] of Object.entries(errors)){document.getElementById(`${name}Error`).textContent=message;if(name==='eventName')eventNameInput.setAttribute('aria-invalid','true');if(name==='customLabel')customLabelInput.setAttribute('aria-invalid','true')}
-  const first=errors.eventName?eventNameInput:errors.customLabel?customLabelInput:setupForm.querySelector(errors.activity?'[name="activity"]':'[name="activityLabel"]');if(first)first.focus();
+  const first=errors.eventName?eventNameInput:errors.customLabel?customLabelInput:setupForm.querySelector(errors.activity?'[name="activity"]':errors.spinMode?'[name="spinMode"]':errors.revealOrder?'[name="revealOrder"]':'[name="activityLabel"]');if(first)first.focus();
 }
-function syncEditingAvailability(){editNames.hidden=hasCompletedSpin;for(const control of setupForm.elements.revealOrder)control.disabled=hasCompletedSpin;revealOrderLock.hidden=!hasCompletedSpin;setupContinue.textContent=hasCompletedSpin?'Save Setup Changes':'Continue to Names'}
+function syncEditingAvailability(){editNames.hidden=hasCompletedSpin||locked;setupContinue.textContent=setupEditSnapshot?'Save Setup Changes':'Continue to Names'}
 function announceParticipants(message,error=false){participantMessage.textContent=message;participantMessage.classList.toggle('participant-error',error)}
 function participantLimit(){return participantMode==='import'?SpinOrderParticipants.IMPORT_MAX_NAMES:SpinOrderParticipants.MANUAL_MAX_NAMES}
 function saveParticipants(){try{SpinOrderParticipants.save(window.sessionStorage,{names:participantNames,mode:participantMode,filename:importedFilename})}catch{}}
@@ -301,76 +313,90 @@ function renderParticipants(){
   const limit=participantLimit();nameCount.textContent=`${participantNames.length} of ${limit} names`;importSource.textContent=participantMode==='import'&&importedFilename?`Imported from ${importedFilename}`:'';addNameButton.disabled=participantNames.length>=limit;createFromNames.disabled=!SpinOrderParticipants.validateList(participantNames,true,limit).valid;if(participantMode==='import'&&importedFilename&&!participantMessage.textContent)announceParticipants(`${participantNames.length} names restored from ${importedFilename}`);
 }
 function addParticipant(){const limit=participantLimit(),result=SpinOrderParticipants.add(participantNames,nameInput.value,limit);if(!result.valid){announceParticipants(result.error,true);nameInput.focus();return}participantNames=result.names;const added=participantNames.at(-1);nameInput.value='';saveParticipants();renderParticipants();announceParticipants(`${added} added. ${participantNames.length} of ${limit} names.`);nameInput.focus()}
-function initializeRandomizer(names){eventParticipants=[...names];remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors);picks={};positionState=SpinOrderPositions.create(eventParticipants.length,setupValues.revealOrder);hasCompletedSpin=false;locked=false;stopTicker();ticker.textContent='Ready to spin';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform='rotate(0deg)';localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();applySetupToRandomizer();updateUI();syncEditingAvailability();reset.disabled=false}
+function clearSpinTimers(){if(spinCompletionTimeoutId!==null)clearTimeout(spinCompletionTimeoutId);if(spinSettleTimeoutId!==null)clearTimeout(spinSettleTimeoutId);if(resultPopTimeoutId!==null)clearTimeout(resultPopTimeoutId);if(finalizationTimeoutId!==null)clearTimeout(finalizationTimeoutId);spinCompletionTimeoutId=spinSettleTimeoutId=resultPopTimeoutId=finalizationTimeoutId=null;finalizationState='idle';stopTicker()}
+function cancelAllPendingActions(){runtimeGeneration+=1;clearSpinTimers();autoController.clearCountdownTimers();locked=false}
+function pauseAutoSafely(){if(setupValues.spinMode==='auto')autoController.pause()}
+function initializeRandomizer(names){cancelAllPendingActions();eventParticipants=[...names];remaining=SpinOrderParticipants.wheelEntries(eventParticipants,colors);wheelParticipants=[...remaining];pendingVisualRemoval=null;picks={};positionState=SpinOrderPositions.create(eventParticipants.length,setupValues.revealOrder);wheelRotation=0;hasCompletedSpin=false;locked=false;autoController.reset(eventParticipants.length>=2);ticker.textContent='Ready to spin';setPointerColor('#76ff3b');wheel.style.transition='none';wheel.style.transform=`rotate(${wheelRotation}deg)`;localStorage.removeItem(DRAFT_STORAGE_KEY);LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));drawResults();drawWheel();applySetupToRandomizer();updateUI();syncEditingAvailability();reset.disabled=false}
 function applySetupToRandomizer(){
   const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,eventName=setupValues.eventName||'SpinOrder';
   const total=eventParticipants.length,direction=setupValues.revealOrder==='first'?`1 → ${total}`:`${total} → 1`;eventIcon.textContent=icon;randomizerTitle.textContent=eventName;eventTagline.textContent=`${label} • ${setupValues.activity} • ${total} names • ${direction}`;
   pointerSymbol.textContent=icon;pointerSymbol.classList.toggle('football',setupValues.activity==='Football');pointer.setAttribute('aria-label',`${setupValues.activity} pointer`);
-  resultsTitle.textContent=`${icon} ${label} Results`;randomizerHelp.textContent=`Building the ${label}: each spin assigns the next position in ${direction} reveal order and removes one name from the wheel.`;
-  reset.textContent=`↻ Reset ${label}`;updateUI();
+  resultsTitle.textContent=`${icon} ${label} Results`;randomizerHelp.textContent=`Building the ${label}: each spin assigns the next position in ${direction} reveal order. The landed name leaves the wheel when the next spin begins.`;
+  reset.textContent='↻ Reset Order';reset.setAttribute('aria-label',`Reset ${label}`);updateUI();
 }
-function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:6,participantNames:eventParticipants,remaining,picks,tickerText:ticker.textContent}))}catch{}}
-function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==6||!Array.isArray(saved.participantNames)||JSON.stringify(saved.participantNames)!==JSON.stringify(participantNames)||!Array.isArray(saved.remaining)||!saved.picks||typeof saved.picks!=='object')return;const restoredPositionState=SpinOrderPositions.restore(participantNames.length,setupValues.revealOrder,Object.keys(saved.picks));if(saved.remaining.length!==restoredPositionState.remaining.length)return;eventParticipants=[...participantNames];remaining=saved.remaining;picks=saved.picks;positionState=restoredPositionState;hasCompletedSpin=positionState.completed.length>0;if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
+function saveDraft(){try{localStorage.setItem(DRAFT_STORAGE_KEY,JSON.stringify({version:6,participantNames:eventParticipants,remaining,wheelParticipants,pendingVisualRemoval,picks,tickerText:ticker.textContent,wheelRotation}))}catch{}}
+function loadDraft(){try{LEGACY_DRAFT_STORAGE_KEYS.forEach(key=>localStorage.removeItem(key));const saved=JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY));if(!saved||saved.version!==6||!Array.isArray(saved.participantNames)||JSON.stringify(saved.participantNames)!==JSON.stringify(participantNames)||!Array.isArray(saved.remaining)||!saved.picks||typeof saved.picks!=='object')return;const restoredPositionState=SpinOrderPositions.restore(participantNames.length,setupValues.revealOrder,Object.keys(saved.picks));if(saved.remaining.length!==restoredPositionState.remaining.length)return;eventParticipants=[...participantNames];remaining=saved.remaining;wheelParticipants=Array.isArray(saved.wheelParticipants)?saved.wheelParticipants:[...remaining];pendingVisualRemoval=saved.pendingVisualRemoval&&typeof saved.pendingVisualRemoval.name==='string'?saved.pendingVisualRemoval:null;picks=saved.picks;positionState=restoredPositionState;wheelRotation=Number.isFinite(saved.wheelRotation)?saved.wheelRotation:0;wheel.style.transform=`rotate(${wheelRotation}deg)`;hasCompletedSpin=positionState.completed.length>0;autoController.restore(positionState.remaining.length>0,hasCompletedSpin);if(typeof saved.tickerText==='string')ticker.textContent=saved.tickerText}catch{}}
 function rand(max){if(window.crypto?.getRandomValues){const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]%max}return Math.floor(Math.random()*max)}
 function setPointerColor(c){document.documentElement.style.setProperty('--pointer',c);pointer.style.setProperty('--pc',c)}
+function measureWheelLabel(text,fontSize){wheelContext.save();wheelContext.font=`900 ${fontSize}px Inter, system-ui, sans-serif`;const width=wheelContext.measureText(text).width;wheelContext.restore();return width}
+function prepareWheelCanvas(){const size=Math.max(1,Math.round(wheel.clientWidth)),dpr=Math.max(1,window.devicePixelRatio||1),pixels=Math.round(size*dpr);if(wheelCanvas.width!==pixels||wheelCanvas.height!==pixels){wheelCanvas.width=pixels;wheelCanvas.height=pixels}wheelCanvas.style.width=size+'px';wheelCanvas.style.height=size+'px';wheelContext.setTransform(dpr,0,0,dpr,0,0);wheelContext.clearRect(0,0,size,size);return{size,dpr}}
 function drawWheel(){
-  labels.replaceChildren(); const n=remaining.length;if(!n){wheel.style.background='#172033';return} const seg=360/n;
-  wheel.style.background=`conic-gradient(${remaining.map((e,i)=>`${e.color} ${i*seg}deg ${(i+1)*seg}deg`).join(',')})`;
-  const D=wheel.getBoundingClientRect().width||520;
-  const center=D/2; const hubR=Math.max(48,D*.105); const outerR=D*.46;
-  remaining.forEach((e,i)=>{
-    const a=i*seg+seg/2; const rad=(a-90)*Math.PI/180;
-    const r=(hubR+outerR)/2 + (n<=5?6:0);
-    const x=center+Math.cos(rad)*r, y=center+Math.sin(rad)*r;
-    const angularWidth=2*Math.PI*r/n;
-    const minWidth=n>=41?12:n>=20?28:n>=13?42:58,maxWidth=n>=41?24:118;const maxW=Math.max(minWidth,Math.min(maxWidth,angularWidth*.72));
-    const radialH=Math.max(34,(outerR-hubR)*.48);
-    let fs=Math.max(n>=41?5:n>=20?7:n>=13?9:10,Math.min(16,D*.029));
-    if(e.name.length>10) fs-=1; if(n>=10 && e.name.length>11) fs-=1;
-    const el=document.createElement('div'); el.className='team-label';el.textContent=n>=41&&e.name.length>8?`${e.name.slice(0,7)}…`:e.name;el.title=e.name;
-    el.style.width=maxW+'px'; el.style.height=radialH+'px'; el.style.fontSize=fs+'px'; el.style.left=x+'px'; el.style.top=y+'px'; el.style.transform='translate(-50%,-50%)';
-    labels.appendChild(el);
-  });
+  const {size}=prepareWheelCanvas(),n=wheelParticipants.length,hubRadius=Math.max(0,(wheelHub.offsetWidth||116)/2),layout=SpinOrderWheelRotation.layout(n,size,hubRadius,5);wheelSections=layout.sections;wheelCanvas.setAttribute('aria-label',n?`Randomizer wheel with ${wheelParticipants.map(entry=>entry.name).join(', ')}`:'Empty randomizer wheel');if(!n)return;
+  wheelContext.save();
+  for(const [index,section] of wheelSections.entries()){wheelContext.save();wheelContext.beginPath();wheelContext.moveTo(layout.centerX,layout.centerY);wheelContext.arc(layout.centerX,layout.centerY,layout.wheelRadius,section.startAngle,section.endAngle);wheelContext.closePath();wheelContext.fillStyle=wheelParticipants[index].color;wheelContext.fill();wheelContext.restore()}
+  const preferredSize=Math.max(n>=41?7:n>=20?9:n>=13?11:12,Math.min(16,size*.029)),minimumSize=n>=41?5:n>=20?7:9;
+  for(const [index,section] of wheelSections.entries()){const participant=wheelParticipants[index],fitted=SpinOrderWheelRotation.fitLabel(participant.name,section.maxTextWidth,preferredSize,minimumSize,measureWheelLabel);wheelContext.save();wheelContext.translate(section.x,section.y);wheelContext.textAlign='center';wheelContext.textBaseline='middle';wheelContext.font=`900 ${fitted.fontSize}px Inter, system-ui, sans-serif`;wheelContext.fillStyle='#fff';wheelContext.shadowColor='rgba(0,0,0,.9)';wheelContext.shadowBlur=4;wheelContext.shadowOffsetY=2;wheelContext.fillText(fitted.text,0,0,section.maxTextWidth);wheelContext.restore()}
+  wheelContext.restore();
 }
 function drawResults(){
   results.replaceChildren();
   for(const rank of SpinOrderParticipants.positions(eventParticipants.length)){const row=document.createElement('div');row.className='result-row';const participant=picks[rank];const rankElement=document.createElement('div');rankElement.className='rank';rankElement.textContent=`#${rank}`;const dot=document.createElement('div');dot.className='dot';dot.style.background=participant?participant.color:'#334155';const team=document.createElement('div');team.className=participant?'team':'pending';team.textContent=participant?participant.name:'Pending';row.append(rankElement,dot,team);results.appendChild(row)}
 }
-function renderPosition(){const position=SpinOrderPositions.displayed(positionState),text=position?`#${position}`:'—';pickNum.textContent=selectedPosition.textContent=text}
+function renderPosition(){const position=SpinOrderPositions.displayed(positionState),text=positionState.phase==='complete'?'Order Set':position?`#${position}`:'—';pickNum.textContent=selectedPosition.textContent=text}
 function setStatus(message){if(status.textContent!==message)status.textContent=message}
 function prefersReducedMotion(){return Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches)}
-function updateUI(){const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,total=eventParticipants.length,position=SpinOrderPositions.displayed(positionState),selected=position?picks[position]:null;renderPosition();spin.textContent=`${icon} SPIN`;spin.disabled=locked||total<2||positionState.phase==='complete';if(positionState.phase==='spinning')setStatus(`Spinning for position ${position}`);else if(positionState.phase==='complete')setStatus(`${label} complete. Final position ${position} selected.`);else if(selected)setStatus(`Position ${position} selected: ${selected.name}`);else setStatus(`${remaining.length} name${remaining.length===1?'':'s'} remaining in this ${label}`)}
+function updateUI(){const label=SpinOrderSetup.displayLabel(setupValues),icon=SpinOrderSetup.ACTIVITIES[setupValues.activity]||SpinOrderSetup.ACTIVITIES.Football,total=eventParticipants.length,position=SpinOrderPositions.displayed(positionState),selected=position?picks[position]:null,automation=autoController.snapshot(),autoMode=setupValues.spinMode==='auto',complete=positionState.phase==='complete',finalizing=finalizationState==='finalizing';renderPosition();spin.textContent=autoMode?'Start Auto Spin':`${icon} SPIN`;spin.disabled=autoMode?!['idle','stopped'].includes(automation.state)||locked||total<2||complete:locked||total<2||complete;pauseAuto.hidden=resumeAuto.hidden=stopAuto.hidden=!autoMode;pauseAuto.disabled=finalizing||!['spinning','countdown'].includes(automation.state)||complete;resumeAuto.disabled=finalizing||automation.state!=='paused'||complete;stopAuto.disabled=finalizing||!['spinning','countdown','paused'].includes(automation.state)||complete;if(finalizing)setStatus('Final position will be assigned automatically.');else if(positionState.phase==='spinning')setStatus(`Spinning for position ${position}`);else if(autoMode&&automation.state==='countdown')setStatus(`Next spin in ${automation.countdown}`);else if(autoMode&&automation.state==='paused')setStatus('Auto Spin paused. Select Resume to continue.');else if(autoMode&&automation.state==='stopped'&&hasCompletedSpin)setStatus('Auto Spin stopped. Select Start Auto Spin to continue.');else if(complete)setStatus('Order Set');else if(selected)setStatus(`Position ${position} selected: ${selected.name}`);else setStatus(`${remaining.length} name${remaining.length===1?'':'s'} remaining in this ${label}`)}
 function startTicker(){ticker.classList.add('flash');tickerTimer=setInterval(()=>ticker.textContent=remaining[rand(remaining.length)].name,70)}
 function stopTicker(){clearInterval(tickerTimer);ticker.classList.remove('flash')}
-async function spinOnce(){
-  if(locked||!remaining.length)return;const started=SpinOrderPositions.beginSpin(positionState);if(!started.accepted)return;positionState=started.state;const positionToAssign=SpinOrderPositions.displayed(positionState),reducedMotion=prefersReducedMotion(),spinDuration=reducedMotion?0:4300,settleDuration=reducedMotion?0:650;locked=true;renderPosition();updateUI();reset.disabled=true;startTicker();setPointerColor('#76ff3b');
-  const idx=rand(remaining.length), selected=remaining[idx], seg=360/remaining.length, selectedCenter=idx*seg+seg/2, target=360-selectedCenter, turns=6+rand(4);
-  wheel.style.transition=reducedMotion?'none':'transform 4.2s cubic-bezier(.12,.68,.12,1)'; wheel.style.transform=`rotate(${turns*360+target}deg)`;
-  setTimeout(()=>{
-    stopTicker();setPointerColor(selected.color);ticker.textContent=`🎯 ${selected.name}`;if(!reducedMotion){ticker.classList.add('pop');setTimeout(()=>ticker.classList.remove('pop'),500)}
-    picks[positionToAssign]=selected;remaining.splice(idx,1);positionState=SpinOrderPositions.completeSpin(positionState).state;hasCompletedSpin=true;drawResults();renderPosition();setStatus(`Position ${positionToAssign} selected: ${selected.name}`);syncEditingAvailability();saveDraft();
-    setTimeout(()=>{
-      wheel.style.transition='none'; wheel.style.transform='rotate(0deg)';
-      requestAnimationFrame(()=>requestAnimationFrame(()=>{drawWheel();wheel.style.transition=reducedMotion?'none':'transform 4.2s cubic-bezier(.12,.68,.12,1)'}));
-      locked=false; saveDraft(); updateUI(); reset.disabled=false;
+function removePendingVisualParticipant(){if(!pendingVisualRemoval)return false;const name=pendingVisualRemoval.name;wheelParticipants=wheelParticipants.filter(participant=>participant.name!==name);pendingVisualRemoval=null;drawWheel();return true}
+function finalizeDeterministicParticipant(){
+  if(remaining.length!==1||positionState.remaining.length!==1)return false;
+  const completed=SpinOrderPositions.completeFinal(positionState);if(!completed.accepted)return false;
+  const participant=remaining[0];picks[completed.position]=participant;remaining=[];wheelParticipants=[participant];pendingVisualRemoval=null;positionState=completed.state;hasCompletedSpin=true;
+  clearSpinTimers();ticker.classList.remove('pop');drawWheel();setPointerColor(participant.color);ticker.textContent=`🎯 ${participant.name}`;drawResults();renderPosition();syncEditingAvailability();autoController.spinCompleted(false);return true;
+}
+function scheduleDeterministicFinalization(){
+  if(finalizationState!=='idle'||remaining.length!==1||positionState.remaining.length!==1)return false;
+  finalizationState='finalizing';locked=true;autoController.clearCountdownTimers();setStatus('Final position will be assigned automatically.');syncEditingAvailability();updateUI();const token=runtimeGeneration;
+  finalizationTimeoutId=setTimeout(()=>{if(token!==runtimeGeneration||finalizationState!=='finalizing')return;finalizationTimeoutId=null;if(!finalizeDeterministicParticipant()){finalizationState='idle';locked=false;updateUI();return}locked=false;saveDraft();updateUI();reset.disabled=false},2000);return true;
+}
+function executeSpin(automated=false){
+  if(locked||!remaining.length)return false;const started=SpinOrderPositions.beginSpin(positionState);if(!started.accepted)return false;removePendingVisualParticipant();positionState=started.state;const positionToAssign=SpinOrderPositions.displayed(positionState),reducedMotion=prefersReducedMotion(),spinDuration=reducedMotion?0:4300,settleDuration=reducedMotion?0:650,spinToken=++runtimeGeneration;locked=true;syncEditingAvailability();renderPosition();updateUI();startTicker();setPointerColor('#76ff3b');
+  const idx=rand(remaining.length),selected=remaining[idx],visualIndex=wheelParticipants.findIndex(participant=>participant.name===selected.name);if(visualIndex<0){locked=false;positionState={...positionState,phase:'idle'};stopTicker();updateUI();return false}const rotation=SpinOrderWheelRotation.next(wheelRotation,wheelSections[visualIndex],6+rand(4));wheelRotation=rotation.rotation;
+  wheel.style.transition=reducedMotion?'none':'transform 4.2s cubic-bezier(.12,.68,.12,1)';wheel.style.transform=`rotate(${wheelRotation}deg)`;
+  spinCompletionTimeoutId=setTimeout(()=>{
+    if(spinToken!==runtimeGeneration)return;spinCompletionTimeoutId=null;stopTicker();setPointerColor(selected.color);ticker.textContent=`🎯 ${selected.name}`;if(!reducedMotion){ticker.classList.add('pop');resultPopTimeoutId=setTimeout(()=>{if(spinToken===runtimeGeneration)ticker.classList.remove('pop');resultPopTimeoutId=null},500)}
+    picks[positionToAssign]=selected;remaining.splice(idx,1);pendingVisualRemoval=selected;positionState=SpinOrderPositions.completeSpin(positionState).state;hasCompletedSpin=true;drawResults();renderPosition();setStatus(`Position ${positionToAssign} selected: ${selected.name}`);syncEditingAvailability();saveDraft();
+    if(scheduleDeterministicFinalization()){if(pendingSetupNavigation){pendingSetupNavigation=false;editSetup.disabled=false;cancelAllPendingActions();editCurrentSetup()}return}
+    spinSettleTimeoutId=setTimeout(()=>{
+      if(spinToken!==runtimeGeneration)return;spinSettleTimeoutId=null;
+      wheel.style.transition=reducedMotion?'none':'transform 4.2s cubic-bezier(.12,.68,.12,1)';
+      locked=false;if(automated)autoController.spinCompleted(positionState.remaining.length>0);saveDraft();updateUI();reset.disabled=false;if(pendingSetupNavigation){pendingSetupNavigation=false;editSetup.disabled=false;editCurrentSetup()}
     },settleDuration);
   },spinDuration);
+  return true;
 }
 function resetDraft(){initializeRandomizer(eventParticipants)}
-spin.addEventListener('click',spinOnce);
+function removeStorageKey(storage,key){try{storage.removeItem(key)}catch{}}
+function returnHome(){const hasEventState=Boolean(setupValues.eventName||participantNames.length||eventParticipants.length||Object.keys(picks).length);if(hasEventState&&!window.confirm('Return home and clear this randomizer? This cannot be undone.'))return false;cancelAllPendingActions();autoController.reset(false);for(const key of [SpinOrderSetup.STORAGE_KEY,SpinOrderSetup.LEGACY_STORAGE_KEY,SpinOrderSetup.OLDEST_STORAGE_KEY,SpinOrderParticipants.STORAGE_KEY])removeStorageKey(sessionStorage,key);for(const key of [DRAFT_STORAGE_KEY,...LEGACY_DRAFT_STORAGE_KEYS])removeStorageKey(localStorage,key);setupValues={...SpinOrderSetup.DEFAULT_VALUES};participantNames=[];participantMode='manual';importedFilename='';eventParticipants=[];remaining=[];wheelParticipants=[];pendingVisualRemoval=null;picks={};positionState=SpinOrderPositions.create(0,'last');wheelRotation=0;wheelSections=[];hasCompletedSpin=false;locked=false;pendingSetupNavigation=false;setupEditSnapshot=null;clearConfirmation=false;nameInput.value='';nameFile.value='';participantMessage.textContent='';importSource.textContent='';clearNamesButton.textContent='Clear All';ticker.textContent='Ready to spin';wheel.style.transition='none';wheel.style.transform=`rotate(${wheelRotation}deg)`;setPointerColor('#76ff3b');populateSetupForm(setupValues);clearSetupErrors();renderParticipants();drawResults();drawWheel();renderPosition();syncEditingAvailability();SpinOrderFavicons.update(document,'Football');history.replaceState({spinorderView:'landing'},'',location.pathname+location.search);showView('landing',true);return true}
+spin.addEventListener('click',()=>{if(setupValues.spinMode==='auto')autoController.start(positionState.remaining.length>0);else executeSpin(false)});
+pauseAuto.addEventListener('click',()=>autoController.pause());resumeAuto.addEventListener('click',()=>autoController.resume(positionState.remaining.length>0));stopAuto.addEventListener('click',()=>autoController.stop());
 reset.addEventListener('click',resetDraft);
+homeButton.addEventListener('click',returnHome);
 createRandomizer.addEventListener('click',openSetup);
 setupBack.addEventListener('click',backFromSetup);
 editSetup.addEventListener('click',editCurrentSetup);
 editNames.addEventListener('click',editParticipantNames);
 namesBack.addEventListener('click',backFromParticipants);
 setupForm.addEventListener('input',saveSetupProgress);
-setupForm.addEventListener('change',()=>{toggleCustomLabel();saveSetupProgress();SpinOrderFavicons.update(document,setupValues.activity)});
+setupForm.addEventListener('change',()=>{toggleCustomLabel();saveSetupProgress();SpinOrderFavicons.update(document,SpinOrderSetup.normalize(formValues()).activity)});
 setupForm.addEventListener('submit',event=>{
   event.preventDefault();const result=SpinOrderSetup.validate(formValues());
   if(!result.valid){showSetupErrors(result.errors);return}
-  clearSetupErrors();setupValues=result.values;try{SpinOrderSetup.save(window.sessionStorage,setupValues)}catch{}
-  if(hasCompletedSpin){history.pushState({spinorderView:'randomizer'},'','#randomizer');showView('randomizer',true)}else openParticipants();
+  clearSetupErrors();const previous=setupEditSnapshot,revealChanged=Boolean(previous&&result.values.revealOrder!==previous.revealOrder);
+  if(revealChanged&&hasCompletedSpin&&!window.confirm('Changing reveal order will reset the current results. Participant names will be kept.')){const reveal=setupForm.querySelector(`[name="revealOrder"][value="${previous.revealOrder}"]`);if(reveal)reveal.checked=true;saveSetupProgress();return}
+  setupValues=result.values;try{SpinOrderSetup.save(window.sessionStorage,setupValues)}catch{}
+  if(previous){cancelAllPendingActions();if(revealChanged)initializeRandomizer(eventParticipants);else{autoController.restore(positionState.remaining.length>0,hasCompletedSpin);applySetupToRandomizer();saveDraft()}setupEditSnapshot=null;SpinOrderFavicons.update(document,setupValues.activity);history.pushState({spinorderView:'randomizer'},'','#randomizer');showView('randomizer',true)}else openParticipants();
 });
 async function importParticipantFile(file){if(!file)return;const fileCheck=SpinOrderParticipants.validateFile(file.name,file.size);if(!fileCheck.valid){announceParticipants(fileCheck.error,true);return}try{const imported=SpinOrderParticipants.importNames(file.name,file.size,await file.text());if(!imported.valid){announceParticipants(imported.error,true);return}participantNames=imported.names;participantMode='import';importedFilename=imported.filename;saveParticipants();renderParticipants();announceParticipants(imported.summary)}catch{announceParticipants('The file could not be read. Try another .txt or .csv file.',true)}}
 function registerParticipantListeners(){
@@ -389,6 +415,7 @@ function registerParticipantListeners(){
 registerParticipantListeners();
 window.addEventListener('popstate',()=>showView(routeFromHash(),true));
 window.addEventListener('hashchange',()=>showView(routeFromHash(),true));
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseAutoSafely()});
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;install.classList.add('show')});
 install.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;install.classList.remove('show')});
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!navigator.standalone)installHelp.classList.add('show');

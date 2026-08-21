@@ -34,17 +34,23 @@ test('reveal order defaults to last position first and validates both directions
   assert.equal(setup.validate({...setup.DEFAULT_VALUES, eventName: 'Event', revealOrder: 'sideways'}).valid, false);
 });
 
-test('Auto spin cannot be selected in normalized or submitted setup state', () => {
-  assert.equal(setup.normalize({...setup.DEFAULT_VALUES, spinMode: 'auto'}).spinMode, 'manual');
+test('spin mode defaults to Manual and accepts Auto with explanatory text', () => {
+  assert.equal(setup.DEFAULT_VALUES.spinMode, 'manual');
+  assert.equal(setup.normalize({...setup.DEFAULT_VALUES, spinMode: 'auto'}).spinMode, 'auto');
+  assert.equal(setup.validate({...setup.DEFAULT_VALUES,eventName:'Event',spinMode:'auto'}).valid,true);
+  assert.equal(setup.validate({...setup.DEFAULT_VALUES,eventName:'Event',spinMode:'invalid'}).valid,false);
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
-  assert.match(html, /value="auto"[^>]*disabled/);
-  assert.match(html, /Coming soon/);
+  assert.match(html, /value="auto"/);assert.doesNotMatch(html,/value="auto"[^>]*disabled/);
+  assert.match(html, /Select Spin for each position\./);
+  assert.match(html, /Spins continue automatically with a 3-second countdown\./);
+  assert.doesNotMatch(html,/Spin mode .*locks after the first completed spin/);
+  assert.doesNotMatch(html,/name="spinMode"[^>]*disabled/);
 });
 
 test('valid setup restores from versioned session storage and malformed data is ignored', () => {
   const data = new Map();
   const storage = {setItem: (key, value) => data.set(key, value), getItem: key => data.get(key) ?? null};
-  const values = {eventName: 'Friday Golf', activity: 'Golf', activityLabel: 'Drawing Order', customLabel: '', spinMode: 'manual', revealOrder: 'first'};
+  const values = {eventName: 'Friday Golf', activity: 'Golf', activityLabel: 'Drawing Order', customLabel: '', spinMode: 'auto', revealOrder: 'first'};
   assert.equal(setup.save(storage, values), true);
   assert.deepEqual(setup.load(storage), values);
   data.set(setup.STORAGE_KEY, '{bad json');
@@ -64,11 +70,21 @@ test('landing, setup, and randomizer navigation and applied configuration are wi
   assert.match(html, /function applySetupToRandomizer/);
   assert.match(html, /eventIcon\.textContent/);
   assert.match(html, /randomizerTitle\.textContent=eventName/);
-  assert.match(html, /reset\.textContent=`↻ Reset \$\{label\}`/);
+  assert.match(html, /reset\.textContent='↻ Reset Order';reset\.setAttribute\('aria-label',`Reset \$\{label\}`\)/);
   assert.equal((html.match(/type="radio" name="activityLabel"/g) || []).length, 4);
 });
 
 test('setup Back routes directly to the landing page regardless of prior history', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
   assert.match(html, /function backFromSetup\(\)\{\s*history\.replaceState\(\{spinorderView:'landing'\},'',location\.pathname\+location\.search\);showView\('landing',true\)\s*\}/);
+});
+
+test('editing setup preserves cosmetic and mode changes while reveal changes require confirmation',()=>{
+  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+  assert.match(html,/setupEditSnapshot=\{\.\.\.setupValues\}/);
+  assert.match(html,/revealChanged&&hasCompletedSpin&&!window\.confirm\('Changing reveal order will reset the current results\. Participant names will be kept\.'\)/);
+  assert.match(html,/if\(revealChanged\)initializeRandomizer\(eventParticipants\);else\{autoController\.restore\(positionState\.remaining\.length>0,hasCompletedSpin\);applySetupToRandomizer\(\);saveDraft\(\)\}/);
+  assert.match(html,/cancelAllPendingActions\(\).*autoController\.restore/s);
+  assert.doesNotMatch(html,/setupForm\.elements\.spinMode.*disabled/);
+  assert.doesNotMatch(html,/setupForm\.elements\.revealOrder.*disabled/);
 });

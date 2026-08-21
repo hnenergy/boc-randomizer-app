@@ -51,8 +51,9 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - Theme: Football, Baseball, Golf, Basketball, Generic
 - Order terminology: Draft Order, Random Order, Drawing Order, or a custom label up to 30 characters; Random Order is the default
 - Setup selections are stored only for the current browser session
-- Reveal order: Position 1 first or Last position first; Last position first is the default and locks after the first completed spin until reset
-- Manual spin is currently available; Auto spin remains visibly disabled until implemented
+- Reveal order: Position 1 first or Last position first; Last position first is the default. Changing direction after results exist requires confirmation and resets results while preserving participants.
+- Manual spin is the default. Auto Spin starts immediately, then continues after a visible three-second countdown and provides Pause, Resume, and Stop controls.
+- Spin mode remains editable after results exist; switching modes preserves results, cancels automation, and never starts Auto Spin automatically.
 - Names: minimum 2; maximum 20 for manual/example lists or 60 for imported lists after normalization
 - Name length: maximum 50 characters
 - Add/remove/reorder names before starting
@@ -62,18 +63,25 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 - Store the working participant list only in versioned browser-session storage
 - Mode: Manual or Auto
 - Reveal order controls whether positions are assigned `1 → N` or `N → 1`; results remain sorted by position
-- Current Position and Selected Position use one active-position state: both begin on the first assignable position, advance together only when a spin is accepted, and remain on the completed position while idle and after the final result
+- Current Position and Selected Position use one active-position state: both begin on the first assignable position, advance together only when a spin is accepted, and display `Order Set` after completion while retaining the final position internally
+- A completed selection remains visibly landed during idle, countdown, pause, stop, and setup editing, but is excluded from selection and removed only when the next spin starts.
+- Manual and Auto Spin hold the landed penultimate result and two-wedge wheel for exactly two seconds, then assign the sole remaining participant and position directly without another click, Auto countdown, wheel animation, or spin sound; the completed wheel contains one full-circle wedge labeled with that final participant.
+- Home requires confirmation before clearing the active SpinOrder setup, participants, results, import filename, wheel orientation, and automation state, then restores clean setup defaults.
 - Review screen before starting
 
 ### Randomization
 
 - Use unbiased browser cryptography for selection
 - Selection logic must be independent of animation duration
+- Wheel rotation is cumulative: every Manual or Auto spin begins from the previous landing angle, redraws preserve that angle, and only an explicit results reset restores the initial orientation
+- Every redraw resets a DPR-aware local canvas, calculates section geometry from the current remaining count, and reuses each wedge midpoint for label placement and landing alignment; the shared wrapper alone receives cumulative rotation, and visual labels shrink or truncate without changing accessible or result names
 - One participant is selected and removed per round
 - Manual mode requires a user action for each round
 - While a manual spin is active, both position displays identify that spin's position and the live status announces “Spinning for position X”; repeat clicks cannot start another round
-- Auto mode pauses for three visible seconds between completed result and next spin
+- Auto mode pauses for three visible seconds between completed results that still require a random selection; when one participant and one position remain, it assigns them directly without another countdown, animation, or spin sound
 - Pause/cancel auto mode at any time
+- Pausing during a spin allows that result to complete but prevents the next countdown; resuming always starts a fresh three-second countdown
+- Hiding the page or navigating away pauses automation, and restored sessions never restart it automatically
 - Persist active event and results locally to recover from refresh
 - “Start Over” must clearly erase the active local event after confirmation
 

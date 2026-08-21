@@ -24,9 +24,17 @@ test('restoration derives the displayed position from the most recently complete
 test('runtime uses one renderer for both displays and protects animation, reduced motion, navigation, and cosmetic edits',()=>{
   const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
   assert.match(html,/function renderPosition\(\).*pickNum\.textContent=selectedPosition\.textContent/s);
-  assert.match(html,/const started=SpinOrderPositions\.beginSpin\(positionState\);if\(!started\.accepted\)return/);
+  assert.match(html,/function executeSpin\(automated=false\).*const started=SpinOrderPositions\.beginSpin\(positionState\);if\(!started\.accepted\)return false/s);
   assert.match(html,/setStatus\(`Spinning for position \$\{position\}`\)/);
   assert.match(html,/prefersReducedMotion\(\).*matchMedia/s);
   assert.match(html,/function editCurrentSetup\(\).*showView\('setup',true\)/s);
   assert.doesNotMatch(html,/currentRank|positionQueue/);
+});
+
+test('completion shows Order Set while preserving numbered results and reset restores the initial position',()=>{
+  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+  assert.match(html,/positionState\.phase==='complete'\?'Order Set'/);
+  assert.match(html,/else if\(complete\)setStatus\('Order Set'\)/);
+  assert.match(html,/for\(const rank of SpinOrderParticipants\.positions\(eventParticipants\.length\)\)/);
+  assert.match(html,/function resetDraft\(\)\{initializeRandomizer\(eventParticipants\)\}/);
 });

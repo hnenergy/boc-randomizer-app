@@ -34,7 +34,7 @@ test('activity changes update immediately without duplicating the favicon link',
   }
   assert.equal(documentObject.links.length,1);
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-  assert.match(html,/setupForm\.addEventListener\('change'.*saveSetupProgress\(\);SpinOrderFavicons\.update\(document,setupValues\.activity\)/);
+  assert.match(html,/setupForm\.addEventListener\('change'.*saveSetupProgress\(\);SpinOrderFavicons\.update\(document,SpinOrderSetup\.normalize\(formValues\(\)\)\.activity\)/);
   assert.equal((html.match(/id="browserFavicon"/g)||[]).length,1);
 });
 
