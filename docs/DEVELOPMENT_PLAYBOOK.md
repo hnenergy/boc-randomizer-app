@@ -57,6 +57,10 @@ Create an empty GitHub repository, then follow GitHub's displayed commands to ad
 
 Every later push to the connected production branch will create a new production deployment; feature branches and pull requests can receive preview URLs.
 
+### Completed-results verification
+
+After completing 2-, 20-, and 60-name events in both reveal directions, verify that Share Results appears only at `Order Set`. Compare Copy Results, TXT, CSV, PNG, print preview, native text Share, and Share Image against the numbered on-screen results. Test default Email, Gmail, and Yahoo Mail with a short result; confirm each subject/body is encoded and webmail opens in a separate `noopener,noreferrer` window. For 60 names, confirm mail actions copy or download instead of opening a long URL. Include punctuation and Unicode in the event name, and commas, quotes, line breaks, and `=`, `+`, `-`, or `@` prefixes in participant names. Confirm Reset and Home hide the panel, CSV formulas are neutralized, the 1080×1350 image contains every result, and print preview flows across pages without clipping rows. No export action should create a network request containing event or participant data unless the visitor explicitly invokes native Share or a mail compose action.
+
 ## 5. Learn the Codex working loop
 
 Use one focused chat per feature. Before a large change, use Plan mode. Give Codex four things:
