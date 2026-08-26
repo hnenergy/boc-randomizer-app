@@ -109,14 +109,20 @@ Update this file in every completed feature branch. Check an item only after its
 
 ## Phase 5 — Results and sharing
 
-- [ ] Build final result screen
-- [ ] Copy formatted results
-- [ ] Download `.txt` and `.csv`
-- [ ] Add Web Share API with fallback
+- [x] Build a completed-only Share Results panel from one position-sorted result model
+- [x] Copy formatted results with Clipboard API and a cleaned-up fallback
+- [x] Download UTF-8 `.txt` and formula-safe BOM-prefixed `.csv` files
+- [x] Generate a branded 1080×1350 PNG locally for up to 60 results
+- [x] Add Web Share API with cancellation-safe fallback behavior
+- [x] Add PNG file sharing with native text/URL fallback
+- [x] Add default Email, Gmail, and Yahoo Mail compose actions with long-result copy/download fallback
 - [ ] Add participant email input for one-time compose action
 - [ ] Open a prefilled `mailto:` email draft
 - [ ] Confirm that recipients and event data are not persisted or transmitted
-- [ ] Add print-friendly result layout
+- [x] Add a print-friendly multi-page result layout
+- [ ] Create individual public result links with an explicit privacy/retention design
+- [ ] After public result links exist, add Facebook sharing
+- [ ] After public result links exist, add Reddit sharing
 
 **Exit:** results are consistently shareable without an application backend.
 

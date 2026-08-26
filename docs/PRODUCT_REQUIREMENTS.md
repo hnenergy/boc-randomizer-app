@@ -87,11 +87,18 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 
 ### Results and sharing
 
-- Display event name, date, theme, and complete ordered result
-- Copy to clipboard
-- Download results as `.txt` or `.csv`
-- Use Web Share API where available
-- Email MVP: open the device email client using `mailto:` with prefilled subject/body
+- Display event name, completion date/time, activity, terminology, reveal direction, and the complete position-sorted result
+- Show sharing controls only for `Order Set`; Reset and Home remove export availability
+- Copy a local plain-text representation with Clipboard API and temporary-textarea fallback
+- Download UTF-8 `.txt`, formula-safe BOM-prefixed `.csv`, and a branded 1080×1350 `.png` generated on a dedicated origin-clean canvas
+- Use Web Share API where available, treating user cancellation as a neutral outcome
+- Prefer Web Share file support for the generated PNG; fall back to native text and the canonical SpinOrder URL when file sharing is unavailable
+- Open encoded default Email, Gmail, or Yahoo Mail compose actions only from an explicit click, using `noopener,noreferrer` for webmail windows
+- Fall back to Copy Results or TXT download when a completed result would produce an excessively long mail URL
+- Recommend Share Image or Download Image for Instagram/TikTok without presenting misleading direct-post buttons
+- Print a black-on-white multi-page result layout without controls or wheel UI
+- Generate every export locally; transmit result text only when the visitor explicitly invokes native Share
+- Email MVP: open the device email client or selected webmail compose screen with a prefilled subject/body
 - Accept multiple participant email addresses only for composing the draft; do not store them
 - Provide a clear fallback when no email handler is available
 
