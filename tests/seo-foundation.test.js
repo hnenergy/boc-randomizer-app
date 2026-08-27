@@ -18,4 +18,4 @@ test('robots.txt allows crawling and references the canonical sitemap',()=>{cons
 
 test('sitemap contains only the canonical homepage and no hash routes',()=>{const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'),locations=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>match[1]);assert.match(sitemap,/^<\?xml version="1\.0" encoding="UTF-8"\?>/);assert.match(sitemap,/<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);assert.deepEqual(locations,['https://www.spinorder.com/']);assert.doesNotMatch(sitemap,/#/)});
 
-test('SEO runtime files are included in the versioned offline cache',()=>{const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');assert.match(worker,/spinorder-draft-v38/);assert.match(worker,/'\.\/robots\.txt'/);assert.match(worker,/'\.\/sitemap\.xml'/)});
+test('SEO runtime files are included in the versioned offline cache',()=>{const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');assert.match(worker,/spinorder-draft-v39/);assert.match(worker,/'\.\/robots\.txt'/);assert.match(worker,/'\.\/sitemap\.xml'/)});

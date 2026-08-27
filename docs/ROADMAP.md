@@ -137,7 +137,7 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Add internal links among use-case pages and the event builder
 - [ ] Verify semantic headings, image text alternatives, and Core Web Vitals
 - [ ] Connect Google Search Console and submit sitemap
-- [ ] Add privacy-conscious analytics with no event-name/participant capture
+- [x] Integrate Vercel Web Analytics for standard anonymous page views only, with no custom events or event-name/participant capture
 
 **Exit:** the site is crawlable, trustworthy, measurable, and ready for content growth.
 

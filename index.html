@@ -531,5 +531,6 @@ window.addEventListener('resize',()=>{if(!locked)drawWheel()});
 if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
 populateSetupForm(setupValues);renderParticipants();loadDraft();drawResults();drawWheel();applySetupToRandomizer();showView(routeFromHash());
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

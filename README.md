@@ -20,6 +20,7 @@ The original [boc-randomizer-app.vercel.app](https://boc-randomizer-app.vercel.a
 - Hosting: Vercel; both custom domains show **Valid Configuration**
 - Data model: no accounts and no server-side event storage in the MVP
 - SEO foundation: canonical homepage metadata, WebApplication structured data, `robots.txt`, and a one-page XML sitemap are implemented
+- Analytics: Vercel Web Analytics is integrated for standard anonymous page views only; no custom events or participant/event data are sent
 - Monetization target: free app supported by privacy-conscious display ads after traffic and policy eligibility are established
 
 See [docs/ROADMAP.md](docs/ROADMAP.md) for the working checklist and [docs/DEVELOPMENT_PLAYBOOK.md](docs/DEVELOPMENT_PLAYBOOK.md) for the step-by-step build process.
@@ -54,7 +55,7 @@ node --test tests/*.test.js
 - Vitest + React Testing Library
 - Playwright for end-to-end tests
 - Vercel for preview and production deployments
-- Vercel Web Analytics or another consent-conscious analytics provider
+- Vercel Web Analytics for standard anonymous page views
 
 ## Documentation
 
