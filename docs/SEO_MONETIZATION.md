@@ -31,7 +31,7 @@ Only publish a page when it has distinct value. Do not generate dozens of near-d
 - Internal links from guides/use-case pages to the correct preset
 - Search Console verification and sitemap submission
 
-The checked items above comprise the first static SEO foundation batch. Search Console, analytics, privacy/trust pages, instructional video content, and the social-preview image remain future work.
+The checked items above comprise the first static SEO foundation batch. Search Console, privacy/trust pages, instructional video content, and the social-preview image remain future work.
 
 ## Content launch set
 
@@ -48,7 +48,9 @@ Each use-case page should explain the problem, offer a usable preset immediately
 
 ## Measurement
 
-Track only product-safe events such as:
+Vercel Web Analytics is integrated through its static HTML script for standard anonymous page views only. The current application does not add custom analytics events, cookies, advertising trackers, or Google Analytics, and it does not send event names, participant names, or results to analytics.
+
+Potential future product-safe events, if separately approved, include:
 
 - Landing page viewed
 - Create flow started
@@ -57,7 +59,7 @@ Track only product-safe events such as:
 - Share method used
 - PWA install prompt accepted where measurable
 
-Never send event names, participant names, email addresses, or results to analytics.
+Never send event names, participant names, email addresses, or results to analytics. The future-event list above is planning material and is not implemented by the current integration.
 
 Use Search Console to review impressions, clicks, queries, indexing, and page performance. Use analytics to find conversion friction. Review monthly at first; avoid reacting to daily noise.
 
