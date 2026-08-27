@@ -128,9 +128,10 @@ Update this file in every completed feature branch. Check an item only after its
 
 ## Phase 6 — SEO and trust foundation
 
-- [ ] Add unique titles, descriptions, canonical URLs, and social images
-- [ ] Add `sitemap.xml` and `robots.txt`
-- [ ] Add Organization/WebSite/SoftwareApplication structured data where accurate
+- [x] Complete the homepage SEO foundation with a title, description, canonical URL, robots directive, Open Graph/Twitter metadata, and factual WebApplication JSON-LD
+- [x] Add a one-URL `sitemap.xml` and crawlable `robots.txt`
+- [ ] Create a dedicated social-preview image and add `og:image`/Twitter image metadata
+- [ ] Add additional Organization, WebSite, or SoftwareApplication structured data only where accurate and useful
 - [ ] Publish How It Works, About, Contact, Privacy, and Terms pages
 - [ ] Publish useful football, golf, and generic team-randomizer landing pages
 - [ ] Add internal links among use-case pages and the event builder
