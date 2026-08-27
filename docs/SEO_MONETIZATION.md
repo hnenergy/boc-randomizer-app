@@ -18,17 +18,20 @@ Only publish a page when it has distinct value. Do not generate dozens of near-d
 
 ## Technical SEO checklist
 
-- Static, crawlable page content and semantic headings
-- One useful title and meta description per indexable route
-- Canonical HTTPS URLs with one preferred hostname
-- XML sitemap and accurate robots rules
-- Descriptive Open Graph/social preview metadata
-- Accurate structured data; never add unsupported ratings or claims
+- [x] Static, crawlable homepage content and semantic splash-page heading
+- [x] One useful title and meta description for the canonical homepage
+- [x] Canonical HTTPS homepage URL with the preferred `www` hostname
+- [x] One-URL XML sitemap and accurate robots rules
+- [x] Descriptive Open Graph and Twitter text metadata
+- [x] Accurate WebApplication structured data without ratings or unsupported claims
+- [ ] Dedicated social-preview image and corresponding image metadata
 - Fast fonts/images, minimal client JavaScript on content pages, and stable layouts
 - Accessible controls, meaningful link text, and strong mobile usability
 - Noindex the private active-event route if it has no standalone search value
 - Internal links from guides/use-case pages to the correct preset
 - Search Console verification and sitemap submission
+
+The checked items above comprise the first static SEO foundation batch. Search Console, analytics, privacy/trust pages, instructional video content, and the social-preview image remain future work.
 
 ## Content launch set
 
@@ -96,4 +99,3 @@ Before buying:
 - Buy through an established registrar with two-factor authentication and auto-renew
 
 Domain availability must be verified at purchase time; do not rely on a static document or an old search result.
-

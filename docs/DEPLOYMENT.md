@@ -50,7 +50,9 @@ Never copy DNS values from this document; use the current values displayed by th
 - [x] Chrome desktop and real iPhone Safari pass on the current static deployment
 - [x] PWA installs from the live custom HTTPS domain
 - [ ] Offline fallback behaves correctly
-- [ ] Canonical URL, robots, sitemap, and social cards are correct
+- [x] Canonical URL, robots directive, and text-only social metadata are correct
+- [x] `robots.txt` and the canonical one-page sitemap are present
+- [ ] A dedicated social-preview image and image metadata are present
 - [ ] Lighthouse and accessibility checks meet release targets
 - [ ] Analytics excludes participant/event data
 - [ ] Error monitoring and rollback owner are defined
