@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06275B">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Read how SpinOrder handles participant names, event settings, results, local browser storage, Vercel Web Analytics, and support email.">
+<link rel="canonical" href="https://www.spinorder.com/privacy/">
+<meta property="og:title" content="Privacy | SpinOrder">
+<meta property="og:description" content="Read how SpinOrder handles participant names, event settings, results, local browser storage, Vercel Web Analytics, and support email.">
+<meta property="og:url" content="https://www.spinorder.com/privacy/">
+<meta property="og:site_name" content="SpinOrder">
+<meta property="og:type" content="website">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/info-pages.css">
+<title>Privacy | SpinOrder</title>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand-link" href="/" aria-label="SpinOrder home"><img src="/assets/brand/spinorder-logo.svg" alt="">SpinOrder</a>
+  <nav class="site-nav" aria-label="Information pages"><a href="/about/">About</a><a href="/privacy/" aria-current="page">Privacy</a><a href="/contact/">Contact</a></nav>
+</header>
+<main class="info-main">
+  <article class="info-card">
+    <p class="eyebrow">SpinOrder privacy</p>
+    <h1>Privacy</h1>
+    <p class="updated">Last updated: August 28, 2026.</p>
+    <p class="lede">SpinOrder is a static randomizer that works without an account. This page describes the information handling implemented by the current application.</p>
+
+    <h2>Information stored in your browser</h2>
+    <p>SpinOrder stores event setup choices in browser session storage. These choices include the event name, activity, randomizer terminology, reveal order, and spin mode.</p>
+    <p>Participant names are also stored in session storage with the list type and, after a file import, a sanitized base filename. Imported text or CSV file contents are read locally and are not retained as original files or uploaded by the import feature.</p>
+    <p>To restore an active randomizer, SpinOrder stores progress in local storage. That progress can include participant names, remaining and displayed wheel entries, assigned results, the visible status, wheel rotation, and completion time. Using the confirmed Home action removes the current SpinOrder setup, participants, and active-event progress from the browser storage keys used by the application. Browser storage may also be removed through your browser controls.</p>
+
+    <h2>Sharing and exports</h2>
+    <p>Copy, download, image, and print features are created in your browser. SpinOrder does not automatically upload participant names or results to an application server. If you choose an email or native sharing action, the information included in that action is passed to the email application, webmail provider, operating-system share interface, or destination you select.</p>
+
+    <h2>Hosting and traffic analytics</h2>
+    <p>SpinOrder is hosted by Vercel. Vercel Web Analytics supplies anonymized, aggregated traffic analytics for page views without third-party cookies. The current SpinOrder integration does not send custom analytics events or intentionally include event names, participant names, or results in analytics events.</p>
+    <p>Learn more from Vercel’s <a href="https://vercel.com/docs/analytics/privacy-policy">Web Analytics privacy and compliance information</a> and <a href="https://vercel.com/legal/privacy-notice">Privacy Notice</a>.</p>
+
+    <h2>Emailing support</h2>
+    <p>If you email <a href="mailto:support@spinorder.com?subject=SpinOrder%20Privacy">support@spinorder.com</a>, your email address, message, and any information you voluntarily include are sent to SpinOrder through Zoho Mail. Do not include participant names or results unless you choose to and they are needed for your request.</p>
+
+    <h2>Privacy questions</h2>
+    <p>For questions about this page or SpinOrder’s information handling, email <a href="mailto:support@spinorder.com?subject=SpinOrder%20Privacy">support@spinorder.com</a>.</p>
+  </article>
+</main>
+<footer class="info-footer"><span>© 2026 LFN Legacy Apps. SpinOrder™</span><nav class="footer-nav" aria-label="Footer"><a href="/">Home</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></footer>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

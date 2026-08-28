@@ -33,6 +33,8 @@ Only publish a page when it has distinct value. Do not generate dozens of near-d
 
 The checked items above comprise the first static SEO foundation batch. Search Console, privacy/trust pages, instructional video content, and the social-preview image remain future work.
 
+The public About, Privacy, and Contact pages are now available and included in the sitemap. How It Works and Terms remain future trust/content work.
+
 ## Content launch set
 
 Before public promotion, publish:

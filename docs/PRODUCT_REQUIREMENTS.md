@@ -114,7 +114,7 @@ The approved public brand is **SpinOrder**, with `https://www.spinorder.com/` as
 
 - Core event data stays in the browser
 - No participant data is sent to a server in MVP
-- Publish Privacy Policy, Terms, Contact, and About pages before ads
+- About, Privacy, and Contact pages are published; publish Terms before ads
 - Analytics must avoid collecting participant names or event contents
 - Any later automated-email feature requires explicit consent, abuse prevention, retention rules, and a separate architecture review
 
