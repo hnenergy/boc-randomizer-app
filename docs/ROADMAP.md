@@ -132,7 +132,9 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Add a one-URL `sitemap.xml` and crawlable `robots.txt`
 - [ ] Create a dedicated social-preview image and add `og:image`/Twitter image metadata
 - [ ] Add additional Organization, WebSite, or SoftwareApplication structured data only where accurate and useful
-- [ ] Publish How It Works, About, Contact, Privacy, and Terms pages
+- [ ] Publish a How It Works page
+- [x] Publish indexable About, Privacy, and Contact pages with consistent navigation
+- [ ] Publish a Terms page
 - [ ] Publish useful football, golf, and generic team-randomizer landing pages
 - [ ] Add internal links among use-case pages and the event builder
 - [ ] Verify semantic headings, image text alternatives, and Core Web Vitals
