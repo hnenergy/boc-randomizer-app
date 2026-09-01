@@ -8,7 +8,7 @@ const path=require('node:path');
 const root=path.join(__dirname,'..');
 const imageUrl='https://www.spinorder.com/social-preview.png';
 const imageAlt='SpinOrder randomizer with a colorful twelve-section wheel and the words Free Randomizer for Names, Teams &amp; Draft Orders';
-const pages=['index.html','about/index.html','privacy/index.html','contact/index.html'];
+const pages=['index.html','about/index.html','privacy/index.html','contact/index.html','fantasy-football-draft-order-randomizer/index.html'];
 
 function attribute(tag,name){
   return tag.match(new RegExp(`${name}=["']([^"']+)["']`,'i'))?.[1];

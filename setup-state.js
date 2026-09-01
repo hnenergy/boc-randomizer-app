@@ -18,6 +18,9 @@
   });
   const LABELS = Object.freeze(['Draft Order', 'Random Order', 'Drawing Order', 'Custom']);
   const DEFAULT_VALUES = Object.freeze({eventName: '', activity: 'Football', activityLabel: 'Random Order', customLabel: '', spinMode: 'manual', revealOrder: 'last'});
+  const PRESETS = Object.freeze({
+    'football-draft': Object.freeze({...DEFAULT_VALUES, activity: 'Football', activityLabel: 'Draft Order'})
+  });
 
   function cleanText(value, maximum) {
     return typeof value === 'string' ? value.trim().slice(0, maximum) : '';
@@ -52,6 +55,19 @@
     return normalized.activityLabel === 'Custom' ? normalized.customLabel || 'Random Order' : normalized.activityLabel;
   }
 
+  function presetFromSearch(search) {
+    try {
+      const key = new URLSearchParams(typeof search === 'string' ? search : '').get('preset');
+      return key && Object.hasOwn(PRESETS, key) ? key : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function valuesForPreset(key) {
+    return typeof key === 'string' && Object.hasOwn(PRESETS, key) ? {...PRESETS[key]} : null;
+  }
+
   function save(storage, values) {
     try {
       storage.setItem(STORAGE_KEY, JSON.stringify({version: VERSION, values: normalize(values)}));
@@ -74,5 +90,5 @@
     }
   }
 
-  return {STORAGE_KEY,LEGACY_STORAGE_KEY,OLDEST_STORAGE_KEY,VERSION,ACTIVITIES,LABELS,DEFAULT_VALUES,normalize,validate,displayLabel,save,load};
+  return {STORAGE_KEY,LEGACY_STORAGE_KEY,OLDEST_STORAGE_KEY,VERSION,ACTIVITIES,LABELS,DEFAULT_VALUES,PRESETS,normalize,validate,displayLabel,presetFromSearch,valuesForPreset,save,load};
 });

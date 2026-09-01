@@ -41,7 +41,7 @@ Before public promotion, publish:
 
 1. Home page
 2. How the randomization works and why it is fair
-3. Fantasy-football draft-order guide/preset
+3. [Fantasy-football draft-order guide/preset](../fantasy-football-draft-order-randomizer/)
 4. Golf-group/order guide/preset
 5. Generic team/order guide/preset
 6. About, Contact, Privacy, and Terms
