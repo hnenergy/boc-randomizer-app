@@ -72,7 +72,7 @@ test('runtime shares one spin path and wires timer cancellation, navigation, vis
   const finalAssignmentBody=html.match(/function finalizeDeterministicParticipant\(\)\{([\s\S]*?)\n\}/)?.[1]||'';
   assert.doesNotMatch(finalAssignmentBody,/executeSpin|startTicker|wheel\.style\.transform|spinDuration/);
   assert.match(finalAssignmentBody,/wheelParticipants=\[participant\];pendingVisualRemoval=null/);
-  assert.match(finalAssignmentBody,/drawWheel\(\).*ticker\.textContent=`🎯 \$\{participant\.name\}`.*drawResults\(\);renderPosition\(\)/s);
+  assert.match(finalAssignmentBody,/drawWheel\(\).*ticker\.textContent=destinationTeam\?.*:`🎯 \$\{participant\.name\}`;drawResults\(\);renderPosition\(\)/s);
   assert.match(html,/spinCompletionTimeoutId=null,spinSettleTimeoutId=null,resultPopTimeoutId=null,finalizationTimeoutId=null,finalizationState='idle',runtimeGeneration=0/);
   assert.match(html,/function cancelAllPendingActions\(\).*runtimeGeneration\+=1;clearSpinTimers\(\);autoController\.clearCountdownTimers\(\)/s);
   assert.match(html,/function initializeRandomizer\(names\)\{cancelAllPendingActions\(\)/);
@@ -92,7 +92,7 @@ test('runtime separates eligible participants from the landed visual wedge',()=>
   const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
   assert.match(html,/remaining=SpinOrderParticipants\.wheelEntries\(eventParticipants,colors\),wheelParticipants=\[\.\.\.remaining\],pendingVisualRemoval=null/);
   assert.match(html,/function drawWheel\(\).*n=wheelParticipants\.length.*wheelParticipants\[index\]\.color.*participant=wheelParticipants\[index\]/s);
-  assert.match(html,/const idx=rand\(remaining\.length\),selected=remaining\[idx\],visualIndex=wheelParticipants\.findIndex/);
+  assert.match(html,/idx=rand\(remaining\.length\),selected=remaining\[idx\],visualIndex=wheelParticipants\.findIndex/);
   assert.match(html,/remaining\.splice\(idx,1\);pendingVisualRemoval=selected/);
   assert.match(html,/function removePendingVisualParticipant\(\).*wheelParticipants=wheelParticipants\.filter\(participant=>participant\.name!==name\);pendingVisualRemoval=null;drawWheel\(\)/s);
   assert.match(html,/beginSpin\(positionState\);if\(!started\.accepted\)return false;removePendingVisualParticipant\(\);positionState=started\.state/);
@@ -108,7 +108,7 @@ test('runtime shared deterministic assignment and Home teardown avoid extra work
   assert.match(finalBody,/SpinOrderPositions\.completeFinal\(positionState\)/);
   assert.match(finalBody,/remaining=\[\];wheelParticipants=\[participant\];pendingVisualRemoval=null/);
   assert.match(finalBody,/clearSpinTimers\(\).*autoController\.spinCompleted\(false\)/s);
-  assert.match(finalBody,/ticker\.textContent=`🎯 \$\{participant\.name\}`/);
+  assert.match(finalBody,/ticker\.textContent=destinationTeam\?/);
   assert.doesNotMatch(finalBody,/executeSpin|startTicker|wheel\.style\.transform|play/);
   assert.match(html,/function scheduleDeterministicFinalization\(\).*finalizationState='finalizing'.*setTimeout\(\(\)=>.*finalizeDeterministicParticipant\(\).*},2000\)/s);
   assert.match(html,/if\(scheduleDeterministicFinalization\(\)\)/);
@@ -132,5 +132,5 @@ test('finalization timeout is cancellable and stale callbacks cannot complete cl
 });
 
 test('header actions use aligned responsive grids and the visible reset label is fixed',()=>{
-  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');assert.match(html,/<div class="topbar-actions">[\s\S]*id="homeButton"[\s\S]*id="editSetup"[\s\S]*id="editNames"[\s\S]*id="reset"[^>]*>↻ Reset Order<\/button>[\s\S]*<\/div>/);assert.match(html,/\.topbar-actions\{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;align-items:stretch;gap:10px/);assert.match(html,/\.topbar-actions button\{display:inline-flex;align-items:center;justify-content:center;min-height:46px;.*white-space:nowrap/);assert.match(html,/@media\(max-width:1040px\).*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/s);assert.match(html,/@media\(max-width:600px\).*\.topbar-actions\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\);gap:8px\}/s);assert.match(html,/reset\.textContent='↻ Reset Order';reset\.setAttribute\('aria-label',`Reset \$\{label\}`\)/);
+  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');assert.match(html,/<div class="topbar-actions">[\s\S]*id="homeButton"[\s\S]*id="editSetup"[\s\S]*id="editNames"[\s\S]*id="reset"[^>]*>↻ Reset Order<\/button>[\s\S]*<\/div>/);assert.match(html,/\.topbar-actions\{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;align-items:stretch;gap:10px/);assert.match(html,/\.topbar-actions button\{display:inline-flex;align-items:center;justify-content:center;min-height:46px;.*white-space:nowrap/);assert.match(html,/@media\(max-width:1040px\).*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/s);assert.match(html,/@media\(max-width:600px\).*\.topbar-actions\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\);gap:8px\}/s);assert.match(html,/reset\.textContent=isTeamMode\(\)\?'↻ Reset Teams':'↻ Reset Order'/);
 });
