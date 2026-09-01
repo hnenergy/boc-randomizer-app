@@ -19,7 +19,7 @@ The original [boc-randomizer-app.vercel.app](https://boc-randomizer-app.vercel.a
 - Domain registration and DNS: GoDaddy
 - Hosting: Vercel; both custom domains show **Valid Configuration**
 - Data model: no accounts and no server-side event storage in the MVP
-- SEO foundation: canonical homepage metadata, WebApplication structured data, `robots.txt`, and a one-page XML sitemap are implemented
+- SEO foundation: canonical metadata, WebApplication structured data, `robots.txt`, sitemap entries for every public page, and a branded 1200 x 630 social preview are implemented
 - Analytics: Vercel Web Analytics is integrated for standard anonymous page views only; no custom events or participant/event data are sent
 - Public information pages: indexable About, Privacy, and Contact routes are available from the site footer
 - Monetization target: free app supported by privacy-conscious display ads after traffic and policy eligibility are established

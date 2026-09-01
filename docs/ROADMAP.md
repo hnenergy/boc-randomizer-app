@@ -130,7 +130,7 @@ Update this file in every completed feature branch. Check an item only after its
 
 - [x] Complete the homepage SEO foundation with a title, description, canonical URL, robots directive, Open Graph/Twitter metadata, and factual WebApplication JSON-LD
 - [x] Add a one-URL `sitemap.xml` and crawlable `robots.txt`
-- [ ] Create a dedicated social-preview image and add `og:image`/Twitter image metadata
+- [x] Create a dedicated 1200 x 630 social-preview image and add `og:image`/Twitter image metadata
 - [ ] Add additional Organization, WebSite, or SoftwareApplication structured data only where accurate and useful
 - [ ] Publish a How It Works page
 - [x] Publish indexable About, Privacy, and Contact pages with consistent navigation

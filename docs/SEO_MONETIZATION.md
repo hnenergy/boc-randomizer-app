@@ -24,14 +24,14 @@ Only publish a page when it has distinct value. Do not generate dozens of near-d
 - [x] One-URL XML sitemap and accurate robots rules
 - [x] Descriptive Open Graph and Twitter text metadata
 - [x] Accurate WebApplication structured data without ratings or unsupported claims
-- [ ] Dedicated social-preview image and corresponding image metadata
+- [x] Dedicated 1200 x 630 social-preview image and corresponding Open Graph/Twitter image metadata
 - Fast fonts/images, minimal client JavaScript on content pages, and stable layouts
 - Accessible controls, meaningful link text, and strong mobile usability
 - Noindex the private active-event route if it has no standalone search value
 - Internal links from guides/use-case pages to the correct preset
 - Search Console verification and sitemap submission
 
-The checked items above comprise the first static SEO foundation batch. Search Console, privacy/trust pages, instructional video content, and the social-preview image remain future work.
+The checked items above comprise the static SEO foundation batch. Search Console and instructional video content remain future work.
 
 The public About, Privacy, and Contact pages are now available and included in the sitemap. How It Works and Terms remain future trust/content work.
 
