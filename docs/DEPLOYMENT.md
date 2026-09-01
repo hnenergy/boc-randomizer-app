@@ -52,7 +52,7 @@ Never copy DNS values from this document; use the current values displayed by th
 - [ ] Offline fallback behaves correctly
 - [x] Canonical URL, robots directive, and text-only social metadata are correct
 - [x] `robots.txt` and the canonical one-page sitemap are present
-- [ ] A dedicated social-preview image and image metadata are present
+- [x] A dedicated 1200 x 630 social-preview image and image metadata are present
 - [ ] Lighthouse and accessibility checks meet release targets
 - [ ] Analytics excludes participant/event data
 - [ ] Error monitoring and rollback owner are defined
