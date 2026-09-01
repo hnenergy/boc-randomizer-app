@@ -1,0 +1,11 @@
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.SpinOrderTeams=api})(typeof globalThis!=='undefined'?globalThis:this,function(){
+'use strict';
+const UINT32_RANGE=0x100000000;
+function browserUint32(){if(!globalThis.crypto||typeof globalThis.crypto.getRandomValues!=='function')throw new Error('Secure random values are unavailable.');const values=new Uint32Array(1);globalThis.crypto.getRandomValues(values);return values[0]}
+function randomIndex(maximum,nextUint32=browserUint32){if(!Number.isInteger(maximum)||maximum<1||maximum>UINT32_RANGE)throw new RangeError('Maximum must be an integer from 1 through 2^32.');const limit=Math.floor(UINT32_RANGE/maximum)*maximum;let value;do{value=nextUint32()}while(!Number.isInteger(value)||value<0||value>=limit);return value%maximum}
+function maximumTeams(participantCount){return Math.min(10,Number.isInteger(participantCount)&&participantCount>0?participantCount:0)}
+function validateTeamCount(value,participantCount){const count=typeof value==='string'&&value.trim()!==''?Number(value):value,maximum=maximumTeams(participantCount);if(!Number.isInteger(count))return{valid:false,error:'Enter a whole number of teams.'};if(count<2)return{valid:false,error:'Use at least 2 teams.'};if(count>maximum)return{valid:false,error:`Use no more than ${maximum} teams for ${participantCount} participants.`};return{valid:true,value:count,error:''}}
+function teamForCompleted(completedAssignmentCount,teamCount){if(!Number.isInteger(completedAssignmentCount)||completedAssignmentCount<0)throw new RangeError('Completed assignment count must be a non-negative integer.');if(!Number.isInteger(teamCount)||teamCount<2||teamCount>10)throw new RangeError('Team count must be an integer from 2 through 10.');return completedAssignmentCount%teamCount+1}
+function grouped(assignments,teamCount){const groups=Array.from({length:teamCount},(_,index)=>({team:index+1,members:[]}));for(const assignment of assignments||[]){if(assignment&&Number.isInteger(assignment.team)&&groups[assignment.team-1]&&typeof assignment.name==='string')groups[assignment.team-1].members.push(assignment.name)}return groups}
+return{UINT32_RANGE,browserUint32,randomIndex,maximumTeams,validateTeamCount,teamForCompleted,grouped}
+});

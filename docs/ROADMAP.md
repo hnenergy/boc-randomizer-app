@@ -78,6 +78,7 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Add Manual spin selection and show Auto spin as disabled **Coming soon**
 - [x] Add Position 1 first and Last position first reveal order, lock it after the first spin, and restore editing on reset
 - [x] Let users choose Draft Order, Random Order, Drawing Order, or a custom label and apply that terminology to supporting text, progress, results, completion, position labels, and reset controls while keeping the event name as the randomizer heading
+- [x] Add balanced Team Assignment mode with 2–10 teams, round-robin destinations, random participant selection, grouped results, persistence, reset, and sharing/export support
 - [x] Add setup/name edit controls and browser Back behavior; a separate review screen remains future work
 
 **Exit:** a valid custom event can be created without login or network data storage.
@@ -137,7 +138,7 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Publish a Terms page
 - [x] Publish an indexable fantasy-football draft-order randomizer page with an allowlisted Football/Draft Order preset
 - [ ] Publish a useful golf-group randomizer landing page
-- [ ] Publish a useful generic team-randomizer landing page
+- [x] Publish an indexable Random Team Generator landing page with the allowlisted Team Assignment preset
 - [ ] Add internal links among use-case pages and the event builder
 - [ ] Verify semantic headings, image text alternatives, and Core Web Vitals
 - [ ] Connect Google Search Console and submit sitemap

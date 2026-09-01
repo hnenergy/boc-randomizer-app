@@ -17,7 +17,7 @@ test('activity selection accepts only supported activities', () => {
 });
 
 test('predefined and custom activity labels validate correctly', () => {
-  assert.deepEqual(setup.LABELS, ['Draft Order', 'Random Order', 'Drawing Order', 'Custom']);
+  assert.deepEqual(setup.LABELS, ['Draft Order', 'Random Order', 'Drawing Order', 'Team Assignment', 'Custom']);
   assert.equal(setup.DEFAULT_VALUES.activityLabel, 'Random Order');
   assert.equal(setup.displayLabel({...setup.DEFAULT_VALUES, activityLabel: 'Draft Order'}), 'Draft Order');
   const missing = setup.validate({...setup.DEFAULT_VALUES, eventName: 'Drawing', activityLabel: 'Custom', customLabel: '  '});
@@ -50,7 +50,7 @@ test('spin mode defaults to Manual and accepts Auto with explanatory text', () =
 test('valid setup restores from versioned session storage and malformed data is ignored', () => {
   const data = new Map();
   const storage = {setItem: (key, value) => data.set(key, value), getItem: key => data.get(key) ?? null};
-  const values = {eventName: 'Friday Golf', activity: 'Golf', activityLabel: 'Drawing Order', customLabel: '', spinMode: 'auto', revealOrder: 'first'};
+  const values = {eventName: 'Friday Golf', activity: 'Golf', activityLabel: 'Drawing Order', customLabel: '', teamCount: 2, spinMode: 'auto', revealOrder: 'first'};
   assert.equal(setup.save(storage, values), true);
   assert.deepEqual(setup.load(storage), values);
   data.set(setup.STORAGE_KEY, '{bad json');
@@ -70,8 +70,8 @@ test('landing, setup, and randomizer navigation and applied configuration are wi
   assert.match(html, /function applySetupToRandomizer/);
   assert.match(html, /eventIcon\.textContent/);
   assert.match(html, /randomizerTitle\.textContent=eventName/);
-  assert.match(html, /reset\.textContent='↻ Reset Order';reset\.setAttribute\('aria-label',`Reset \$\{label\}`\)/);
-  assert.equal((html.match(/type="radio" name="activityLabel"/g) || []).length, 4);
+  assert.match(html, /reset\.textContent=isTeamMode\(\)\?'↻ Reset Teams':'↻ Reset Order'/);
+  assert.equal((html.match(/type="radio" name="activityLabel"/g) || []).length, 5);
 });
 
 test('setup Back routes directly to the landing page regardless of prior history', () => {
@@ -82,8 +82,8 @@ test('setup Back routes directly to the landing page regardless of prior history
 test('editing setup preserves cosmetic and mode changes while reveal changes require confirmation',()=>{
   const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
   assert.match(html,/setupEditSnapshot=\{\.\.\.setupValues\}/);
-  assert.match(html,/revealChanged&&hasCompletedSpin&&!window\.confirm\('Changing reveal order will reset the current results\. Participant names will be kept\.'\)/);
-  assert.match(html,/if\(revealChanged\)initializeRandomizer\(eventParticipants\);else\{autoController\.restore\(positionState\.remaining\.length>0,hasCompletedSpin\);applySetupToRandomizer\(\);saveDraft\(\)\}/);
+  assert.match(html,/\(revealChanged\|\|assignmentChanged\)&&hasCompletedSpin&&!window\.confirm\('Changing this setup will reset the current results\. Participant names will be kept\.'\)/);
+  assert.match(html,/if\(revealChanged\|\|assignmentChanged\)initializeRandomizer\(eventParticipants\);else\{autoController\.restore\(positionState\.remaining\.length>0,hasCompletedSpin\);applySetupToRandomizer\(\);saveDraft\(\)\}/);
   assert.match(html,/cancelAllPendingActions\(\).*autoController\.restore/s);
   assert.doesNotMatch(html,/setupForm\.elements\.spinMode.*disabled/);
   assert.doesNotMatch(html,/setupForm\.elements\.revealOrder.*disabled/);

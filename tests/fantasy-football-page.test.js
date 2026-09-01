@@ -47,7 +47,7 @@ test('CTA targets the allowlisted football draft setup preset',()=>{
 test('football-draft preset supplies only fixed setup values',()=>{
   assert.equal(setup.presetFromSearch('?preset=football-draft'),'football-draft');
   assert.equal(setup.presetFromSearch('?names=Alex&preset=football-draft&eventName=Injected'),'football-draft');
-  assert.deepEqual(setup.valuesForPreset('football-draft'),{eventName:'',activity:'Football',activityLabel:'Draft Order',customLabel:'',spinMode:'manual',revealOrder:'last'});
+  assert.deepEqual(setup.valuesForPreset('football-draft'),{eventName:'',activity:'Football',activityLabel:'Draft Order',customLabel:'',teamCount:2,spinMode:'manual',revealOrder:'last'});
   assert.equal(Object.hasOwn(setup.valuesForPreset('football-draft'),'names'),false);
 });
 
@@ -58,10 +58,10 @@ test('unknown and absent presets are ignored safely',()=>{
 
 test('app consumes recognized presets without accepting participant query data',()=>{
   const app=fs.readFileSync(path.join(root,'index.html'),'utf8');
-  assert.match(app,/const activePreset=SpinOrderSetup\.presetFromSearch\(window\.location\.search\)/);
+  assert.match(app,/const presetApplication=SpinOrderSetup\.applyPreset\(window\.sessionStorage,window\.location\.search\),activePreset=presetApplication\?\.key\|\|null/);
   assert.match(app,/if\(activePreset\)return \{names:\[\],mode:'manual',filename:''\}/);
-  assert.match(app,/if\(activePreset\)return SpinOrderSetup\.valuesForPreset\(activePreset\)/);
-  assert.match(app,/history\.replaceState\(\{spinorderView:'setup'\},'',location\.pathname\+'#setup'\)/);
+  assert.match(app,/if\(presetApplication\)return presetApplication\.values/);
+  assert.match(app,/if\(presetApplication\)history\.replaceState\(\{spinorderView:'setup'\},'',location\.pathname\+'#setup'\)/);
   assert.doesNotMatch(app,/URLSearchParams[^;]*(?:name|participant)/i);
 });
 
@@ -69,6 +69,6 @@ test('sitemap and offline cache include the use-case route',()=>{
   const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
   assert.equal((sitemap.match(new RegExp(`<loc>${canonical.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}<\\/loc>`,'g'))||[]).length,1);
   const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');
-  assert.match(worker,/spinorder-draft-v43/);
+  assert.match(worker,/spinorder-draft-v44/);
   assert.match(worker,/'\.\/fantasy-football-draft-order-randomizer\/'/);
 });

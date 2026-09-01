@@ -5,10 +5,10 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const STORAGE_KEY = 'spinorder-setup-v3';
-  const LEGACY_STORAGE_KEY = 'spinorder-setup-v2';
-  const OLDEST_STORAGE_KEY = 'spinorder-setup-v1';
-  const VERSION = 3;
+  const STORAGE_KEY = 'spinorder-setup-v4';
+  const LEGACY_STORAGE_KEY = 'spinorder-setup-v3';
+  const OLDEST_STORAGE_KEY = 'spinorder-setup-v2';
+  const VERSION = 4;
   const ACTIVITIES = Object.freeze({
     Football: '🏈',
     Baseball: '⚾',
@@ -16,10 +16,11 @@
     Basketball: '🏀',
     Generic: '🔄'
   });
-  const LABELS = Object.freeze(['Draft Order', 'Random Order', 'Drawing Order', 'Custom']);
-  const DEFAULT_VALUES = Object.freeze({eventName: '', activity: 'Football', activityLabel: 'Random Order', customLabel: '', spinMode: 'manual', revealOrder: 'last'});
+  const LABELS = Object.freeze(['Draft Order', 'Random Order', 'Drawing Order', 'Team Assignment', 'Custom']);
+  const DEFAULT_VALUES = Object.freeze({eventName: '', activity: 'Football', activityLabel: 'Random Order', customLabel: '', teamCount: 2, spinMode: 'manual', revealOrder: 'last'});
   const PRESETS = Object.freeze({
-    'football-draft': Object.freeze({...DEFAULT_VALUES, activity: 'Football', activityLabel: 'Draft Order'})
+    'football-draft': Object.freeze({...DEFAULT_VALUES, activity: 'Football', activityLabel: 'Draft Order'}),
+    'team-generator': Object.freeze({...DEFAULT_VALUES, activity: 'Generic', activityLabel: 'Team Assignment', teamCount: 2})
   });
 
   function cleanText(value, maximum) {
@@ -33,6 +34,7 @@
       activity: Object.hasOwn(ACTIVITIES, source.activity) ? source.activity : DEFAULT_VALUES.activity,
       activityLabel: LABELS.includes(source.activityLabel) ? source.activityLabel : DEFAULT_VALUES.activityLabel,
       customLabel: cleanText(source.customLabel, 30),
+      teamCount: Number.isInteger(Number(source.teamCount)) ? Number(source.teamCount) : DEFAULT_VALUES.teamCount,
       spinMode: source.spinMode === 'auto' ? 'auto' : 'manual',
       revealOrder: source.revealOrder === 'first' ? 'first' : 'last'
     };
@@ -47,6 +49,7 @@
     if (!values || !['first','last'].includes(values.revealOrder)) errors.revealOrder = 'Choose a reveal order.';
     if (!values || !['manual','auto'].includes(values.spinMode)) errors.spinMode = 'Choose a spin mode.';
     if (normalized.activityLabel === 'Custom' && !normalized.customLabel) errors.customLabel = 'Enter a custom activity label.';
+    if (normalized.activityLabel === 'Team Assignment' && (normalized.teamCount < 2 || normalized.teamCount > 10)) errors.teamCount = 'Choose between 2 and 10 teams.';
     return {values: normalized, errors, valid: Object.keys(errors).length === 0};
   }
 
@@ -66,6 +69,12 @@
 
   function valuesForPreset(key) {
     return typeof key === 'string' && Object.hasOwn(PRESETS, key) ? {...PRESETS[key]} : null;
+  }
+
+  function applyPreset(storage, search) {
+    const key = presetFromSearch(search);
+    const values = valuesForPreset(key);
+    return key && values && save(storage, values) ? {key, values} : null;
   }
 
   function save(storage, values) {
@@ -90,5 +99,5 @@
     }
   }
 
-  return {STORAGE_KEY,LEGACY_STORAGE_KEY,OLDEST_STORAGE_KEY,VERSION,ACTIVITIES,LABELS,DEFAULT_VALUES,PRESETS,normalize,validate,displayLabel,presetFromSearch,valuesForPreset,save,load};
+  return {STORAGE_KEY,LEGACY_STORAGE_KEY,OLDEST_STORAGE_KEY,VERSION,ACTIVITIES,LABELS,DEFAULT_VALUES,PRESETS,normalize,validate,displayLabel,presetFromSearch,valuesForPreset,applyPreset,save,load};
 });
