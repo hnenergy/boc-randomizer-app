@@ -135,7 +135,9 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Publish a How It Works page
 - [x] Publish indexable About, Privacy, and Contact pages with consistent navigation
 - [ ] Publish a Terms page
-- [ ] Publish useful football, golf, and generic team-randomizer landing pages
+- [x] Publish an indexable fantasy-football draft-order randomizer page with an allowlisted Football/Draft Order preset
+- [ ] Publish a useful golf-group randomizer landing page
+- [ ] Publish a useful generic team-randomizer landing page
 - [ ] Add internal links among use-case pages and the event builder
 - [ ] Verify semantic headings, image text alternatives, and Core Web Vitals
 - [ ] Connect Google Search Console and submit sitemap
