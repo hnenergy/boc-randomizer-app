@@ -70,7 +70,7 @@ test('landing, setup, and randomizer navigation and applied configuration are wi
   assert.match(html, /function applySetupToRandomizer/);
   assert.match(html, /eventIcon\.textContent/);
   assert.match(html, /randomizerTitle\.textContent=eventName/);
-  assert.match(html, /reset\.textContent=isTeamMode\(\)\?`↻ \$\{words\.reset\}`:'↻ Reset Order'/);
+  assert.match(html, /reset\.textContent=isTeamMode\(\)\?`↻ \$\{words\.reset\}`:`↻ \$\{copy\.reset\}`/);
   assert.equal((html.match(/type="radio" name="activityLabel"/g) || []).length, 5);
 });
 

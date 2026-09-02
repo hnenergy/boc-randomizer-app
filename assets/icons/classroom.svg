@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Classroom graduation cap</title>
+  <path fill="#65b7ff" d="M4 23 32 9l28 14-28 14L4 23Z"/>
+  <path fill="#1261c9" d="M16 31v12c6 8 26 8 32 0V31l-16 8-16-8Z"/>
+  <path fill="none" stroke="#f8fafc" stroke-linecap="round" stroke-width="4" d="M58 25v17"/>
+  <circle cx="58" cy="46" r="4" fill="#76ff3b"/>
+</svg>

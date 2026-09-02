@@ -11,6 +11,7 @@
     Baseball: 'assets/icons/baseball.svg',
     Golf: 'assets/icons/golf.svg',
     Basketball: 'assets/icons/basketball.svg',
+    Classroom: 'assets/icons/classroom.svg',
     Generic: 'assets/icons/generic.svg'
   });
 

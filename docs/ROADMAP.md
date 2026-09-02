@@ -139,7 +139,7 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Publish an indexable fantasy-football draft-order randomizer page with an allowlisted Football/Draft Order preset
 - [x] Publish a useful golf-group randomizer landing page
 - [x] Publish an indexable Random Team Generator landing page with the allowlisted Team Assignment preset
-- [ ] Publish an indexable Classroom randomizer page
+- [x] Add the Classroom activity with Name Picker terminology and publish an indexable Classroom Name Picker page
 - [ ] Publish an indexable Drawing/Giveaway randomizer page
 - [ ] Add internal links among use-case pages and the event builder
 - [ ] Verify semantic headings, image text alternatives, and Core Web Vitals
