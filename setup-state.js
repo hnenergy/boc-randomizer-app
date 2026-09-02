@@ -20,7 +20,8 @@
   const DEFAULT_VALUES = Object.freeze({eventName: '', activity: 'Football', activityLabel: 'Random Order', customLabel: '', teamCount: 2, spinMode: 'manual', revealOrder: 'last'});
   const PRESETS = Object.freeze({
     'football-draft': Object.freeze({...DEFAULT_VALUES, activity: 'Football', activityLabel: 'Draft Order'}),
-    'team-generator': Object.freeze({...DEFAULT_VALUES, activity: 'Generic', activityLabel: 'Team Assignment', teamCount: 2})
+    'team-generator': Object.freeze({...DEFAULT_VALUES, activity: 'Generic', activityLabel: 'Team Assignment', teamCount: 2}),
+    'golf-groups': Object.freeze({...DEFAULT_VALUES, activity: 'Golf', activityLabel: 'Team Assignment', teamCount: 2})
   });
 
   function cleanText(value, maximum) {
@@ -49,12 +50,13 @@
     if (!values || !['first','last'].includes(values.revealOrder)) errors.revealOrder = 'Choose a reveal order.';
     if (!values || !['manual','auto'].includes(values.spinMode)) errors.spinMode = 'Choose a spin mode.';
     if (normalized.activityLabel === 'Custom' && !normalized.customLabel) errors.customLabel = 'Enter a custom activity label.';
-    if (normalized.activityLabel === 'Team Assignment' && (normalized.teamCount < 2 || normalized.teamCount > 10)) errors.teamCount = 'Choose between 2 and 10 teams.';
+    if (normalized.activityLabel === 'Team Assignment' && (normalized.teamCount < 2 || normalized.teamCount > 10)) errors.teamCount = `Choose between 2 and 10 ${normalized.activity === 'Golf' ? 'groups' : 'teams'}.`;
     return {values: normalized, errors, valid: Object.keys(errors).length === 0};
   }
 
   function displayLabel(values) {
     const normalized = normalize(values);
+    if (normalized.activityLabel === 'Team Assignment' && normalized.activity === 'Golf') return 'Group Assignment';
     return normalized.activityLabel === 'Custom' ? normalized.customLabel || 'Random Order' : normalized.activityLabel;
   }
 

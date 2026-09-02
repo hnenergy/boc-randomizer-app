@@ -69,6 +69,6 @@ test('sitemap and offline cache include the use-case route',()=>{
   const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
   assert.equal((sitemap.match(new RegExp(`<loc>${canonical.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}<\\/loc>`,'g'))||[]).length,1);
   const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');
-  assert.match(worker,/spinorder-draft-v44/);
+  assert.match(worker,/spinorder-draft-v45/);
   assert.match(worker,/'\.\/fantasy-football-draft-order-randomizer\/'/);
 });

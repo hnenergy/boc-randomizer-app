@@ -33,8 +33,8 @@ test('runtime uses one renderer for both displays and protects animation, reduce
 
 test('completion shows Order Set while preserving numbered results and reset restores the initial position',()=>{
   const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
-  assert.match(html,/positionState\.phase==='complete'\?\(isTeamMode\(\)\?'Teams Set':'Order Set'\)/);
-  assert.match(html,/else if\(complete\)setStatus\(isTeamMode\(\)\?'Teams Set':'Order Set'\)/);
+  assert.match(html,/positionState\.phase==='complete'\?\(isTeamMode\(\)\?words\.completion:'Order Set'\)/);
+  assert.match(html,/else if\(complete\)setStatus\(isTeamMode\(\)\?words\.completion:'Order Set'\)/);
   assert.match(html,/for\(const rank of SpinOrderParticipants\.positions\(eventParticipants\.length\)\)/);
   assert.match(html,/function resetDraft\(\)\{initializeRandomizer\(eventParticipants\)\}/);
 });

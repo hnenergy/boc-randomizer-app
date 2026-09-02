@@ -42,7 +42,7 @@ Before public promotion, publish:
 1. Home page
 2. How the randomization works and why it is fair
 3. [Fantasy-football draft-order guide/preset](../fantasy-football-draft-order-randomizer/)
-4. Golf-group/order guide/preset
+4. [Golf Group Randomizer guide/preset](../golf-group-randomizer/)
 5. [Random Team Generator guide/preset](../random-team-generator/)
 6. About, Contact, Privacy, and Terms
 
