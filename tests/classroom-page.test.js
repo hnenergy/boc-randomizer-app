@@ -17,6 +17,6 @@ test('classroom metadata, analytics, navigation, and reciprocal internal links a
   assert.match(fs.readFileSync(path.join(root,'random-team-generator','index.html'),'utf8'),/href="\/classroom-name-picker\/"/);
 });
 
-test('classroom route and icon are indexed and cached in v46',()=>{
-  assert.match(fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'),new RegExp(`<loc>${canonical}<\\/loc>`));const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');assert.match(worker,/spinorder-draft-v46/);assert.match(worker,/'\.\/classroom-name-picker\/'/);assert.match(worker,/'\.\/assets\/icons\/classroom\.svg'/);
+test('classroom route and icon are indexed and cached',()=>{
+  assert.match(fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'),new RegExp(`<loc>${canonical}<\\/loc>`));const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');assert.match(worker,/spinorder-draft-v47/);assert.match(worker,/'\.\/classroom-name-picker\/'/);assert.match(worker,/'\.\/assets\/icons\/classroom\.svg'/);
 });

@@ -140,7 +140,10 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Publish a useful golf-group randomizer landing page
 - [x] Publish an indexable Random Team Generator landing page with the allowlisted Team Assignment preset
 - [x] Add the Classroom activity with Name Picker terminology and publish an indexable Classroom Name Picker page
-- [ ] Publish an indexable Drawing/Giveaway randomizer page
+- [x] Publish an indexable Random Drawing Order Generator page using the existing Drawing Order mode
+- [x] Complete the first SEO use-case collection: fantasy football, teams, golf groups, classroom names, and drawing order
+- [x] Link every homepage use-case chip to its matching indexable landing page
+- [ ] Evaluate a true Giveaway Winner Picker separately, including any entrant, eligibility, and prize-administration requirements
 - [ ] Add internal links among use-case pages and the event builder
 - [ ] Verify semantic headings, image text alternatives, and Core Web Vitals
 - [ ] Connect Google Search Console and submit sitemap

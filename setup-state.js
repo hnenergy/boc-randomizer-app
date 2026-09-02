@@ -23,7 +23,8 @@
     'football-draft': Object.freeze({...DEFAULT_VALUES, activity: 'Football', activityLabel: 'Draft Order'}),
     'team-generator': Object.freeze({...DEFAULT_VALUES, activity: 'Generic', activityLabel: 'Team Assignment', teamCount: 2}),
     'golf-groups': Object.freeze({...DEFAULT_VALUES, activity: 'Golf', activityLabel: 'Team Assignment', teamCount: 2}),
-    'classroom-picker': Object.freeze({...DEFAULT_VALUES, activity: 'Classroom', activityLabel: 'Random Order', revealOrder: 'first'})
+    'classroom-picker': Object.freeze({...DEFAULT_VALUES, activity: 'Classroom', activityLabel: 'Random Order', revealOrder: 'first'}),
+    'drawing-order': Object.freeze({...DEFAULT_VALUES, activity: 'Generic', activityLabel: 'Drawing Order', revealOrder: 'first'})
   });
 
   function cleanText(value, maximum) {

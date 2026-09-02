@@ -28,6 +28,7 @@ Only publish a page when it has distinct value. Do not generate dozens of near-d
 - Fast fonts/images, minimal client JavaScript on content pages, and stable layouts
 - Accessible controls, meaningful link text, and strong mobile usability
 - Noindex the private active-event route if it has no standalone search value
+- [x] Homepage use-case chips link to their focused, indexable landing pages
 - Internal links from guides/use-case pages to the correct preset
 - Search Console verification and sitemap submission
 
@@ -45,7 +46,8 @@ Before public promotion, publish:
 4. [Golf Group Randomizer guide/preset](../golf-group-randomizer/)
 5. [Random Team Generator guide/preset](../random-team-generator/)
 6. [Classroom Name Picker guide/preset](../classroom-name-picker/)
-7. About, Contact, Privacy, and Terms
+7. [Random Drawing Order Generator guide/preset](../random-drawing-order-generator/)
+8. About, Contact, Privacy, and Terms
 
 Each use-case page should explain the problem, offer a usable preset immediately, give concise instructions, answer real questions, and link to related tools naturally.
 
