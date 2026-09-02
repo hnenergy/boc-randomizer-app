@@ -44,7 +44,8 @@ Before public promotion, publish:
 3. [Fantasy-football draft-order guide/preset](../fantasy-football-draft-order-randomizer/)
 4. [Golf Group Randomizer guide/preset](../golf-group-randomizer/)
 5. [Random Team Generator guide/preset](../random-team-generator/)
-6. About, Contact, Privacy, and Terms
+6. [Classroom Name Picker guide/preset](../classroom-name-picker/)
+7. About, Contact, Privacy, and Terms
 
 Each use-case page should explain the problem, offer a usable preset immediately, give concise instructions, answer real questions, and link to related tools naturally.
 

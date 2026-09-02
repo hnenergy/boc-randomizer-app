@@ -21,7 +21,7 @@ The original [boc-randomizer-app.vercel.app](https://boc-randomizer-app.vercel.a
 - Data model: no accounts and no server-side event storage in the MVP
 - SEO foundation: canonical metadata, WebApplication structured data, `robots.txt`, sitemap entries for every public page, and a branded 1200 x 630 social preview are implemented
 - Analytics: Vercel Web Analytics is integrated for standard anonymous page views only; no custom events or participant/event data are sent
-- Public pages: indexable About, Privacy, Contact, fantasy-football draft-order, random-team-generator, and golf-group-randomizer routes are available
+- Public pages: indexable About, Privacy, Contact, fantasy-football draft-order, random-team-generator, golf-group-randomizer, and classroom-name-picker routes are available
 - Monetization target: free app supported by privacy-conscious display ads after traffic and policy eligibility are established
 
 See [docs/ROADMAP.md](docs/ROADMAP.md) for the working checklist and [docs/DEVELOPMENT_PLAYBOOK.md](docs/DEVELOPMENT_PLAYBOOK.md) for the step-by-step build process.
@@ -30,7 +30,7 @@ See [docs/ROADMAP.md](docs/ROADMAP.md) for the working checklist and [docs/DEVEL
 
 LFN Legacy Apps is the publisher of SpinOrder. Its approved publisher mark is a minimal, front-facing navy elephant outline with two eyes and a curled trunk, stored at [`assets/brand/lfn-legacy-apps-elephant.png`](assets/brand/lfn-legacy-apps-elephant.png). It is not the SpinOrder product logo.
 
-The official SpinOrder product and website logo is the five-section blue wheel stored at [`assets/brand/spinorder-logo.svg`](assets/brand/spinorder-logo.svg). Browser tabs use a favicon matching the configured Football, Baseball, Golf, Basketball, or Generic activity. The installed PWA, Apple touch icon, and default product installation branding remain the approved playful football. The footer uses the mechanically recolored light-blue LFN Legacy Apps publisher mark; the original navy PNG remains the approved geometry source. A production elephant SVG and additional production light/dark treatments remain future work. See [Brand architecture](docs/BRAND.md) for the recorded decisions.
+The official SpinOrder product and website logo is the five-section blue wheel stored at [`assets/brand/spinorder-logo.svg`](assets/brand/spinorder-logo.svg). Browser tabs use a favicon matching the configured Football, Baseball, Golf, Basketball, Classroom, or Generic activity. The installed PWA, Apple touch icon, and default product installation branding remain the approved playful football. The footer uses the mechanically recolored light-blue LFN Legacy Apps publisher mark; the original navy PNG remains the approved geometry source. A production elephant SVG and additional production light/dark treatments remain future work. See [Brand architecture](docs/BRAND.md) for the recorded decisions.
 
 ## Current prototype
 

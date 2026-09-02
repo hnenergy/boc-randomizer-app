@@ -16,7 +16,7 @@ function fakeDocument(withLink=true){
 
 test('every activity maps to an existing accessible SVG favicon',()=>{
   assert.deepEqual(favicons.ACTIVITY_FAVICONS,{
-    Football:'assets/icons/football.svg',Baseball:'assets/icons/baseball.svg',Golf:'assets/icons/golf.svg',Basketball:'assets/icons/basketball.svg',Generic:'assets/icons/generic.svg'
+    Football:'assets/icons/football.svg',Baseball:'assets/icons/baseball.svg',Golf:'assets/icons/golf.svg',Basketball:'assets/icons/basketball.svg',Classroom:'assets/icons/classroom.svg',Generic:'assets/icons/generic.svg'
   });
   for(const [activity,relativePath] of Object.entries(favicons.ACTIVITY_FAVICONS)){
     const svg=fs.readFileSync(path.join(root,relativePath),'utf8');

@@ -14,6 +14,7 @@
     Baseball: '⚾',
     Golf: '⛳',
     Basketball: '🏀',
+    Classroom: '🎓',
     Generic: '🔄'
   });
   const LABELS = Object.freeze(['Draft Order', 'Random Order', 'Drawing Order', 'Team Assignment', 'Custom']);
@@ -21,7 +22,8 @@
   const PRESETS = Object.freeze({
     'football-draft': Object.freeze({...DEFAULT_VALUES, activity: 'Football', activityLabel: 'Draft Order'}),
     'team-generator': Object.freeze({...DEFAULT_VALUES, activity: 'Generic', activityLabel: 'Team Assignment', teamCount: 2}),
-    'golf-groups': Object.freeze({...DEFAULT_VALUES, activity: 'Golf', activityLabel: 'Team Assignment', teamCount: 2})
+    'golf-groups': Object.freeze({...DEFAULT_VALUES, activity: 'Golf', activityLabel: 'Team Assignment', teamCount: 2}),
+    'classroom-picker': Object.freeze({...DEFAULT_VALUES, activity: 'Classroom', activityLabel: 'Random Order', revealOrder: 'first'})
   });
 
   function cleanText(value, maximum) {
@@ -37,7 +39,7 @@
       customLabel: cleanText(source.customLabel, 30),
       teamCount: Number.isInteger(Number(source.teamCount)) ? Number(source.teamCount) : DEFAULT_VALUES.teamCount,
       spinMode: source.spinMode === 'auto' ? 'auto' : 'manual',
-      revealOrder: source.revealOrder === 'first' ? 'first' : 'last'
+      revealOrder: source.activity === 'Classroom' && source.activityLabel === 'Random Order' ? 'first' : source.revealOrder === 'first' ? 'first' : 'last'
     };
   }
 
@@ -57,6 +59,7 @@
   function displayLabel(values) {
     const normalized = normalize(values);
     if (normalized.activityLabel === 'Team Assignment' && normalized.activity === 'Golf') return 'Group Assignment';
+    if (normalized.activityLabel === 'Random Order' && normalized.activity === 'Classroom') return 'Name Picker';
     return normalized.activityLabel === 'Custom' ? normalized.customLabel || 'Random Order' : normalized.activityLabel;
   }
 
