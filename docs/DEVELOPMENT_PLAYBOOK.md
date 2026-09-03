@@ -24,7 +24,7 @@ npm --version
 3. Open the integrated terminal and run:
 
 ```bash
-npx serve .
+npx serve . -l 3000
 ```
 
 4. Open the local URL printed in the terminal.
@@ -135,7 +135,27 @@ test: cover 60-name imported randomizer
 docs: update phase 2 checklist
 ```
 
-## 8. Standard verification
+## 8. Automated and manual verification
+
+Install the development dependencies once after cloning or when `package-lock.json` changes:
+
+```bash
+npm install
+```
+
+Use these commands for the current static application:
+
+```bash
+npm test
+npm run test:static
+npm run test:e2e
+npm run test:e2e:chromium
+npm run test:e2e:webkit
+```
+
+`npm test` runs the unit/static checks first and then both Playwright projects. Playwright starts and stops its own locally installed `serve` process at `http://127.0.0.1:4173`, so the manual port 3000 server is neither required nor reused. Run `npm run test:e2e:headed` to watch the smoke tests or `npm run test:e2e:ui` for Playwright's interactive UI and trace tools. On failure, inspect `playwright-report/` and the screenshots, traces, and failure-only videos under `test-results/`.
+
+The pure Node tests remain responsible for exhaustive parsing and validation limits, unbiased random selection, preset allowlisting, team balancing, timer state transitions, wheel geometry, exports, metadata, sitemap, and service-worker cache checks. Playwright covers representative browser integration rather than duplicating every data permutation.
 
 Once the Next.js toolchain exists:
 
@@ -157,6 +177,15 @@ Also test manually:
 - Refresh mid-event
 - Offline reload after first visit
 - 2 names, 20 manual names, 60 imported names, duplicates, blank rows, long names, malformed upload
+
+### Definition of Done
+
+- Relevant unit/static tests are added or updated.
+- Relevant Playwright coverage is added or updated for user-visible workflows.
+- Bug fixes include regression coverage at the appropriate layer.
+- The complete automated suite passes.
+- A brief manual visual review is completed at desktop and mobile sizes.
+- Pull-request checks pass before merge.
 
 ## 9. Recommended implementation order
 

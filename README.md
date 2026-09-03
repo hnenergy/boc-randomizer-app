@@ -32,21 +32,38 @@ LFN Legacy Apps is the publisher of SpinOrder. Its approved publisher mark is a 
 
 The official SpinOrder product and website logo is the five-section blue wheel stored at [`assets/brand/spinorder-logo.svg`](assets/brand/spinorder-logo.svg). Browser tabs use a favicon matching the configured Football, Baseball, Golf, Basketball, Classroom, or Generic activity. The installed PWA, Apple touch icon, and default product installation branding remain the approved playful football. The footer uses the mechanically recolored light-blue LFN Legacy Apps publisher mark; the original navy PNG remains the approved geometry source. A production elephant SVG and additional production light/dark treatments remain future work. See [Brand architecture](docs/BRAND.md) for the recorded decisions.
 
-## Current prototype
+## Local development
 
-Run a local static server from this directory:
+Install the development-only test tools once:
 
 ```bash
-npx serve .
+npm install
+```
+
+The deployed application remains plain static HTML, CSS, and JavaScript; the npm packages are used only for local serving and automated tests.
+
+Run the complete static and browser test suite:
+
+```bash
+npm test
+```
+
+Run only the existing unit/static checks or only the Playwright smoke tests:
+
+```bash
+npm run test:static
+npm run test:e2e
+```
+
+Playwright automatically starts an isolated static server on `http://127.0.0.1:4173`; it does not depend on a server running on port 3000. The suite covers Chromium desktop and mobile iPhone-sized WebKit projects. For interactive diagnosis, use `npm run test:e2e:headed` or `npm run test:e2e:ui`. Failure screenshots, traces, and videos are written under `test-results/`, and the HTML report is written to `playwright-report/`.
+
+For ordinary manual review, the existing command remains:
+
+```bash
+npx serve . -l 3000
 ```
 
 Opening `index.html` directly will not fully test service workers or PWA installation.
-
-Run the dependency-free tests with:
-
-```bash
-node --test tests/*.test.js
-```
 
 ## Planned development stack
 

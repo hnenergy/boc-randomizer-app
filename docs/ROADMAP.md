@@ -51,10 +51,17 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Revisit whether the approved SpinOrder wheel should become the favicon and PWA icon in a later release
 - [x] Add the light-blue LFN Legacy Apps mark as a small publisher attribution in the dark site footer
 
+### Post-MVP activity-neutral SpinOrder logo redesign
+
+- [ ] Redesign the product mark around a multicolor segmented wheel and pointer with no football or activity-specific symbol
+- [ ] Apply the approved redesign to the favicon, PWA icons, Apple touch icon, homepage, and social preview
+- [ ] Verify the installed icon on iPhone and Android devices
+
 **Exit:** name, domain direction, design direction, and enhancement backlog are approved.
 
 ## Phase 2 — Modern application foundation
 
+- [x] Maintain dependency-minimal Playwright smoke tests and GitHub Actions checks for the current static application
 - [ ] Create Next.js + TypeScript application in a migration branch
 - [ ] Add formatting, linting, strict type checking, and test commands
 - [ ] Configure Vitest, React Testing Library, and Playwright
