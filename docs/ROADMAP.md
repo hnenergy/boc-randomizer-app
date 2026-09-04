@@ -54,6 +54,7 @@ Update this file in every completed feature branch. Check an item only after its
 ### Post-MVP activity-neutral SpinOrder logo redesign
 
 - [ ] Redesign the product mark around a multicolor segmented wheel and pointer with no football or activity-specific symbol
+- [ ] Keep wheel labels upright by adjusting canvas text rotation so every participant name remains right-side up and readable at every wheel position while preserving centered placement, text fitting, wheel animation, pointer alignment, and selection accuracy
 - [ ] Apply the approved redesign to the favicon, PWA icons, Apple touch icon, homepage, and social preview
 - [ ] Verify the installed icon on iPhone and Android devices
 
@@ -62,6 +63,7 @@ Update this file in every completed feature branch. Check an item only after its
 ## Phase 2 — Modern application foundation
 
 - [x] Maintain dependency-minimal Playwright smoke tests and GitHub Actions checks for the current static application
+- [x] Complete the static MVP accessibility, performance, and release-readiness review with focused Chromium and mobile WebKit regression coverage
 - [ ] Create Next.js + TypeScript application in a migration branch
 - [ ] Add formatting, linting, strict type checking, and test commands
 - [ ] Configure Vitest, React Testing Library, and Playwright
@@ -152,7 +154,8 @@ Update this file in every completed feature branch. Check an item only after its
 - [x] Link every homepage use-case chip to its matching indexable landing page
 - [ ] Evaluate a true Giveaway Winner Picker separately, including any entrant, eligibility, and prize-administration requirements
 - [ ] Add internal links among use-case pages and the event builder
-- [ ] Verify semantic headings, image text alternatives, and Core Web Vitals
+- [x] Verify semantic headings, image text alternatives, keyboard/focus behavior, reduced motion, and 320px reflow for the static MVP
+- [ ] Verify production Core Web Vitals and complete a real assistive-technology review
 - [ ] Connect Google Search Console and submit sitemap
 - [x] Integrate Vercel Web Analytics for standard anonymous page views only, with no custom events or event-name/participant capture
 
@@ -168,6 +171,7 @@ Update this file in every completed feature branch. Check an item only after its
 - [ ] Verify sitemap and analytics
 - [x] Test HTTPS, desktop, iPhone Safari, and Add to Home Screen on the live custom domain
 - [ ] Run Lighthouse and resolve release-blocking issues
+- [ ] Record the instructional product video after the MVP UI is stable
 - [ ] Create tagged `v1.0.0` release and rollback notes
 
 **Exit:** public v1 is live, monitored, installable, and recoverable.

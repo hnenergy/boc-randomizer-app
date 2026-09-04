@@ -187,6 +187,21 @@ Also test manually:
 - A brief manual visual review is completed at desktop and mobile sizes.
 - Pull-request checks pass before merge.
 
+### MVP manual release checklist
+
+- [ ] Complete the landing → Setup → Names → Randomizer flow using only the keyboard; confirm focus remains visible and moves to each new view heading.
+- [ ] Trigger each setup and participant validation error; confirm the message is announced and focus moves to the field that needs correction.
+- [ ] Complete Manual and Auto events, including Pause, Resume, Stop, Reset, Home confirmation, browser Back, and refresh restoration.
+- [ ] Open Share Results with the keyboard; verify Copy, downloads, print, native share, email actions, and the Yahoo dialog. Confirm the dialog contains focus, closes with Escape, and restores focus.
+- [ ] At 200% browser zoom and at 320px width, review every app view and public content page for readable reflow, unclipped text, usable controls, and no essential horizontal scrolling.
+- [ ] Enable reduced motion at the operating-system/browser level and confirm spins still complete without prolonged or flashing animation.
+- [ ] Use a screen reader to verify headings, fieldsets, live status updates, participant editing, wheel/result meaning, and completed-order announcements.
+- [ ] On real iPhone Safari and a desktop browser, verify touch targets, file import, installation, offline reload after a first visit, and update behavior.
+- [ ] Inspect print preview and downloaded result images for 2 and 60 results; verify no clipping and correct position order.
+- [ ] Run production Lighthouse and review field Core Web Vitals when traffic data becomes available. Investigate the large wheel-center trophy asset if transfer size becomes material.
+
+Current automated limitations: no automated screen-reader speech verification, browser zoom API coverage, real installed-PWA lifecycle, native operating-system share sheet, mail-client rendering, print pagination inspection, or production network/Core Web Vitals measurement. The local Vercel Analytics endpoint is expected to be unavailable outside Vercel and is stubbed only in browser tests so it does not mask application failures.
+
 ## 9. Recommended implementation order
 
 1. Run and verify the current static application

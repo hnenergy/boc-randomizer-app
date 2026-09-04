@@ -21,6 +21,6 @@ test('drawing page metadata, analytics, navigation, and internal links are compl
   assert.match(fs.readFileSync(path.join(root,'classroom-name-picker','index.html'),'utf8'),/href="\/random-drawing-order-generator\/"/);
 });
 
-test('drawing route is in sitemap and v47 offline cache',()=>{
-  assert.match(fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'),new RegExp(`<loc>${canonical}<\\/loc>`));const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');assert.match(worker,/spinorder-draft-v47/);assert.match(worker,/'\.\/random-drawing-order-generator\/'/);
+test('drawing route is in sitemap and the versioned offline cache',()=>{
+  assert.match(fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'),new RegExp(`<loc>${canonical}<\\/loc>`));const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');assert.match(worker,/spinorder-draft-v48/);assert.match(worker,/'\.\/random-drawing-order-generator\/'/);
 });

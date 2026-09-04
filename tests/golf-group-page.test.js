@@ -22,5 +22,5 @@ test('golf page metadata, analytics, navigation, and reciprocal links are comple
 
 test('golf route is indexed and included in the current offline cache',()=>{
   assert.match(fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'),new RegExp(`<loc>${canonical}<\\/loc>`));
-  const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');assert.match(worker,/spinorder-draft-v47/);assert.match(worker,/'\.\/golf-group-randomizer\/'/);
+  const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');assert.match(worker,/spinorder-draft-v48/);assert.match(worker,/'\.\/golf-group-randomizer\/'/);
 });

@@ -10,7 +10,7 @@ a:focus-visible{outline:3px solid var(--light-blue);outline-offset:4px;border-ra
 .brand-link{display:inline-flex;align-items:center;gap:11px;color:#fff;font-size:20px;font-weight:900;text-decoration:none}
 .brand-link img{width:46px;height:46px;object-fit:contain}
 .site-nav,.footer-nav{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
-.site-nav a,.footer-nav a{font-weight:800}
+.site-nav a,.footer-nav a{display:inline-flex;align-items:center;min-height:44px;font-weight:800}
 .info-main{padding:36px 0 58px}
 .info-card{padding:clamp(24px,6vw,52px);border:1px solid rgba(124,196,255,.25);border-radius:26px;background:rgba(11,25,42,.96);box-shadow:0 24px 70px rgba(0,0,0,.38)}
 .eyebrow{margin:0 0 9px;color:var(--light-blue);font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}

@@ -53,5 +53,5 @@ test('PWA icons stay football while the footer uses the light-blue elephant',()=
   assert.deepEqual(manifest.icons.map(icon=>icon.src),['icon-192.png','icon-512.png']);
   assert.match(html,/<link rel="apple-touch-icon" href="icon-192\.png">/);
   assert.match(fs.readFileSync(path.join(root,'icon.svg'),'utf8'),/<title|<path d="M104 256c40-115\.2/);
-  assert.match(html,/<img src="assets\/brand\/lfn-legacy-apps-elephant-light-blue\.png" alt="LFN Legacy Apps elephant publisher logo">/);
+  assert.match(html,/<img src="assets\/brand\/lfn-legacy-apps-elephant-light-blue\.png" alt="LFN Legacy Apps elephant publisher logo" width="30" height="30" loading="lazy" decoding="async">/);
 });
