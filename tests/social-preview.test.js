@@ -37,7 +37,7 @@ test('app and preview use the stable cached trophy artwork',()=>{
   assert.equal(png.readUInt32BE(16),1254);
   assert.equal(png.readUInt32BE(20),1254);
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-  assert.match(html,/<div class="hub" id="wheelHub"><img src="assets\/icons\/trophy\.png" alt=""><\/div>/);
+  assert.match(html,/<div class="hub" id="wheelHub"><img src="assets\/icons\/trophy\.png" alt="" width="116" height="116" loading="lazy" decoding="async"><\/div>/);
   assert.doesNotMatch(html,/<div class="hub" id="wheelHub"><span>🏆<\/span>/);
   const worker=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');
   assert.match(worker,/'\.\/assets\/icons\/trophy\.png'/);

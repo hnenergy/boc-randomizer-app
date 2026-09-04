@@ -42,6 +42,8 @@ npm install
 
 The deployed application remains plain static HTML, CSS, and JavaScript; the npm packages are used only for local serving and automated tests.
 
+The MVP readiness review covers keyboard operation, form validation and focus, modal behavior, reduced motion, 320px reflow, public routes, broken local links, JavaScript errors, and representative desktop Chromium/mobile WebKit workflows. The review keeps exhaustive input limits, randomization invariants, export formatting, metadata, and cache assertions in the faster Node test suite.
+
 Run the complete static and browser test suite:
 
 ```bash
@@ -64,6 +66,8 @@ npx serve . -l 3000
 ```
 
 Opening `index.html` directly will not fully test service workers or PWA installation.
+
+Before a release, also complete the manual checklist in [docs/DEVELOPMENT_PLAYBOOK.md](docs/DEVELOPMENT_PLAYBOOK.md). Automated checks cannot replace assistive-technology testing, real-device PWA installation/offline checks, print and native-share review, or production Lighthouse/Core Web Vitals measurements.
 
 ## Planned development stack
 

@@ -20,18 +20,26 @@ async function openConfiguredNames(page, { preset, eventName = 'Browser Smoke Te
   await page.goto(preset ? `/?preset=${preset}` : '/');
   if (!preset) await page.getByRole('button', { name: 'Create Randomizer' }).click();
   await expect(page).toHaveURL(/#setup$/);
+  if (!preset) await expect(page.locator('#setupTitle')).toBeFocused();
   await page.getByLabel('Event name').fill(eventName);
   if (spinMode) await page.getByRole('radio', { name: new RegExp(`^${spinMode}`, 'i') }).check();
   if (teamCount) await page.getByLabel(/Number of (teams|groups)/).fill(String(teamCount));
   await page.getByRole('button', { name: 'Continue to Names' }).click();
   await expect(page.getByRole('heading', { level: 1, name: /names/i })).toBeVisible();
+  await expect(page.locator('#participantsTitle')).toBeFocused();
 }
 
 async function addNames(page, names, classroom = false) {
+  await expect(page.locator('#participantsTitle')).toBeFocused();
   const input = page.getByRole('textbox', { name: classroom ? 'Student name' : 'Participant name', exact: true });
-  for (const name of names) {
+  const addButton = page.getByRole('button', { name: classroom ? 'Add student' : 'Add participant' });
+  for (const [index, name] of names.entries()) {
+    const expectedCount = index + 1;
+    await input.focus();
     await input.fill(name);
-    await page.getByRole('button', { name: classroom ? 'Add student' : 'Add participant' }).click();
+    await expect(input).toHaveValue(name);
+    await addButton.click();
+    await expect(page.locator('#participantList li')).toHaveCount(expectedCount);
   }
 }
 
@@ -178,16 +186,28 @@ test('Auto Spin can pause, resume, stop, restart, and finish without duplicates'
   await addNames(page, ['A', 'B', 'C', 'D']);
   await createWheel(page);
   await page.getByRole('button', { name: 'Start Auto Spin' }).click();
-  const pause = page.getByRole('button', { name: 'Pause Auto Spin' });
-  await expect(pause).toBeEnabled();
-  await pause.click();
+  await page.waitForFunction(() => {
+    const pause = document.querySelector('#pauseAuto');
+    if (pause && !pause.disabled) {
+      pause.click();
+      return true;
+    }
+    return false;
+  });
   await expect(page.locator('#status')).toContainText('Auto Spin paused', { timeout: 8_000 });
   const assigned = (await resultNames(page)).filter(name => name !== 'Pending').length;
   await page.waitForTimeout(1_100);
   expect((await resultNames(page)).filter(name => name !== 'Pending').length).toBe(assigned);
   await page.getByRole('button', { name: 'Resume Auto Spin' }).click();
-  await expect(page.locator('#status')).toContainText('Next spin in 3');
-  await page.getByRole('button', { name: 'Stop Auto Spin' }).click();
+  await page.waitForFunction(() => {
+    const status = document.querySelector('#status');
+    const stop = document.querySelector('#stopAuto');
+    if (status?.textContent.includes('Next spin in 3') && stop && !stop.disabled) {
+      stop.click();
+      return true;
+    }
+    return false;
+  });
   await expect(page.locator('#status')).toContainText('Auto Spin stopped');
   await page.getByRole('button', { name: 'Start Auto Spin' }).click();
   await expect(page.locator('#status')).toContainText('Order Set', { timeout: 20_000 });
@@ -229,9 +249,11 @@ test('critical flow controls remain visible and usable at 320px', async ({ page 
   await page.goto('/');
   await expect(page.getByRole('button', { name: 'Create Randomizer' })).toBeVisible();
   await page.getByRole('button', { name: 'Create Randomizer' }).click();
+  await expect(page.locator('#setupTitle')).toBeFocused();
   await expect(page.getByLabel('Event name')).toBeVisible();
   await page.getByLabel('Event name').fill('Mobile Test');
   await page.getByRole('button', { name: 'Continue to Names' }).click();
+  await expect(page.locator('#participantsTitle')).toBeFocused();
   await addNames(page, ['One', 'Two']);
   await expect(page.getByRole('button', { name: 'Create Randomizer' })).toBeVisible();
   await createWheel(page);
